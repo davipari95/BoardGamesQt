@@ -3,6 +3,7 @@
 
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +21,8 @@ MainWindow::~MainWindow()
 
 bool MainWindow::connectSlots()
 {
-    connect(ui->fileExitAction, &QAction::triggered, this, &MainWindow::onFileExitTriggered);
+    connect(ui->fileExitAction, &QAction::triggered, this, &MainWindow::onFileExitActionTriggered);
+    connect(ui->gamesTicTacToeLocalAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLocalActionTriggered);
 
     return true;
 }
@@ -40,9 +42,18 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
-void MainWindow::onFileExitTriggered(bool checked)
+void MainWindow::onFileExitActionTriggered(bool checked)
 {
-    (void)checked;
+    (void) checked;
 
     close();
+}
+
+void MainWindow::onGamesTicTacToeLocalActionTriggered(bool checked)
+{
+    (void) checked;
+
+    TicTacToeLocalGameSettingsMdiSubWindow *w = new TicTacToeLocalGameSettingsMdiSubWindow();
+    ui->mainMdiArea->addSubWindow(w);
+    w->show();
 }

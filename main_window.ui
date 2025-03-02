@@ -16,7 +16,13 @@
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QMdiArea" name="mainMdiArea"/>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="mainMenuBar">
    <property name="geometry">
     <rect>
@@ -32,11 +38,45 @@
     </property>
     <addaction name="fileExitAction"/>
    </widget>
+   <widget class="QMenu" name="gamesMenu">
+    <property name="title">
+     <string>&amp;Games</string>
+    </property>
+    <widget class="QMenu" name="gamesTicTacToeMenu">
+     <property name="title">
+      <string>Tic Tac Toe</string>
+     </property>
+     <addaction name="gamesTicTacToeLocalAction"/>
+     <addaction name="gamesTicTacToeLANAction"/>
+     <addaction name="separator"/>
+     <addaction name="gamesTicTacToeRulesAction"/>
+    </widget>
+    <addaction name="gamesTicTacToeMenu"/>
+   </widget>
    <addaction name="fileMenu"/>
+   <addaction name="gamesMenu"/>
   </widget>
   <action name="fileExitAction">
    <property name="text">
     <string>E&amp;xit</string>
+   </property>
+  </action>
+  <action name="gamesTicTacToeLocalAction">
+   <property name="text">
+    <string>Local</string>
+   </property>
+  </action>
+  <action name="gamesTicTacToeLANAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>LAN</string>
+   </property>
+  </action>
+  <action name="gamesTicTacToeRulesAction">
+   <property name="text">
+    <string>Rules</string>
    </property>
   </action>
  </widget>

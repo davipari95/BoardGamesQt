@@ -32,6 +32,7 @@ class MainWindow : public QMainWindow
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
-        void onFileExitTriggered(bool checked);
+        void onFileExitActionTriggered(bool checked);
+        void onGamesTicTacToeLocalActionTriggered(bool checked);
 };
 #endif // MAIN_WINDOW_H
