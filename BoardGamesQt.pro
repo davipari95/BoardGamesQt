@@ -9,15 +9,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp \
+    classes/utils/u_frames.cpp \
     main.cpp \
-    main_window.cpp
+    main_window.cpp \
+    variables/v_styles.cpp
 
 HEADERS += \
+    classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h \
-    main_window.h
+    classes/utils/u_frames.h \
+    enums/tictactoe/tictactoe_players_enum.h \
+    main_window.h \
+    variables/v_styles.h
 
 FORMS += \
+    classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui \
     main_window.ui
 
