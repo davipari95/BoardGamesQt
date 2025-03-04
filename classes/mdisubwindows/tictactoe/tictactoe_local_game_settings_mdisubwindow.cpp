@@ -2,21 +2,25 @@
 #include "ui_tictactoe_local_game_settings_mdisubwindow.h"
 
 #include <QMessageBox>
+#include <QMdiArea>
+#include <main_window.h>
 #include <classes/utils/u_frames.h>
 #include <classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h>
 #include <variables/v_styles.h>
 
-TicTacToeLocalGameSettingsMdiSubWindow::TicTacToeLocalGameSettingsMdiSubWindow(QWidget *parent)
+TicTacToeLocalGameSettingsMdiSubWindow::TicTacToeLocalGameSettingsMdiSubWindow( QWidget *parent)
     : QMdiSubWindow(parent)
     , ui(new Ui::TicTacToeLocalGameSettingsMdiSubWindow)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
+    setAttribute(Qt::WA_DeleteOnClose); //Delete everything on closing form
+    setWindowFlag(Qt::WindowMaximizeButtonHint, false);  //Remove maximize button
 
     QWidget *m_widget = new QWidget(this);
     ui->setupUi(m_widget);
     setWidget(m_widget);
 
-    UFrames::adaptSubMdiSizesByContent(this, m_widget->width(), m_widget->height());
+
+    UFrames::adaptSubMdiSizesByContent(this, m_widget->width(), m_widget->height(), true);
 
     connectAllSlots();
 }
@@ -104,5 +108,11 @@ void TicTacToeLocalGameSettingsMdiSubWindow::onPlayPushButtonClicked(bool checke
     else
     {
         TicTacToeLocalGame *game = new TicTacToeLocalGame(xPlayerName, oPlayerName);
+        MainWindow::getMainMdiArea()->addSubWindow(game);
+
+        game->show();
+        UFrames::centreFormInMdiArea(game);
+
+        close();
     }
 }

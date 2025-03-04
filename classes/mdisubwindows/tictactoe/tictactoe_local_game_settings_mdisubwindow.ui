@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>443</width>
     <height>112</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>[Tic Tac Toe][Local] Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

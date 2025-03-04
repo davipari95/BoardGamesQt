@@ -12,6 +12,8 @@ namespace Ui
 
 QT_END_NAMESPACE
 
+class QMdiArea;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,9 +25,13 @@ class MainWindow : public QMainWindow
         //Destructors
         ~MainWindow();
 
+        //Functions
+        static QMdiArea *getMainMdiArea();
+
     private:
         //Properties
         Ui::MainWindow *ui;
+        static MainWindow *m_mainInstance;
 
         //Functions
         bool connectSlots();

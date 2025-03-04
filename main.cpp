@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <variables/v_widget.h>
 
 int main(int argc, char *argv[])
 {

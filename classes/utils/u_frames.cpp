@@ -3,6 +3,8 @@
 #include <QStyle>
 #include <QWidget>
 #include <QMdiSubWindow>
+#include <QMdiArea>
+#include <main_window.h>
 
 UFrames::UFrames() {}
 
@@ -32,6 +34,16 @@ bool UFrames::adaptSubMdiSizesByContent(QMdiSubWindow *window, int width, int he
     {
         window->resize(real_width, real_height);
     }
+
+    return true;
+}
+
+bool UFrames::centreFormInMdiArea(QMdiSubWindow *window)
+{
+    int x = (MainWindow::getMainMdiArea()->width() - window->width()) / 2;
+    int y = (MainWindow::getMainMdiArea()->height() - window->height()) / 2;
+
+    window->move(x, y);
 
     return true;
 }

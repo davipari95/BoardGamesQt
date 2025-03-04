@@ -8,16 +8,27 @@ namespace Ui {
 class TicTacToeLocalGame;
 }
 
+class Match;
+
 class TicTacToeLocalGame : public QMdiSubWindow
 {
     Q_OBJECT
 
-public:
-    explicit TicTacToeLocalGame(QString xPlayerName, QString oPlayerName, QWidget *parent = nullptr);
-    ~TicTacToeLocalGame();
+    public:
+        //Constructors
+        explicit TicTacToeLocalGame(const QString &xPlayerName,const QString &oPlayerName, QWidget *parent = nullptr);
 
-private:
-    Ui::TicTacToeLocalGame *ui;
+        //Destructors
+        ~TicTacToeLocalGame();
+
+    private:
+        //Variables
+        Ui::TicTacToeLocalGame *ui;
+        std::unique_ptr<Match> m_match;
+
+        //Functions
+        void initialize(const QString &xPlayerName, const QString &oPlayerName);
+        void initializeComponents();
 };
 
 #endif // TICTACTOE_LOCAL_GAME_MDISUBWINDOW_H
