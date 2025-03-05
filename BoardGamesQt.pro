@@ -11,13 +11,14 @@ CONFIG += c++17
 SOURCES += \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp \
+    classes/objects/custom_components/qgridlabel.cpp \
     classes/objects/gridposition.cpp \
-    classes/objects/qgridlabel.cpp \
     classes/objects/tictactoe/board.cpp \
     classes/objects/tictactoe/match.cpp \
     classes/utils/u_frames.cpp \
     classes/virtuals/cloneable.cpp \
     classes/virtuals/equatable.cpp \
+    classes/virtuals/to_stringable.cpp \
     main.cpp \
     main_window.cpp \
     variables/v_styles.cpp
@@ -25,13 +26,14 @@ SOURCES += \
 HEADERS += \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h \
+    classes/objects/custom_components/qgridlabel.h \
     classes/objects/gridposition.h \
-    classes/objects/qgridlabel.h \
     classes/objects/tictactoe/board.h \
     classes/objects/tictactoe/match.h \
     classes/utils/u_frames.h \
     classes/virtuals/cloneable.h \
     classes/virtuals/equatable.h \
+    classes/virtuals/to_stringable.h \
     enums/tictactoe/tictactoe_players_enum.h \
     main_window.h \
     variables/v_styles.h \
@@ -51,3 +53,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    tictactoe.qrc

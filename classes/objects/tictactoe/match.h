@@ -21,11 +21,14 @@ class Match : public QObject
         void setActualTurn(TicTacToePlayerEnum turn);
 
     public:
+        //Constructors
         explicit Match(const QString &xPlayerName, const QString &oPlayerName, QObject *parent = nullptr);
 
         //Functions
         TicTacToePlayerEnum getActualTurn();
         void switchTurn();
+        Board* getBoard();
+        TicTacToePlayerEnum checkGameOver();
 
     signals:
         void actualTurnChangedSignal(Match *sender, TicTacToePlayerEnum actualTurn);

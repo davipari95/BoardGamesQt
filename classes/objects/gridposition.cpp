@@ -85,6 +85,13 @@ GridPosition* GridPosition::clone()
     return new GridPosition(*this);
 }
 
+QString GridPosition::toString()
+{
+    return QString("{row = %0 ::: column = %1}")
+        .arg(getRow())
+        .arg(getColumn());
+}
+
 void GridPosition::initialize(const qint32 &row, const qint32 &column)
 {
     m_row = row;

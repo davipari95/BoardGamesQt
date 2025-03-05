@@ -4,8 +4,9 @@
 #include <QObject>
 #include <classes/virtuals/equatable.h>
 #include <classes/virtuals/cloneable.h>
+#include <classes/virtuals/to_stringable.h>
 
-class GridPosition : public QObject, Equatable<GridPosition>, Cloneable<GridPosition*>
+class GridPosition : public QObject, Equatable<GridPosition>, Cloneable<GridPosition*>, ToStringable
 {
     Q_OBJECT
 
@@ -22,6 +23,7 @@ class GridPosition : public QObject, Equatable<GridPosition>, Cloneable<GridPosi
         qint32 setPosition(const qint32 &row, const qint32 &column);
         bool equals(const GridPosition &item) const override;
         GridPosition* clone() override;
+        QString toString() override;
 
     private:
         //Variables

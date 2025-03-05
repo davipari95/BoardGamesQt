@@ -16,6 +16,18 @@ void Match::switchTurn()
     setActualTurn(!m_actTurn);
 }
 
+Board *Match::getBoard()
+{
+    return m_board.get();
+}
+
+TicTacToePlayerEnum Match::checkGameOver()
+{
+    std::array<QString, 8> sequences = m_board->getAllSequences();
+
+    return TicTacToePlayerEnum::Circle | TicTacToePlayerEnum::Cross;
+}
+
 void Match::initialize(const QString &xPlayerName, const QString &oPlayerName)
 {
     //Actual turn

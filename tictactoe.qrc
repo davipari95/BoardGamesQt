@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/resources/tictactoe">
+        <file>resources/tictactoe/board.png</file>
+        <file>resources/tictactoe/circle.png</file>
+        <file>resources/tictactoe/cross.png</file>
+    </qresource>
+</RCC>

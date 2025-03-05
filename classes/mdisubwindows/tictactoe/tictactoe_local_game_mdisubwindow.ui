@@ -22,11 +22,19 @@
      <height>300</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;</string>
+   </property>
    <property name="text">
     <string/>
    </property>
+   <property name="pixmap">
+    <pixmap resource="../../../tictactoe.qrc">:/resources/tictactoe/resources/tictactoe/board.png</pixmap>
+   </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../tictactoe.qrc"/>
+ </resources>
  <connections/>
 </ui>
