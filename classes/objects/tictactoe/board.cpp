@@ -47,19 +47,6 @@ void Board::clearContent()
     }
 }
 
-char Board::getTokenChar(TicTacToePlayerEnum token)
-{
-    switch (token)
-    {
-        case TicTacToePlayerEnum::Circle:
-            return 'O';
-        case TicTacToePlayerEnum::Cross:
-            return 'X';
-        case TicTacToePlayerEnum::None:
-            return ' ';
-    }
-}
-
 TicTacToePlayerEnum Board::getTokenByPosition(const qint32 &row, const qint32 &column)
 {
     return m_content[row][column];
@@ -74,8 +61,8 @@ std::array<QString, 8> Board::getAllSequences()
 {
     std::array<QString, 8> sequences = std::array<QString, 8>();
 
+    sequences[6] = "";
     sequences[7] = "";
-    sequences[8] = "";
 
     for (int i = 0; i < 3; i++)
     {
@@ -88,8 +75,8 @@ std::array<QString, 8> Board::getAllSequences()
             sequences[(i*2)+1] += getTokenChar(m_content[j][i]);
         }
 
-        sequences[7] += getTokenChar(m_content[i][i]);
-        sequences[8] += getTokenChar(m_content[i][2 - i]);
+        sequences[6] += getTokenChar(m_content[i][i]);
+        sequences[7] += getTokenChar(m_content[i][2 - i]);
     }
 
     return sequences;

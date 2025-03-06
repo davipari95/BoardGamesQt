@@ -14,6 +14,7 @@ TicTacToeLocalGameSettingsMdiSubWindow::TicTacToeLocalGameSettingsMdiSubWindow( 
 {
     setAttribute(Qt::WA_DeleteOnClose); //Delete everything on closing form
     setWindowFlag(Qt::WindowMaximizeButtonHint, false);  //Remove maximize button
+    setWindowIcon(QIcon(UFrames::isDarkMode() ? ":/application/gear_light" : ":/application/gear_dark"));
 
     QWidget *m_widget = new QWidget(this);
     ui->setupUi(m_widget);

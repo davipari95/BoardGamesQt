@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QMdiSubWindow>
 #include <QMdiArea>
+#include <QGuiApplication>
+#include <QStyleHints>
 #include <main_window.h>
 
 UFrames::UFrames() {}
@@ -46,4 +48,9 @@ bool UFrames::centreFormInMdiArea(QMdiSubWindow *window)
     window->move(x, y);
 
     return true;
+}
+
+bool UFrames::isDarkMode()
+{
+    return QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark;
 }

@@ -22,6 +22,7 @@ class Board : public QObject
         TicTacToePlayerEnum getTokenByPosition(const qint32 &row, const qint32 &column);
         TicTacToePlayerEnum getTokenByPosition(const GridPosition &position);
         std::array<QString, 8> getAllSequences();
+        void clearContent();
 
     private:
         //Variables
@@ -30,8 +31,6 @@ class Board : public QObject
 
         //Functions
         void initialize(Match *matchParent);
-        void clearContent();
-        char getTokenChar(TicTacToePlayerEnum token);
 
 signals:
 };

@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/tictactoe">
+        <file alias="board">resources/tictactoe/board.png</file>
+        <file alias="circle">resources/tictactoe/circle.png</file>
+        <file alias="cross">resources/tictactoe/cross.png</file>
+        <file alias="drawn">resources/tictactoe/drawn.png</file>
+    </qresource>
+    <qresource prefix="/application">
+        <file alias="app_icon_dark">resources/application/app_icon_dark.png</file>
+        <file alias="app_icon_light">resources/application/app_icon_light.png</file>
+        <file alias="book_dark">resources/application/book_dark.png</file>
+        <file alias="book_light">resources/application/book_light.png</file>
+        <file alias="gear_dark">resources/application/gear_dark.png</file>
+        <file alias="gear_light">resources/application/gear_light.png</file>
+        <file alias="lan_dark">resources/application/lan_dark.png</file>
+        <file alias="lan_light">resources/application/lan_light.png</file>
+        <file alias="local_dark">resources/application/local_dark.png</file>
+        <file alias="local_light">resources/application/local_light.png</file>
+        <file alias="tictactoe_dark">resources/application/tictactoe_dark.png</file>
+        <file alias="tictactoe_light">resources/application/tictactoe_light.png</file>
+    </qresource>
+</RCC>

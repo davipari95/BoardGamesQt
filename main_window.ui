@@ -57,6 +57,9 @@
    <addaction name="gamesMenu"/>
   </widget>
   <action name="fileExitAction">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::WindowClose"/>
+   </property>
    <property name="text">
     <string>E&amp;xit</string>
    </property>

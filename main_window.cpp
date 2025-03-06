@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
+    setIcons();
+
     connectSlots();
 }
 
@@ -35,6 +37,18 @@ bool MainWindow::connectSlots()
     connect(ui->gamesTicTacToeLocalAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLocalActionTriggered);
 
     return true;
+}
+
+void MainWindow::setIcons()
+{
+    bool dark = UFrames::isDarkMode();
+
+    setWindowIcon(QIcon(dark ? ":/application/app_icon_light" : ":/application/app_icon_dark"));
+
+    ui->gamesTicTacToeMenu->setIcon(QIcon(dark ? ":/application/tictactoe_light" : ":/application/tictactoe_dark"));
+    ui->gamesTicTacToeLocalAction->setIcon(QIcon(dark ? ":/application/local_light" : ":/application/local_dark"));
+    ui->gamesTicTacToeLANAction->setIcon(QIcon(dark ? ":/application/lan_light" : ":/application/lan_dark"));
+    ui->gamesTicTacToeRulesAction->setIcon(QIcon(dark ? ":/application/book_light" : ":/application/book_dark"));
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)

@@ -16,6 +16,7 @@ SOURCES += \
     classes/objects/tictactoe/board.cpp \
     classes/objects/tictactoe/match.cpp \
     classes/utils/u_frames.cpp \
+    classes/utils/u_messageboxes.cpp \
     classes/virtuals/cloneable.cpp \
     classes/virtuals/equatable.cpp \
     classes/virtuals/to_stringable.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     classes/objects/tictactoe/board.h \
     classes/objects/tictactoe/match.h \
     classes/utils/u_frames.h \
+    classes/utils/u_messageboxes.h \
     classes/virtuals/cloneable.h \
     classes/virtuals/equatable.h \
     classes/virtuals/to_stringable.h \
@@ -55,4 +57,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    tictactoe.qrc
+    resources.qrc

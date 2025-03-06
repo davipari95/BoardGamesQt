@@ -24,8 +24,53 @@ Board *Match::getBoard()
 TicTacToePlayerEnum Match::checkGameOver()
 {
     std::array<QString, 8> sequences = m_board->getAllSequences();
+    bool full = true;
 
-    return TicTacToePlayerEnum::Circle | TicTacToePlayerEnum::Cross;
+    for (QString sequence : sequences)
+    {
+        if (sequence.contains(' '))
+        {
+            full = false;
+        }
+        else if (sequence[0] == sequence[1] && sequence[1] == sequence[2])
+        {
+            return getTokenByChar(sequence[0].toLatin1());
+        }
+    }
+
+    return full ?
+               TicTacToePlayerEnum::Circle | TicTacToePlayerEnum::Cross :
+               TicTacToePlayerEnum::None;
+}
+
+bool Match::getPlayerName(const TicTacToePlayerEnum token, QString &out_payerName) const
+{
+    if (token == TicTacToePlayerEnum::Cross || token == TicTacToePlayerEnum::Circle)
+    {
+        out_payerName = m_playerNames.value(token);
+
+        return true;
+    }
+    else return false;
+}
+
+void Match::restart(const TicTacToePlayerEnum &gameStartsWith)
+{
+    setActualTurn(gameStartsWith);
+
+    m_board->clearContent();
+}
+
+void Match::stopsGame()
+{
+    m_gameStopped = true;
+
+    emit gameStoppedSignal(this);
+}
+
+bool Match::isGameStopped() const
+{
+    return m_gameStopped;
 }
 
 void Match::initialize(const QString &xPlayerName, const QString &oPlayerName)
@@ -41,6 +86,9 @@ void Match::initialize(const QString &xPlayerName, const QString &oPlayerName)
 
     //Board
     m_board = std::make_unique<Board>(this);
+
+    //Game over
+    m_gameStopped = false;
 }
 
 void Match::setActualTurn(TicTacToePlayerEnum turn)

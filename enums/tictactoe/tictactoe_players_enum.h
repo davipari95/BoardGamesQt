@@ -40,4 +40,34 @@ inline void reset(TicTacToePlayerEnum &flags, TicTacToePlayerEnum toReset)
     flags = static_cast<TicTacToePlayerEnum>(static_cast<int>(flags) & ~static_cast<int>(toReset));
 }
 
+inline char getTokenChar(TicTacToePlayerEnum token)
+{
+    switch (token)
+    {
+        case TicTacToePlayerEnum::None:
+            return ' ';
+        case TicTacToePlayerEnum::Circle:
+            return 'O';
+        case TicTacToePlayerEnum::Cross:
+            return 'X';
+    }
+
+    return '!';
+}
+
+inline TicTacToePlayerEnum getTokenByChar(char c)
+{
+    switch (c)
+    {
+        case ' ':
+            return TicTacToePlayerEnum::None;
+        case 'X':
+            return TicTacToePlayerEnum::Cross;
+        case 'O':
+            return TicTacToePlayerEnum::Circle;
+    }
+
+    return TicTacToePlayerEnum::Circle | TicTacToePlayerEnum::Cross;
+}
+
 #endif // TICTACTOE_PLAYERS_ENUM_H

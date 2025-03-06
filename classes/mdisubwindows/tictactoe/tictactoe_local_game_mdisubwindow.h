@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMdiSubWindow>
 #include <classes/objects/custom_components/qgridlabel.h>
+#include <enums/tictactoe/tictactoe_players_enum.h>
 
 namespace Ui {
 class TicTacToeLocalGame;
@@ -32,9 +33,12 @@ class TicTacToeLocalGame : public QMdiSubWindow
         void initialize(const QString &xPlayerName, const QString &oPlayerName);
         void initializeComponents();
         void updateGraphics();
+        void connectAllSlots();
 
     private slots:
         void onGridLabelClicked(QGridLabel *sender);
+        void onActualTurnChanged(Match* sender, TicTacToePlayerEnum actualTurn);
+        void onGameStopped(Match *sender);
 };
 
 #endif // TICTACTOE_LOCAL_GAME_MDISUBWINDOW_H

@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QStyleHints>
 #include <variables/v_widget.h>
 
 int main(int argc, char *argv[])
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
+
     MainWindow w;
     w.showMaximized();
     return a.exec();

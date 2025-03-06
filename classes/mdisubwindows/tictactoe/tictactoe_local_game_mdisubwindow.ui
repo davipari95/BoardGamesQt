@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>[Tic Tac Toe][Local] Game</string>
   </property>
   <widget class="QLabel" name="boardLabel">
    <property name="geometry">
@@ -29,12 +29,25 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../../tictactoe.qrc">:/resources/tictactoe/resources/tictactoe/board.png</pixmap>
+    <pixmap resource="../../../resources.qrc">:/tictactoe/board</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="infoLabel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>300</y>
+     <width>300</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%0's turn.</string>
    </property>
   </widget>
  </widget>
  <resources>
-  <include location="../../../tictactoe.qrc"/>
+  <include location="../../../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

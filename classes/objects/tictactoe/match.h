@@ -15,6 +15,7 @@ class Match : public QObject
         QMap<TicTacToePlayerEnum, QString> m_playerNames;
         TicTacToePlayerEnum m_actTurn;
         std::unique_ptr<Board> m_board;
+        bool m_gameStopped;
 
         //Functions
         void initialize(const QString &xPlayerName, const QString &oPlayerName);
@@ -29,9 +30,14 @@ class Match : public QObject
         void switchTurn();
         Board* getBoard();
         TicTacToePlayerEnum checkGameOver();
+        bool getPlayerName(const TicTacToePlayerEnum token, QString &out_payerName) const;
+        void restart(const TicTacToePlayerEnum &gameStartsWith);
+        void stopsGame();
+        bool isGameStopped() const;
 
     signals:
         void actualTurnChangedSignal(Match *sender, TicTacToePlayerEnum actualTurn);
+        void gameStoppedSignal(Match *sender);
 };
 
 #endif // MATCH_H

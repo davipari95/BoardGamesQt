@@ -35,6 +35,7 @@ class MainWindow : public QMainWindow
 
         //Functions
         bool connectSlots();
+        void setIcons();
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
