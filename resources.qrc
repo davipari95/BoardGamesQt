@@ -19,4 +19,8 @@
         <file alias="tictactoe_dark">resources/application/tictactoe_dark.png</file>
         <file alias="tictactoe_light">resources/application/tictactoe_light.png</file>
     </qresource>
+    <qresource prefix="/rules/tictactoe">
+        <file alias="en">resources/rules/tictactoe/en.html</file>
+        <file alias="it">resources/rules/tictactoe/it.html</file>
+    </qresource>
 </RCC>

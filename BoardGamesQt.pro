@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    classes/mdisubwindows/rules_viewer.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp \
     classes/objects/custom_components/qgridlabel.cpp \
@@ -16,6 +17,7 @@ SOURCES += \
     classes/objects/tictactoe/board.cpp \
     classes/objects/tictactoe/match.cpp \
     classes/utils/u_frames.cpp \
+    classes/utils/u_locale.cpp \
     classes/utils/u_messageboxes.cpp \
     classes/virtuals/cloneable.cpp \
     classes/virtuals/equatable.cpp \
@@ -25,6 +27,7 @@ SOURCES += \
     variables/v_styles.cpp
 
 HEADERS += \
+    classes/mdisubwindows/rules_viewer.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h \
     classes/objects/custom_components/qgridlabel.h \
@@ -32,6 +35,7 @@ HEADERS += \
     classes/objects/tictactoe/board.h \
     classes/objects/tictactoe/match.h \
     classes/utils/u_frames.h \
+    classes/utils/u_locale.h \
     classes/utils/u_messageboxes.h \
     classes/virtuals/cloneable.h \
     classes/virtuals/equatable.h \
@@ -42,6 +46,7 @@ HEADERS += \
     variables/v_widget.h
 
 FORMS += \
+    classes/mdisubwindows/rules_viewer.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui \
     main_window.ui

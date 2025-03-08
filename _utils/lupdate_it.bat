@@ -1,0 +1,1 @@
+C:\Qt\6.8.2\mingw_64\bin\lupdate.exe D:\Documenti\Projects\Qt\BoardGamesQt\BoardGamesQt.pro -ts D:\Documenti\Projects\Qt\BoardGamesQt\BoardGamesQt_it_IT.ts

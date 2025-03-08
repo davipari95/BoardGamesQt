@@ -36,10 +36,12 @@ class MainWindow : public QMainWindow
         //Functions
         bool connectSlots();
         void setIcons();
+        void openRulesForm(QString gameName);
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
         void onFileExitActionTriggered(bool checked);
         void onGamesTicTacToeLocalActionTriggered(bool checked);
+        void onGamesTicTacToeRulesActionTriggered(bool checked);
 };
 #endif // MAIN_WINDOW_H

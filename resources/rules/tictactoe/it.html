@@ -5,14 +5,59 @@
     <body>
         <h1>Tris</h1>
 
-        <h2>Indice</h2>
-        <!-- inserisci l'indice qui -->
+        <h2 id="index">Indice</h2>
+        <ul>
+            <li><a href="#introduction">Introduzione</a></li>
+            <li><a href="#game-components">Componenti di gioco</a></li>
+            <li><a href="#preparation">Componenti di gioco</a></li>
+            <li><a href="#game-progress">Svolgimento del gioco</a></li>
+            <li><a href="#winning-conditions">Condizioni di vittoria</a></li>
+            <li><a href="#drawn">Pareggio</a></li>
+        </ul>
 
-        <h2>Obbiettivo del gioco</h2>
-        I giocatori devono alternarsi nel posizionare il proprio simbolo (X o O) su una griglia 3x3.<br/> 
-        L'obiettivo è riuscire ad allineare tre simboli uguali in una delle seguenti modalità: orizzontalmente, verticalmente o diagonalmente.<br/>
-        Il primo giocatore che raggiunge questa condizione vince la partita.<br/> 
-        Se tutti gli spazi della griglia vengono riempiti senza che nessun giocatore abbia raggiunto l'allineamento richiesto, la partita termina in parità.
+        <h2 id="introduction">Introduzione</h2>
+        Il Tris, noto anche come Tic-Tac-Toe, è un gioco da tavolo astratto per due giocatori.<br/>
+        Si gioca su una griglia 3x3 e l’obiettivo è allineare tre simboli uguali in fila, colonna o diagonale prima dell’avversario.
+
+        <h2 id="game-components">Componenti di gioco</h2>
+        <ul>
+            <li>Una griglia quadrata composta da 3 righe e 3 colonne (3x3 caselle)</li>
+            <li>Due simboli distinti per i giocatori:</li>
+            <ul>
+                <li><b>Giocatore 1</b>: "X"</li>
+                <li><b>Giocatore 2</b>: "O"</li>
+            </ul>
+        </ul>
+
+        <h2 id="preparation">Preparazione</h2>
+        <ul>
+            <li>La griglia deve essere vuota dall'inizio della partita.</li>
+            <li>Il giocatore 1 comincia per primo.</li>
+            <ul>
+                <li>In caso di vittoria di un giocatore e richiesta di rivincita, il giocatore sconfitto avrà il diritto di iniziare per primo nella nuova partita.</li>
+                <li>In caso di pareggio e richiesta di rivincita, il turno iniziale spetterà al giocatore che non ha iniziato la partita precedente.</li>
+            </ul>
+        </ul>
+
+        <h2 id="game-progress">Svolgimento del gioco</h2>
+        <ul>
+            <li>I giocatori si alternano nel posizionare il proprio simbolo in una casella vuota della griglia.</li>
+            <li>È vietato modificare o rimuovere un simbolo già posizionato.</li>
+            <li>La partita continua fino al verificarsi di una delle condizioni di fine gioco.</li>
+        </ul>
+
+        <h2 id="winning-conditions">Condizioni di vittoria</h2>
+        Un giocatore vince se riesce ad allineare tre dei propri simboli in una delle seguenti configurazioni:
+        <ul>
+            <li>Tre simboli consecutivi in <b>orizzontale</b> (es. una riga interamente occupata da "X" o "O").</li>
+            <li>Tre simboli consecutivi in <b>verticale</b> (es. una colonna interamente occupata da "X" o "O").</li>
+            <li>Tre simboli consecutivi in <b>diagonale</b> (es. una sequenza che attraversa la griglia diagonalmente da angolo ad angolo).</li>
+        </ul>
+
+        <h2 id="drawn">Pareggio</h2>
+        Se tutte le 9 caselle della griglia sono occupate e nessun giocatore ha allineato tre simboli, la partita termina in <b>pareggio</b>.
+
+        <p><a href="#index">Vai all'indice</a></p>
 
     </body>
 </html>

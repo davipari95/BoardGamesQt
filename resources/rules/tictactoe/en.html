@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Tic-Tac-Toe - Rules</title>
+    </head>
+    <body>
+        <h1>Tic-Tac-Toe</h1>
+
+        <h2 id="index">Index</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#game-components">Game components</a></li>
+            <li><a href="#preparation">Preparation</a></li>
+            <li><a href="#game-progress">Game progress</a></li>
+            <li><a href="#winning-conditions">Winning conditions</a></li>
+            <li><a href="#drawn">Drawn</a></li>
+        </ul>
+
+        <h2 id="introduction">Introduction</h2>
+        Tic-Tac-Toe, is an abstract board game for two players.<br/>
+        It is played in a 3x3 grid and the goal is to align three same symbols in a row, column or diagonal before the opponent. 
+
+        <h2 id="game-components">Game components</h2>
+        <ul>
+            <li>A square grid with 3 rows and 3 columns (3x3 cells).</li>
+            <li>Two distinct symbols for the players:</li>
+            <ul>
+                <li><b>Player 1</b>: "X"</li>
+                <li><b>Player 2</b>: "O"</li>
+            </ul>
+        </ul>
+
+        <h2 id="preparation">Preparation</h2>
+        <ul>
+            <li>The grid must be empty before the game starts.</li>
+            <li>Player 1 starts at the first turn.</li>
+            <ul>
+                <li>In case of victory of one player and a revenge match is requested, the defeated player will have the right to starts as first at the new match.</li>
+                <li>In case of drawn and a revenge match is requested, the initial turn will go to the player who did not start the previous game.</li>
+            </ul>
+        </ul>
+
+        <h2 id="game-progress">Game progress</h2>
+        <ul>
+            <li>Players take turns placing their symbol in an empty space on the grid.</li>
+            <li>It is forbidden to modify or remove a symbol already placed.</li>
+            <li>The game continues until one of the game-ending conditions occurs.</li>
+        </ul>
+
+        <h2 id="winning-conditions">Victory Conditions</h2>
+        A player wins if he manages to line up three of his symbols in one of the following configurations:
+        <ul>
+            <li>Three consecutive symbols in <b>horizontal</b> (e.g. a row entirely occupied by "X" or "O").</li>
+            <li>Three consecutive symbols in <b>vertical</b> (e.g. a column entirely occupied by "X" or "O").</li>
+            <li>Three consecutive symbols in <b>diagonal</b> (e.g. a sequence that crosses the grid diagonally from corner to corner).</li>
+        </ul>
+
+        <h2 id="drawn">Drawn</h2>
+        If all 9 squares of the grid are occupied and no player has lined up three symbols, the game ends in a <b>draw</b>.
+
+        <p><a href="#index">Go to index</a></p>
+
+    </body>
+</html>
