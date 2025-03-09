@@ -140,7 +140,7 @@ void TicTacToeLocalGame::onGridLabelClicked(QGridLabel *sender)
                             ":/tictactoe/circle";
                     icon = QPixmap(resPath);
                     m_match->getPlayerName(gameOverResult, playerName);
-                    title = tr("%0 player wins!").arg(gameOverResult == TicTacToePlayerEnum::Cross ? "Cross" : "Circle");
+                    title = tr("%0 player wins!").arg(gameOverResult == TicTacToePlayerEnum::Cross ? tr("Cross") : tr("Circle"));
                     message = tr("%0 wins this match!\nDo you want to replay?").arg(playerName);
                     restartsWith = !gameOverResult;
                 }

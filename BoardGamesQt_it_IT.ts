@@ -16,12 +16,12 @@
     <message>
         <location filename="main_window.ui" line="43"/>
         <source>&amp;Games</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Giochi</translation>
     </message>
     <message>
         <location filename="main_window.ui" line="47"/>
         <source>Tic Tac Toe</source>
-        <translation type="unfinished"></translation>
+        <translation>Tris</translation>
     </message>
     <message>
         <location filename="main_window.ui" line="64"/>
@@ -31,17 +31,17 @@
     <message>
         <location filename="main_window.ui" line="69"/>
         <source>Local</source>
-        <translation type="unfinished"></translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <location filename="main_window.ui" line="77"/>
         <source>LAN</source>
-        <translation type="unfinished"></translation>
+        <translation>LAN</translation>
     </message>
     <message>
         <location filename="main_window.ui" line="82"/>
         <source>Rules</source>
-        <translation type="unfinished"></translation>
+        <translation>Regolamento</translation>
     </message>
     <message>
         <location filename="main_window.cpp" line="67"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="classes/mdisubwindows/rules_viewer.ui" line="14"/>
         <source>Game rules</source>
-        <translation type="unfinished"></translation>
+        <translation>Regolamento del gioco</translation>
     </message>
 </context>
 <context>
@@ -67,41 +67,53 @@
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui" line="14"/>
         <source>[Tic Tac Toe][Local] Game</source>
-        <translation type="unfinished"></translation>
+        <translation>[Tris][Locale] Partita</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui" line="45"/>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="36"/>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="174"/>
         <source>%0&apos;s turn.</source>
-        <translation type="unfinished"></translation>
+        <translation>Turno di %0.</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="131"/>
         <source>Drawn match</source>
-        <translation type="unfinished"></translation>
+        <translation>Partita patta</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="132"/>
         <source>Drawn match!
 Do you want to replay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Partita patta!
+Volete la rivincita?</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="143"/>
         <source>%0 player wins!</source>
-        <translation type="unfinished"></translation>
+        <translation>Il giocatore %0 vince!</translation>
+    </message>
+    <message>
+        <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="143"/>
+        <source>Cross</source>
+        <translation>croce</translation>
+    </message>
+    <message>
+        <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="143"/>
+        <source>Circle</source>
+        <translation>cerchio</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="144"/>
         <source>%0 wins this match!
 Do you want to replay?</source>
-        <translation type="unfinished"></translation>
+        <translation>%0 vince la partita!
+Volete la rivincita?</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp" line="181"/>
         <source>Game over!</source>
-        <translation type="unfinished"></translation>
+        <translation>Game over!</translation>
     </message>
 </context>
 <context>
@@ -109,37 +121,37 @@ Do you want to replay?</source>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui" line="20"/>
         <source>[Tic Tac Toe][Local] Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>[Tris][Locale] Impostazioni</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui" line="28"/>
         <source>X player name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del giocatore X:</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui" line="35"/>
         <source>O player name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del giocatore O:</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui" line="52"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Annulla</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui" line="59"/>
         <source>&amp;Play &gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Gioca &gt;</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp" line="107"/>
         <source>Name are missing</source>
-        <translation type="unfinished"></translation>
+        <translation>Nomi mancanti</translation>
     </message>
     <message>
         <location filename="classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp" line="107"/>
         <source>One or more names are missing. Please, check again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uno o più nomi sono mancanti. Si prega di controllare.</translation>
     </message>
 </context>
 </TS>
