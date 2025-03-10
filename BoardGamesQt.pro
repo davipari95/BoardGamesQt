@@ -20,6 +20,7 @@ SOURCES += \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp \
     classes/objects/custom_components/qgridlabel.cpp \
     classes/objects/gridposition.cpp \
+    classes/objects/range.cpp \
     classes/objects/tictactoe/board.cpp \
     classes/objects/tictactoe/match.cpp \
     classes/utils/u_frames.cpp \
@@ -30,6 +31,7 @@ SOURCES += \
     classes/virtuals/to_stringable.cpp \
     main.cpp \
     main_window.cpp \
+    variables/v_lan_ports.cpp \
     variables/v_styles.cpp
 
 HEADERS += \
@@ -38,6 +40,7 @@ HEADERS += \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h \
     classes/objects/custom_components/qgridlabel.h \
     classes/objects/gridposition.h \
+    classes/objects/range.h \
     classes/objects/tictactoe/board.h \
     classes/objects/tictactoe/match.h \
     classes/utils/u_frames.h \
@@ -46,8 +49,10 @@ HEADERS += \
     classes/virtuals/cloneable.h \
     classes/virtuals/equatable.h \
     classes/virtuals/to_stringable.h \
+    enums/games_enum.h \
     enums/tictactoe/tictactoe_players_enum.h \
     main_window.h \
+    variables/v_lan_ports.h \
     variables/v_styles.h \
     variables/v_widget.h
 
