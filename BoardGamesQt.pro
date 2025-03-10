@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,6 +16,8 @@ VERSION = 0.1.0.0
 
 SOURCES += \
     classes/mdisubwindows/rules_viewer.cpp \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.cpp \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.cpp \
     classes/objects/custom_components/qgridlabel.cpp \
@@ -26,6 +28,7 @@ SOURCES += \
     classes/utils/u_frames.cpp \
     classes/utils/u_locale.cpp \
     classes/utils/u_messageboxes.cpp \
+    classes/utils/u_network.cpp \
     classes/virtuals/cloneable.cpp \
     classes/virtuals/equatable.cpp \
     classes/virtuals/to_stringable.cpp \
@@ -36,6 +39,8 @@ SOURCES += \
 
 HEADERS += \
     classes/mdisubwindows/rules_viewer.h \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.h \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h \
     classes/objects/custom_components/qgridlabel.h \
@@ -46,6 +51,7 @@ HEADERS += \
     classes/utils/u_frames.h \
     classes/utils/u_locale.h \
     classes/utils/u_messageboxes.h \
+    classes/utils/u_network.h \
     classes/virtuals/cloneable.h \
     classes/virtuals/equatable.h \
     classes/virtuals/to_stringable.h \
@@ -58,6 +64,8 @@ HEADERS += \
 
 FORMS += \
     classes/mdisubwindows/rules_viewer.ui \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.ui \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.ui \
     main_window.ui

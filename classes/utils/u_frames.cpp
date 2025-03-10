@@ -54,3 +54,9 @@ bool UFrames::isDarkMode()
 {
     return QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark;
 }
+
+void UFrames::setFlagsAndAttributes(QMdiSubWindow *window, bool deleteOnClose, bool showMaximiseButton)
+{
+    window->setAttribute(Qt::WA_DeleteOnClose, deleteOnClose);
+    window->setWindowFlag(Qt::WindowMaximizeButtonHint, showMaximiseButton);
+}

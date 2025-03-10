@@ -8,19 +8,3 @@ QMap<GamesEnum, Range*> &VLanPorts::getPortsRange()
 
     return ranges;
 }
-
-bool VLanPorts::getPortRangeByGame(GamesEnum game, Range *out_Range)
-{
-    QMap<GamesEnum, Range*> ports = getPortsRange();
-
-    if (ports.contains(game))
-    {
-        out_Range = ports[game];
-        return true;
-    }
-    else
-    {
-        out_Range = nullptr;
-        return false;
-    }
-}

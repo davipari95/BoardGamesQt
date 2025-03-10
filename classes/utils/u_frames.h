@@ -15,6 +15,8 @@ class UFrames
         static bool adaptSubMdiSizesByContent(QMdiSubWindow* window, int width, int height, bool fixedSize = false);
         static bool centreFormInMdiArea(QMdiSubWindow *window);
         static bool isDarkMode();
+        static void setFlagsAndAttributes(QMdiSubWindow *window, bool deleteOnClose, bool showMaximiseButton);
+
 
 };
 

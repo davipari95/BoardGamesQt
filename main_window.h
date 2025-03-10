@@ -43,5 +43,6 @@ class MainWindow : public QMainWindow
         void onFileExitActionTriggered(bool checked);
         void onGamesTicTacToeLocalActionTriggered(bool checked);
         void onGamesTicTacToeRulesActionTriggered(bool checked);
+        void onGamesTicTacToeLANCreateActionTriggered(bool checked);
 };
 #endif // MAIN_WINDOW_H

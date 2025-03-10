@@ -9,7 +9,7 @@ class Range : public QObject
 
     public:
         //Constructor
-        explicit Range(const qint32 &min, const qint32 &max, QObject *parent = nullptr);
+        explicit Range(const qint32 min, const qint32 max, QObject *parent = nullptr);
 
         //Functions
         qint32 getMin() const;
@@ -26,7 +26,7 @@ class Range : public QObject
         qint32 m_max;
 
         //Functions
-        void initialize(const qint32 &min, const qint32 &max);
+        void initialize(const qint32 min, const qint32 max);
 
     signals:
 };

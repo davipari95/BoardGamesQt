@@ -1,7 +1,7 @@
 #include "range.h"
 #include "qdebug.h"
 
-Range::Range(const qint32 &min, const qint32 &max, QObject *parent) : QObject(parent)
+Range::Range(const qint32 min, const qint32 max, QObject *parent) : QObject(parent)
 {
     if (min > max)
     {
@@ -47,7 +47,7 @@ bool Range::isInRange(const qint32 &min, const qint32 &max, const qint32 &value)
     }
 }
 
-void Range::initialize(const qint32 &min, const qint32 &max)
+void Range::initialize(const qint32 min, const qint32 max)
 {
     m_min = min;
     m_max = max;

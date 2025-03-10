@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <classes/mdisubwindows/tictactoe/tictactoe_local_game_settings_mdisubwindow.h>
+#include <classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.h>
 #include <classes/utils/u_frames.h>
 #include <classes/mdisubwindows/rules_viewer.h>
 
@@ -37,6 +38,7 @@ bool MainWindow::connectSlots()
     connect(ui->fileExitAction, &QAction::triggered, this, &MainWindow::onFileExitActionTriggered);
     connect(ui->gamesTicTacToeLocalAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLocalActionTriggered);
     connect(ui->gamesTicTacToeRulesAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeRulesActionTriggered);
+    connect(ui->gamesTicTacToeLANCreateAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLANCreateActionTriggered);
 
     return true;
 }
@@ -49,7 +51,7 @@ void MainWindow::setIcons()
 
     ui->gamesTicTacToeMenu->setIcon(QIcon(dark ? ":/application/tictactoe_light" : ":/application/tictactoe_dark"));
     ui->gamesTicTacToeLocalAction->setIcon(QIcon(dark ? ":/application/local_light" : ":/application/local_dark"));
-    ui->gamesTicTacToeLANAction->setIcon(QIcon(dark ? ":/application/lan_light" : ":/application/lan_dark"));
+    ui->gamesTicTacToeLANMenu->setIcon(QIcon(dark ? ":/application/lan_light" : ":/application/lan_dark"));
     ui->gamesTicTacToeRulesAction->setIcon(QIcon(dark ? ":/application/book_light" : ":/application/book_dark"));
 }
 
@@ -98,4 +100,14 @@ void MainWindow::onGamesTicTacToeRulesActionTriggered(bool checked)
     (void) checked;
 
     openRulesForm("tictactoe");
+}
+
+void MainWindow::onGamesTicTacToeLANCreateActionTriggered(bool checked)
+{
+    (void) checked;
+
+    TicTacToeLanServerSettingsMdiSubWindow *w = new TicTacToeLanServerSettingsMdiSubWindow();
+    ui->mainMdiArea->addSubWindow(w);
+    UFrames::centreFormInMdiArea(w);
+    w->show();
 }
