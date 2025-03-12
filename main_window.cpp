@@ -7,6 +7,7 @@
 #include <classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.h>
 #include <classes/utils/u_frames.h>
 #include <classes/mdisubwindows/rules_viewer.h>
+#include <classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.h>
 
 MainWindow *MainWindow::m_mainInstance = nullptr;
 
@@ -39,6 +40,7 @@ bool MainWindow::connectSlots()
     connect(ui->gamesTicTacToeLocalAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLocalActionTriggered);
     connect(ui->gamesTicTacToeRulesAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeRulesActionTriggered);
     connect(ui->gamesTicTacToeLANCreateAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLANCreateActionTriggered);
+    connect(ui->gamesTicTacToeLANJoinAction, &QAction::triggered, this, &MainWindow::onGamesTicTacToeLANJoinActionTriggered);
 
     return true;
 }
@@ -107,6 +109,16 @@ void MainWindow::onGamesTicTacToeLANCreateActionTriggered(bool checked)
     (void) checked;
 
     TicTacToeLanServerSettingsMdiSubWindow *w = new TicTacToeLanServerSettingsMdiSubWindow();
+    ui->mainMdiArea->addSubWindow(w);
+    UFrames::centreFormInMdiArea(w);
+    w->show();
+}
+
+void MainWindow::onGamesTicTacToeLANJoinActionTriggered(bool checked)
+{
+    (void) checked;
+
+    TicTacToeLanClientSettingsMdiSubWindow *w = new TicTacToeLanClientSettingsMdiSubWindow();
     ui->mainMdiArea->addSubWindow(w);
     UFrames::centreFormInMdiArea(w);
     w->show();

@@ -41,3 +41,16 @@ bool UNetwork::getPrimaryIPAddress(QHostAddress &out_primaryIpAddress)
 
     return false;
 }
+
+bool UNetwork::tryParseIpAddress(const QString strIpAddress, QHostAddress &out_ipAddress)
+{
+    QHostAddress address = QHostAddress(strIpAddress);
+
+    if (address.protocol() == QHostAddress::IPv4Protocol)
+    {
+        out_ipAddress = address;
+        return true;
+    }
+
+    return false;
+}

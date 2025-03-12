@@ -7,6 +7,7 @@
 #include <QDateTime>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QTcpSocket>
 
 TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerName, int portNr, QWidget *parent) :
     QMdiSubWindow(parent),
@@ -41,11 +42,10 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
     connect(ui->clearPushButton, &QPushButton::clicked, this, &TicTacToeLanServerMdiSubWindow::onClearPushButtonClicked);
 
     //Show IP address
-    QHostAddress primaryHostAddress;
 
-    if (UNetwork::getPrimaryIPAddress(primaryHostAddress))
+    if (UNetwork::getPrimaryIPAddress(m_primaryAddress))
     {
-        ui->ipAddressLabel->setText(primaryHostAddress.toString());
+        ui->ipAddressLabel->setText(m_primaryAddress.toString());
     }
 
     //Show port number
@@ -55,12 +55,28 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
 void TicTacToeLanServerMdiSubWindow::initialize(int portNr)
 {
     m_portNumber = portNr;
+    m_server = std::make_unique<QTcpServer>();
+
+    //Connect slots
 }
 
 void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
 {
     QString message = QString("[%0] >> %1").arg(QDateTime::currentDateTime().toString("dd/MM/yyyy HH:mm:ss.zzz"), logMessage);
     ui->logPlainTextEdit->appendPlainText(message);
+}
+
+void TicTacToeLanServerMdiSubWindow::waitClients()
+{
+    if (m_server->listen(m_primaryAddress, m_portNumber))   //Sarebbe bello che la porta venga scelta in modo automatico
+    {
+        writeLog("Server started.");
+        connect(m_server.get(), &QTcpServer::newConnection, this, &TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection);
+    }
+    else
+    {
+        writeLog("Server error: unable to start the server.");
+    }
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -97,4 +113,11 @@ void TicTacToeLanServerMdiSubWindow::onClearPushButtonClicked(bool checked)
     {
         ui->logPlainTextEdit->clear();
     }
+}
+
+void TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection()
+{
+    QTcpSocket *client = m_server->nextPendingConnection();
+
+    writeLog(QString("New client connected. IP: %0 .").arg(client->localAddress().toString()));
 }

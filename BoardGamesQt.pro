@@ -16,6 +16,7 @@ VERSION = 0.1.0.0
 
 SOURCES += \
     classes/mdisubwindows/rules_viewer.cpp \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.cpp \
@@ -35,10 +36,12 @@ SOURCES += \
     main.cpp \
     main_window.cpp \
     variables/v_lan_ports.cpp \
+    variables/v_regex.cpp \
     variables/v_styles.cpp
 
 HEADERS += \
     classes/mdisubwindows/rules_viewer.h \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h \
@@ -59,11 +62,13 @@ HEADERS += \
     enums/tictactoe/tictactoe_players_enum.h \
     main_window.h \
     variables/v_lan_ports.h \
+    variables/v_regex.h \
     variables/v_styles.h \
     variables/v_widget.h
 
 FORMS += \
     classes/mdisubwindows/rules_viewer.ui \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.ui \
