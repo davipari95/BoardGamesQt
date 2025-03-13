@@ -16,7 +16,7 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
 
     public:
         //Constructors
-        explicit TicTacToeLanServerMdiSubWindow(QString playerName, int portNr, QWidget *parent = nullptr);
+        explicit TicTacToeLanServerMdiSubWindow(QString playerName, QWidget *parent = nullptr);
 
         //Destructors
         ~TicTacToeLanServerMdiSubWindow();
@@ -24,22 +24,25 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
     private:
         //Variables
         Ui::TicTacToeLanServerMdiSubWindow *ui;
-        int m_portNumber;
         QHostAddress m_primaryAddress;
-        std::unique_ptr<QTcpServer> m_server;
+        QTcpServer *m_server;
         std::unique_ptr<Match> m_match;
 
         //Functions
         void initializeComponents();
-        void initialize(int portNr);
+        void initialize();
         void writeLog(QString logMessage);
         void waitClients();
+        qint32 manageTcpIncomingMessage(QTcpSocket* client);
+        bool manageIncomingGetPlayerInfo(QTcpSocket *client, QStringList args);
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
         void onTestPushButtonClicked(bool checked);
         void onClearPushButtonClicked(bool checked);
         void onTCPServerNewConnection();
+        void onTcpSocketReadyRead();
+        void onTcpSocketDisconnected();
 };
 
 #endif // TICTACTOE_LAN_SERVER_MDISUBWINDOW_H

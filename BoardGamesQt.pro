@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network concurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,7 +35,6 @@ SOURCES += \
     classes/virtuals/to_stringable.cpp \
     main.cpp \
     main_window.cpp \
-    variables/v_lan_ports.cpp \
     variables/v_regex.cpp \
     variables/v_styles.cpp
 
@@ -61,7 +60,6 @@ HEADERS += \
     enums/games_enum.h \
     enums/tictactoe/tictactoe_players_enum.h \
     main_window.h \
-    variables/v_lan_ports.h \
     variables/v_regex.h \
     variables/v_styles.h \
     variables/v_widget.h

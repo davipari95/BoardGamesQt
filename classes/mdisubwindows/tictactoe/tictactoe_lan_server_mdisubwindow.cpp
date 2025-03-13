@@ -8,15 +8,18 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QTcpSocket>
+#include <QHash>
 
-TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerName, int portNr, QWidget *parent) :
+TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerName, QWidget *parent) :
     QMdiSubWindow(parent),
     ui(new Ui::TicTacToeLanServerMdiSubWindow)
 {
     (void) playerName;
 
-    initialize(portNr);
+    initialize();
     initializeComponents();
+
+    waitClients();
 }
 
 TicTacToeLanServerMdiSubWindow::~TicTacToeLanServerMdiSubWindow()
@@ -47,17 +50,11 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
     {
         ui->ipAddressLabel->setText(m_primaryAddress.toString());
     }
-
-    //Show port number
-    ui->portLabel->setText(QString::number(m_portNumber));
 }
 
-void TicTacToeLanServerMdiSubWindow::initialize(int portNr)
+void TicTacToeLanServerMdiSubWindow::initialize()
 {
-    m_portNumber = portNr;
-    m_server = std::make_unique<QTcpServer>();
-
-    //Connect slots
+    m_server = new QTcpServer(this);
 }
 
 void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
@@ -68,15 +65,46 @@ void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
 
 void TicTacToeLanServerMdiSubWindow::waitClients()
 {
-    if (m_server->listen(m_primaryAddress, m_portNumber))   //Sarebbe bello che la porta venga scelta in modo automatico
-    {
+    if (m_server->listen(m_primaryAddress, 0))
+    {        
         writeLog("Server started.");
-        connect(m_server.get(), &QTcpServer::newConnection, this, &TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection);
+        ui->portLabel->setText(QString::number(m_server->serverPort()));
+        connect(m_server, &QTcpServer::newConnection, this, &TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection);
     }
     else
     {
         writeLog("Server error: unable to start the server.");
     }
+}
+
+qint32 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *client)
+{
+
+    QString incoming = client->readAll();
+
+    QStringList datas = incoming.split("\r\n", Qt::SkipEmptyParts);
+    QString command = datas[0];
+
+    if (command == "get-player-info")
+    {
+        if (manageIncomingGetPlayerInfo(client, datas))
+        {
+            return 1;
+        }
+    }
+    else
+    {
+        qDebug() << "Invalid data received.";
+        return -1;
+    }
+}
+
+bool TicTacToeLanServerMdiSubWindow::manageIncomingGetPlayerInfo(QTcpSocket *client, QStringList args)
+{
+    char symbol = args[1][0].toLatin1();
+    QString playerName = args[2];
+
+    return true;
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -120,4 +148,23 @@ void TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection()
     QTcpSocket *client = m_server->nextPendingConnection();
 
     writeLog(QString("New client connected. IP: %0 .").arg(client->localAddress().toString()));
+
+    connect(client, &QTcpSocket::readyRead, this, &TicTacToeLanServerMdiSubWindow::onTcpSocketReadyRead);
+    connect(client, &QTcpSocket::disconnected, this, &TicTacToeLanServerMdiSubWindow::onTcpSocketDisconnected);
+
+    client->write("get-player-info\r\n");
+}
+
+void TicTacToeLanServerMdiSubWindow::onTcpSocketReadyRead()
+{
+    QTcpSocket *senderSocket = qobject_cast<QTcpSocket*>(sender());
+
+    manageTcpIncomingMessage(senderSocket);
+}
+
+void TicTacToeLanServerMdiSubWindow::onTcpSocketDisconnected()
+{
+    QTcpSocket *m_sender = qobject_cast<QTcpSocket*>(sender());
+
+    writeLog(QString("Client [%0] disconnected.").arg(m_sender->localAddress().toString()));
 }

@@ -2,6 +2,8 @@
 #include "ui_tictactoe_lan_client_settings_mdisubwindow.h"
 
 #include <QRegularExpressionValidator>
+#include <QMessageBox>
+#include <QCloseEvent>
 
 #include <classes/utils/u_frames.h>
 #include <classes/utils/u_network.h>
@@ -13,6 +15,7 @@ TicTacToeLanClientSettingsMdiSubWindow::TicTacToeLanClientSettingsMdiSubWindow(Q
     ui(new Ui::TicTacToeLanClientSettingsMdiSubWindow)
 {
     initializeComponenets();
+    initialize();
 }
 
 TicTacToeLanClientSettingsMdiSubWindow::~TicTacToeLanClientSettingsMdiSubWindow()
@@ -43,6 +46,17 @@ void TicTacToeLanClientSettingsMdiSubWindow::initializeComponenets()
     //Connect slots
     connect(ui->cancelPushButton, &QPushButton::clicked, this, &TicTacToeLanClientSettingsMdiSubWindow::onCancelPushButtonClicked);
     connect(ui->playPushButton, &QPushButton::clicked, this, &TicTacToeLanClientSettingsMdiSubWindow::onPlayPushButtonClicked);
+    connect(this, &TicTacToeLanClientSettingsMdiSubWindow::connectingChangedValue, this, &TicTacToeLanClientSettingsMdiSubWindow::onConnectingChangedValue);
+
+#ifdef QT_DEBUG
+    ui->ipAddressLineEdit->setText("127.0.0.1");
+    ui->usernameLineEdit->setText("Mario Rossi");
+#endif
+}
+
+void TicTacToeLanClientSettingsMdiSubWindow::initialize()
+{
+    m_connecting = false;
 }
 
 bool TicTacToeLanClientSettingsMdiSubWindow::checkIPAddressLineEdit(QHostAddress &out_hostAddress) const
@@ -113,6 +127,28 @@ void TicTacToeLanClientSettingsMdiSubWindow::plainTextEdits()
     ui->usernameLineEdit->setStyleSheet(VStyles::plain);
 }
 
+void TicTacToeLanClientSettingsMdiSubWindow::setConnecting(const bool value)
+{
+    if (value != m_connecting)
+    {
+        m_connecting = value;
+        emit connectingChangedValue(value);
+    }
+}
+
+bool TicTacToeLanClientSettingsMdiSubWindow::getConnecting() const
+{
+    return m_connecting;
+}
+
+void TicTacToeLanClientSettingsMdiSubWindow::closeEvent(QCloseEvent *closeEvent)
+{
+    if (getConnecting())
+    {
+        closeEvent->ignore();
+    }
+}
+
 qint8 TicTacToeLanClientSettingsMdiSubWindow::checkLineEdits(QHostAddress &out_hostAddress, quint16 &out_port, QString &out_username) const
 {
     qint8 result = 0b000;
@@ -157,9 +193,48 @@ void TicTacToeLanClientSettingsMdiSubWindow::onPlayPushButtonClicked(bool checke
     if (errors)
     {
         highlightErrorsInField(errors);
+
+        QString msgBoxTitle = tr("Error in fields");
+        QString msgBoxMessage = tr("One or more fields are filled with bad data.\nPlease, check the fields before continue.");
+
+        QMessageBox::information(this, msgBoxTitle, msgBoxMessage);
     }
     else
     {
-        //Open socket and check connection.
+        setConnecting(true);
+
+        QTcpSocket *socket = new QTcpSocket();
+
+        connect(socket, &QTcpSocket::connected, this, [this, socket]()
+        {
+            qDebug() << "Connected to server";
+
+            //Open client
+        });
+
+        connect(socket, &QTcpSocket::errorOccurred, this, [this, socket](QAbstractSocket::SocketError)
+        {
+            QString msgBoxTitle = tr("No connection");
+            QString msgBoxMessage = tr("Unable to connect to the server.\nPlease, check that IP address and port are correct.");
+
+            QMessageBox::critical(this, msgBoxTitle, msgBoxMessage);
+
+            socket->deleteLater();
+
+            setConnecting(false);
+        });
+
+        socket->connectToHost(hostAddress, port);
     }
+}
+
+void TicTacToeLanClientSettingsMdiSubWindow::onConnectingChangedValue(bool value)
+{
+    ui->ipAddressLineEdit->setEnabled(!value);
+    ui->portLineEdit->setEnabled(!value);
+    ui->usernameLineEdit->setEnabled(!value);
+    ui->cancelPushButton->setEnabled(!value);
+    ui->playPushButton->setEnabled(!value);
+
+    ui->playPushButton->setText(value ? tr("Connecting...") : tr("&Play >"));
 }

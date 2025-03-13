@@ -89,6 +89,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>ipAddressLineEdit</tabstop>
+  <tabstop>portLineEdit</tabstop>
+  <tabstop>usernameLineEdit</tabstop>
+  <tabstop>cancelPushButton</tabstop>
+  <tabstop>playPushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
+ <slots>
+  <slot>onCancelPushButtonPressed()</slot>
+ </slots>
 </ui>

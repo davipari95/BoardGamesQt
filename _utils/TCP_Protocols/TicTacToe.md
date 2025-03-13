@@ -7,23 +7,17 @@ From `49152` to `49161`.
 
 ### Server → Client
 
-***
-
-### Client → Server
-#### `set-player-name <symbol> '<player_name>'`
-Set the player name given the symbol in `<symbol>`, given between single quotes.
-
-Symbol can be one of the following:
-- `X`: uppercase "X", player that plays cross.
-- `O`: uppercase "O", player that plays circle.
-
-##### Answers
-- `OK`: the username is successufully set.
-- `NOK`: the username is not successufully set.
-
-###### Example 1
-Player X wants to set theyr username as 'Foo':
-```text
->> set-player-name X 'Foo'
-<< set-player-name OK
-```
+> ## `get-player-info\r\n`
+> Retrieve all informations of the client: symbol and nickname.
+> ### Answer
+> Client will answer with `get-player-info\r\n<symbol>\r\n<nickname>\r\n`, where:
+> - `<symbol>` is the symbol of the player:
+>     - `X` for cross player.
+>     - `O` for circle player.
+> - `<nickname>`: the nickname of the player.
+> #### Example 1
+> Retrieve informations from client. The player is playing cross and the nickname is "Foo".
+> ```text
+> >> get-player-info
+> << get-player-info\r\nX\r\nFoo
+> ```

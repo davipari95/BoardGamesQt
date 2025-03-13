@@ -3,6 +3,10 @@
 #include <QNetworkInterface>
 #include <QNetworkAddressEntry>
 #include <QAbstractSocket>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+
+#include <variables/v_regex.h>
 
 QList<QHostAddress> UNetwork::getLocalIPAddresses()
 {
@@ -44,13 +48,20 @@ bool UNetwork::getPrimaryIPAddress(QHostAddress &out_primaryIpAddress)
 
 bool UNetwork::tryParseIpAddress(const QString strIpAddress, QHostAddress &out_ipAddress)
 {
-    QHostAddress address = QHostAddress(strIpAddress);
-
-    if (address.protocol() == QHostAddress::IPv4Protocol)
+    if (!QRegularExpression(VRegex::getIp()).match(strIpAddress).hasMatch())
     {
-        out_ipAddress = address;
-        return true;
+        return false;
     }
+    else
+    {
+        QHostAddress address = QHostAddress(strIpAddress);
 
-    return false;
+        if (address.protocol() == QHostAddress::IPv4Protocol)
+        {
+            out_ipAddress = address;
+            return true;
+        }
+
+        return false;
+    }
 }

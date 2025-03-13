@@ -5,7 +5,6 @@
 #include <classes/utils/u_frames.h>
 #include <classes/objects/range.h>
 #include <classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.h>
-#include <variables/v_lan_ports.h>
 #include <variables/v_styles.h>
 #include <enums/games_enum.h>
 #include <QMessageBox>
@@ -38,19 +37,6 @@ void TicTacToeLanServerSettingsMdiSubWindow::initializeComponents()
     //Adapt frame at content
     UFrames::adaptSubMdiSizesByContent(this, content->width(), content->height(), true);
 
-    //Set range of ports
-    QMap<GamesEnum, Range*> portRange = VLanPorts::getPortsRange();
-
-    if (portRange.contains(GamesEnum::TicTacToe))
-    {
-        ui->portNumberSpinBox->setMinimum(portRange[GamesEnum::TicTacToe]->getMin());
-        ui->portNumberSpinBox->setMaximum(portRange[GamesEnum::TicTacToe]->getMax());
-    }
-    else
-    {
-        qDebug() << "Port range not found!!";
-    }
-
     //Connect all signals
     connect(ui->cancelPushButton, &QPushButton::clicked, this, &TicTacToeLanServerSettingsMdiSubWindow::onCancelPushButtonClicked);
     connect(ui->openServerPushButton, &QPushButton::clicked, this, &TicTacToeLanServerSettingsMdiSubWindow::onOpenServerPushButtonClicked);
@@ -77,10 +63,9 @@ void TicTacToeLanServerSettingsMdiSubWindow::onOpenServerPushButtonClicked(bool 
     else
     {
         ui->playerNameLineEdit->setStyleSheet(VStyles::plain);
-        int portNr = ui->portNumberSpinBox->value();
 
         //Open server window
-        TicTacToeLanServerMdiSubWindow *w = new TicTacToeLanServerMdiSubWindow(playerName, portNr);
+        TicTacToeLanServerMdiSubWindow *w = new TicTacToeLanServerMdiSubWindow(playerName);
         MainWindow::getMainMdiArea()->addSubWindow(w);
         UFrames::centreFormInMdiArea(w);
         w->show();
