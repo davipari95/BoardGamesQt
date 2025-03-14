@@ -55,6 +55,8 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
 void TicTacToeLanServerMdiSubWindow::initialize()
 {
     m_server = new QTcpServer(this);
+    m_connectedPlayers = QList<PlayerInfoStruct>();
+    m_gameIsReady = false;
 }
 
 void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
@@ -79,7 +81,6 @@ void TicTacToeLanServerMdiSubWindow::waitClients()
 
 qint32 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *client)
 {
-
     QString incoming = client->readAll();
 
     QStringList datas = incoming.split("\r\n", Qt::SkipEmptyParts);
@@ -92,19 +93,59 @@ qint32 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *clie
             return 1;
         }
     }
-    else
+    else if (command == "get-game")
     {
-        qDebug() << "Invalid data received.";
-        return -1;
+        if (manageIncomingGetGame(client))
+        {
+            return 2;
+        }
     }
+
+    qDebug() << "Invalid data received.";
+    return -1;
 }
 
 bool TicTacToeLanServerMdiSubWindow::manageIncomingGetPlayerInfo(QTcpSocket *client, QStringList args)
 {
+    PlayerInfoStruct playerInfo;
+
     char symbol = args[1][0].toLatin1();
     QString playerName = args[2];
 
+    playerInfo.socket = client;
+    playerInfo.token = getTokenByChar(symbol);
+    playerInfo.name = playerName;
+
+    insertNewConnectedPlayer(playerInfo);
+
     return true;
+}
+
+bool TicTacToeLanServerMdiSubWindow::manageIncomingGetGame(QTcpSocket *client)
+{
+    client->write("get-game\r\ntic-tac-toe\r\n");
+
+    return true;
+}
+
+qint32 TicTacToeLanServerMdiSubWindow::insertNewConnectedPlayer(PlayerInfoStruct player)
+{
+    m_connectedPlayers.append(player);
+
+    int connectedPlayers = m_connectedPlayers.count();
+    emit connectedPlayerListManaged(connectedPlayers);
+
+    return connectedPlayers;
+}
+
+qint32 TicTacToeLanServerMdiSubWindow::removeConnectedPlayer(PlayerInfoStruct player)
+{
+    m_connectedPlayers.removeOne(player);
+
+    int connectedPlayers = m_connectedPlayers.count();
+    emit connectedPlayerListManaged(connectedPlayers);
+
+    return connectedPlayers;
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -117,6 +158,18 @@ void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
     if (response != QMessageBox::StandardButton::Yes)
     {
         event->ignore();
+    }
+    else
+    {
+        for (QTcpSocket *client : m_server->findChildren<QTcpSocket*>())
+        {
+            client->disconnectFromHost();
+        }
+
+        if (m_server->isListening())
+        {
+            m_server->close();
+        }
     }
 }
 
