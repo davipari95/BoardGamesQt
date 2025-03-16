@@ -57,6 +57,7 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         bool manageIncomingGetGame(QTcpSocket *client);
         qint32 insertNewConnectedPlayer(PlayerInfoStruct player);
         qint32 removeConnectedPlayer(PlayerInfoStruct player);
+        QString getPlayerNameByToken(TicTacToePlayerEnum token);
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
@@ -65,6 +66,8 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         void onTCPServerNewConnection();
         void onTcpSocketReadyRead();
         void onTcpSocketDisconnected();
+        void onConnectedPlayerListManaged(int &nrOfConnectedPlayers);
+        void onGameIsReady();
 
     signals:
         void connectedPlayerListManaged(int &nrOfConnectedPlayers);

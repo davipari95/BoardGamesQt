@@ -57,6 +57,9 @@ void TicTacToeLanServerMdiSubWindow::initialize()
     m_server = new QTcpServer(this);
     m_connectedPlayers = QList<PlayerInfoStruct>();
     m_gameIsReady = false;
+
+    //Connect local slots
+    connect(this, &TicTacToeLanServerMdiSubWindow::connectedPlayerListManaged, this, &TicTacToeLanServerMdiSubWindow::onConnectedPlayerListManaged);
 }
 
 void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
@@ -148,6 +151,14 @@ qint32 TicTacToeLanServerMdiSubWindow::removeConnectedPlayer(PlayerInfoStruct pl
     return connectedPlayers;
 }
 
+QString TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum token)
+{
+    return std::find_if(m_connectedPlayers.first(), m_connectedPlayers.last(), [](const PlayerInfoStruct &player)
+    {
+        return player.token == token;
+    }).name;
+}
+
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
 {
     QString title = tr("Server is closing");
@@ -220,4 +231,22 @@ void TicTacToeLanServerMdiSubWindow::onTcpSocketDisconnected()
     QTcpSocket *m_sender = qobject_cast<QTcpSocket*>(sender());
 
     writeLog(QString("Client [%0] disconnected.").arg(m_sender->localAddress().toString()));
+}
+
+void TicTacToeLanServerMdiSubWindow::onConnectedPlayerListManaged(int &nrOfConnectedPlayers)
+{
+    if (!m_gameIsReady && nrOfConnectedPlayers == 2)
+    {
+        m_gameIsReady = true;
+        emit gameIsReady();
+    }
+}
+
+void TicTacToeLanServerMdiSubWindow::onGameIsReady()
+{
+    //Initializee match
+    QString xPlayerName = std::find_if(m_connectedPlayers.first(), m_connectedPlayers.last(), [](const PlayerInfoStruct &player)
+    {
+        return player.token == TicTacToePlayerEnum::Cross;
+    }).name;
 }
