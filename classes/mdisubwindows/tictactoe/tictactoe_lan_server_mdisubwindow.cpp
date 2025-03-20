@@ -45,7 +45,6 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
     connect(ui->clearPushButton, &QPushButton::clicked, this, &TicTacToeLanServerMdiSubWindow::onClearPushButtonClicked);
 
     //Show IP address
-
     if (UNetwork::getPrimaryIPAddress(m_primaryAddress))
     {
         ui->ipAddressLabel->setText(m_primaryAddress.toString());
@@ -153,10 +152,45 @@ qint32 TicTacToeLanServerMdiSubWindow::removeConnectedPlayer(PlayerInfoStruct pl
 
 QString TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum token)
 {
-    return std::find_if(m_connectedPlayers.first(), m_connectedPlayers.last(), [](const PlayerInfoStruct &player)
+    QList<PlayerInfoStruct>::iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [token](const PlayerInfoStruct &player)
     {
         return player.token == token;
-    }).name;
+    });
+
+    if (res != m_connectedPlayers.end())
+    {
+        return res->name;
+    }
+    else
+    {
+        return "ERROR";
+    }
+}
+
+bool TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum token, QString &out_playerName) const
+{
+    QList<PlayerInfoStruct>::iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [token](const PlayerInfoStruct &player)
+    {
+        return player.token == token;
+    });
+
+    if (res != m_connectedPlayers.end())
+    {
+        out_playerName = res->name;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool TicTacToeLanServerMdiSubWindow::broadcastMessage(const QString message) const
+{
+    for (PlayerInfoStruct player : m_connectedPlayers)
+    {
+        player.socket->write(message);
+    }
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -245,8 +279,20 @@ void TicTacToeLanServerMdiSubWindow::onConnectedPlayerListManaged(int &nrOfConne
 void TicTacToeLanServerMdiSubWindow::onGameIsReady()
 {
     //Initializee match
-    QString xPlayerName = std::find_if(m_connectedPlayers.first(), m_connectedPlayers.last(), [](const PlayerInfoStruct &player)
+    QString xPlayerName, oPlayerName;
+
+    bool ok =
+        getPlayerNameByToken(TicTacToePlayerEnum::Cross, xPlayerName) &&
+        getPlayerNameByToken(TicTacToePlayerEnum::Circle, oPlayerName);
+
+    if (ok)
     {
-        return player.token == TicTacToePlayerEnum::Cross;
-    }).name;
+        m_match = std::make_unique<Match>(xPlayerName, oPlayerName);
+
+        broadcastMessage("game-ready\r\n");
+    }
+    else
+    {
+        qDebug() << "How can we suppose how we reach this point?!";
+    }
 }

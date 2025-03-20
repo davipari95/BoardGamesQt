@@ -57,7 +57,8 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         bool manageIncomingGetGame(QTcpSocket *client);
         qint32 insertNewConnectedPlayer(PlayerInfoStruct player);
         qint32 removeConnectedPlayer(PlayerInfoStruct player);
-        QString getPlayerNameByToken(TicTacToePlayerEnum token);
+        bool getPlayerNameByToken(TicTacToePlayerEnum token, QString &out_playerName) const;
+        bool broadcastMessage(const QString message) const;
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
