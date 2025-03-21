@@ -59,6 +59,7 @@ void TicTacToeLanServerMdiSubWindow::initialize()
 
     //Connect local slots
     connect(this, &TicTacToeLanServerMdiSubWindow::connectedPlayerListManaged, this, &TicTacToeLanServerMdiSubWindow::onConnectedPlayerListManaged);
+    connect(this, &TicTacToeLanServerMdiSubWindow::gameIsReady, this, &TicTacToeLanServerMdiSubWindow::onGameIsReady);
 }
 
 void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
@@ -135,6 +136,9 @@ qint32 TicTacToeLanServerMdiSubWindow::insertNewConnectedPlayer(PlayerInfoStruct
     m_connectedPlayers.append(player);
 
     int connectedPlayers = m_connectedPlayers.count();
+
+    writeLog(QString("Player info: [%0][%1]").arg(player.name, getTokenChar(player.token)));
+
     emit connectedPlayerListManaged(connectedPlayers);
 
     return connectedPlayers;
@@ -150,26 +154,9 @@ qint32 TicTacToeLanServerMdiSubWindow::removeConnectedPlayer(PlayerInfoStruct pl
     return connectedPlayers;
 }
 
-QString TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum token)
-{
-    QList<PlayerInfoStruct>::iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [token](const PlayerInfoStruct &player)
-    {
-        return player.token == token;
-    });
-
-    if (res != m_connectedPlayers.end())
-    {
-        return res->name;
-    }
-    else
-    {
-        return "ERROR";
-    }
-}
-
 bool TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum token, QString &out_playerName) const
 {
-    QList<PlayerInfoStruct>::iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [token](const PlayerInfoStruct &player)
+    QList<PlayerInfoStruct>::const_iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [token](const PlayerInfoStruct &player)
     {
         return player.token == token;
     });
@@ -187,10 +174,12 @@ bool TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum to
 
 bool TicTacToeLanServerMdiSubWindow::broadcastMessage(const QString message) const
 {
-    for (PlayerInfoStruct player : m_connectedPlayers)
+    for (const PlayerInfoStruct& player : m_connectedPlayers)
     {
-        player.socket->write(message);
+        player.socket->write(message.toUtf8());
     }
+
+    return true;
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -206,7 +195,9 @@ void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
     }
     else
     {
-        for (QTcpSocket *client : m_server->findChildren<QTcpSocket*>())
+        QList<QTcpSocket*> clients = m_server->findChildren<QTcpSocket*>();
+
+        for (QTcpSocket* &client : clients)
         {
             client->disconnectFromHost();
         }
@@ -290,6 +281,7 @@ void TicTacToeLanServerMdiSubWindow::onGameIsReady()
         m_match = std::make_unique<Match>(xPlayerName, oPlayerName);
 
         broadcastMessage("game-ready\r\n");
+        writeLog("Game is ready!");
     }
     else
     {
