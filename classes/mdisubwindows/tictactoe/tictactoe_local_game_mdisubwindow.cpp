@@ -25,7 +25,7 @@ TicTacToeLocalGame::~TicTacToeLocalGame()
 void TicTacToeLocalGame::initialize(const QString &xPlayerName, const QString &oPlayerName)
 {
     //Initialize variables
-    m_match = std::make_unique<Match>(xPlayerName, oPlayerName);
+    m_match = new Match(xPlayerName, oPlayerName, this);
 
     //Set GUI
     initializeComponents();
@@ -96,8 +96,8 @@ void TicTacToeLocalGame::updateGraphics()
 
 void TicTacToeLocalGame::connectAllSlots()
 {
-    connect(m_match.get(), &Match::actualTurnChangedSignal, this, &TicTacToeLocalGame::onActualTurnChanged);
-    connect(m_match.get(), &Match::gameStoppedSignal, this, &TicTacToeLocalGame::onGameStopped);
+    connect(m_match, &Match::actualTurnChangedSignal, this, &TicTacToeLocalGame::onActualTurnChanged);
+    connect(m_match, &Match::gameStoppedSignal, this, &TicTacToeLocalGame::onGameStopped);
 }
 
 void TicTacToeLocalGame::onGridLabelClicked(QGridLabel *sender)

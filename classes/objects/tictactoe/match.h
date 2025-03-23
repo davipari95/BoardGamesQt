@@ -10,11 +10,15 @@ class Match : public QObject
 {
     Q_OBJECT
 
-    private:
+    protected:
         //Variables
         QMap<TicTacToePlayerEnum, QString> m_playerNames;
+
+
+    private:
+        //Variables
         TicTacToePlayerEnum m_actTurn;
-        std::unique_ptr<Board> m_board;
+        Board *m_board;
         bool m_gameStopped;
 
         //Functions
@@ -24,6 +28,9 @@ class Match : public QObject
     public:
         //Constructors
         explicit Match(const QString &xPlayerName, const QString &oPlayerName, QObject *parent = nullptr);
+
+        //Destructor
+        virtual ~Match();
 
         //Functions
         TicTacToePlayerEnum getActualTurn();

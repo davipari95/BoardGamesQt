@@ -26,7 +26,7 @@ class TicTacToeLocalGame : public QMdiSubWindow
     private:
         //Variables
         Ui::TicTacToeLocalGame *ui;
-        std::unique_ptr<Match> m_match;
+        Match* m_match;
         QGridLabel* m_cells[3][3];
 
         //Functions

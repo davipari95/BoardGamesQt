@@ -6,6 +6,11 @@ Match::Match(const QString &xPlayerName, const QString &oPlayerName, QObject *pa
     initialize(xPlayerName, oPlayerName);
 }
 
+Match::~Match()
+{
+
+}
+
 TicTacToePlayerEnum Match::getActualTurn()
 {
     return m_actTurn;
@@ -18,7 +23,7 @@ void Match::switchTurn()
 
 Board *Match::getBoard()
 {
-    return m_board.get();
+    return m_board;
 }
 
 TicTacToePlayerEnum Match::checkGameOver()
@@ -85,7 +90,7 @@ void Match::initialize(const QString &xPlayerName, const QString &oPlayerName)
     m_playerNames.insert(TicTacToePlayerEnum::Circle, oPlayerName);
 
     //Board
-    m_board = std::make_unique<Board>(this);
+    m_board = new Board(this, this);
 
     //Game over
     m_gameStopped = false;

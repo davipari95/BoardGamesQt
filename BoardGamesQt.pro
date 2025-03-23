@@ -16,6 +16,7 @@ VERSION = 0.1.0.0
 
 SOURCES += \
     classes/mdisubwindows/rules_viewer.cpp \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.cpp \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
     classes/objects/range.cpp \
     classes/objects/tictactoe/board.cpp \
     classes/objects/tictactoe/match.cpp \
+    classes/objects/tictactoe/matches/lan_match.cpp \
     classes/utils/u_frames.cpp \
     classes/utils/u_locale.cpp \
     classes/utils/u_messageboxes.cpp \
@@ -40,6 +42,7 @@ SOURCES += \
 
 HEADERS += \
     classes/mdisubwindows/rules_viewer.h \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.h \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.h \
@@ -50,6 +53,7 @@ HEADERS += \
     classes/objects/range.h \
     classes/objects/tictactoe/board.h \
     classes/objects/tictactoe/match.h \
+    classes/objects/tictactoe/matches/lan_match.h \
     classes/utils/u_frames.h \
     classes/utils/u_locale.h \
     classes/utils/u_messageboxes.h \
@@ -66,6 +70,7 @@ HEADERS += \
 
 FORMS += \
     classes/mdisubwindows/rules_viewer.ui \
+    classes/mdisubwindows/tictactoe/tictactoe_lan_client_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_lan_client_settings_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_mdisubwindow.ui \
     classes/mdisubwindows/tictactoe/tictactoe_lan_server_settings_mdisubwindow.ui \
