@@ -3,6 +3,8 @@
 
 #include <classes/utils/u_frames.h>
 #include <classes/utils/u_network.h>
+#include <classes/mdisubwindows/tictactoe/tictactoe_lan_client_mdisubwindow.h>
+#include <main_window.h>
 
 #include <QDateTime>
 #include <QMessageBox>
@@ -16,7 +18,7 @@ TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerNam
 {
     (void) playerName;
 
-    initialize();
+    initialize(playerName);
     initializeComponents();
 
     waitClients();
@@ -51,8 +53,9 @@ void TicTacToeLanServerMdiSubWindow::initializeComponents()
     }
 }
 
-void TicTacToeLanServerMdiSubWindow::initialize()
+void TicTacToeLanServerMdiSubWindow::initialize(const QString &clientPlayerName)
 {
+    m_clientPlayerName = clientPlayerName;
     m_server = new QTcpServer(this);
     m_connectedPlayers = QList<PlayerInfoStruct>();
     m_gameIsReady = false;
@@ -82,30 +85,40 @@ void TicTacToeLanServerMdiSubWindow::waitClients()
     }
 }
 
-qint32 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *client)
+quint64 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *client)
 {
+    quint64 result = 0;
+
     QString incoming = client->readAll();
 
-    QStringList datas = incoming.split("\r\n", Qt::SkipEmptyParts);
-    QString command = datas[0];
+    QStringList messages = incoming.split("\r\n", Qt::SkipEmptyParts);
 
-    if (command == "get-player-info")
+    for (QString &message : messages)
     {
-        if (manageIncomingGetPlayerInfo(client, datas))
+        QStringList command = message.split("\n");
+
+        if (command[0] == "get-player-info")
         {
-            return 1;
+            if (manageIncomingGetPlayerInfo(client, command))
+            {
+                result |= 1 << 0;
+            }
+        }
+        else if (command[0] == "get-game")
+        {
+            if (manageIncomingGetGame(client))
+            {
+                result |= 1 << 1;
+            }
         }
     }
-    else if (command == "get-game")
+
+    if (result == 0)
     {
-        if (manageIncomingGetGame(client))
-        {
-            return 2;
-        }
+        throw "Invalid data received";
     }
 
-    qDebug() << "Invalid data received.";
-    return -1;
+    return result;
 }
 
 bool TicTacToeLanServerMdiSubWindow::manageIncomingGetPlayerInfo(QTcpSocket *client, QStringList args)
@@ -126,7 +139,7 @@ bool TicTacToeLanServerMdiSubWindow::manageIncomingGetPlayerInfo(QTcpSocket *cli
 
 bool TicTacToeLanServerMdiSubWindow::manageIncomingGetGame(QTcpSocket *client)
 {
-    client->write("get-game\r\ntic-tac-toe\r\n");
+    client->write("get-game\ntic-tac-toe\r\n");
 
     return true;
 }
@@ -180,6 +193,16 @@ bool TicTacToeLanServerMdiSubWindow::broadcastMessage(const QString message) con
     }
 
     return true;
+}
+
+bool TicTacToeLanServerMdiSubWindow::openClient(const QString &playerName) const
+{
+    QTcpSocket *clientSocket = new QTcpSocket();
+
+    connect(clientSocket, &QTcpSocket::connected, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected);
+    connect(clientSocket, &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
+
+    clientSocket->connectToHost(m_server->serverAddress(), m_server->serverPort());
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -287,4 +310,20 @@ void TicTacToeLanServerMdiSubWindow::onGameIsReady()
     {
         qDebug() << "How can we suppose how we reach this point?!";
     }
+}
+
+void TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected()
+{
+    QTcpSocket *clientSocket = qobject_cast<QTcpSocket*>(sender());
+
+    disconnect(clientSocket, &QTcpSocket::connected, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected);
+    disconnect(clientSocket, &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
+
+    TicTacToeLANClientMdiSubWindow *window = new TicTacToeLANClientMdiSubWindow(clientSocket, m_clientPlayerName, TicTacToePlayerEnum::Cross, MainWindow::getMainMdiArea());
+}
+
+void TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured()
+{
+    disconnect(qobject_cast<QTcpSocket*>(sender()), &QTcpSocket::connected, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected);
+    disconnect(qobject_cast<QTcpSocket*>(sender()), &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
 }

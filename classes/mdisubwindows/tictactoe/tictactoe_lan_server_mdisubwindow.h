@@ -46,19 +46,21 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         QTcpServer *m_server;
         std::unique_ptr<Match> m_match;
         bool m_gameIsReady;
+        QString m_clientPlayerName;
 
         //Functions
         void initializeComponents();
-        void initialize();
+        void initialize(const QString &clientPlayerName);
         void writeLog(QString logMessage);
         void waitClients();
-        qint32 manageTcpIncomingMessage(QTcpSocket* client);
+        quint64 manageTcpIncomingMessage(QTcpSocket* client);
         bool manageIncomingGetPlayerInfo(QTcpSocket *client, QStringList args);
         bool manageIncomingGetGame(QTcpSocket *client);
         qint32 insertNewConnectedPlayer(PlayerInfoStruct player);
         qint32 removeConnectedPlayer(PlayerInfoStruct player);
         bool getPlayerNameByToken(TicTacToePlayerEnum token, QString &out_playerName) const;
         bool broadcastMessage(const QString message) const;
+        bool openClient(const QString &playerName) const;
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
@@ -69,6 +71,8 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         void onTcpSocketDisconnected();
         void onConnectedPlayerListManaged(int &nrOfConnectedPlayers);
         void onGameIsReady();
+        void onClientTcpSocketConnected();
+        void onClientTcpSocketErrorOccured();
 
     signals:
         void connectedPlayerListManaged(int &nrOfConnectedPlayers);

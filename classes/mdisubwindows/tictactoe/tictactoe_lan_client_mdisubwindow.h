@@ -28,6 +28,13 @@ class TicTacToeLANClientMdiSubWindow : public QMdiSubWindow
 
         //Functions
         void initialize(QTcpSocket *socket, const QString &playerName, const TicTacToePlayerEnum &playerToken);
+        void initializeComponents();
+        quint64 manageIncomingTcpMessage(QTcpSocket *socket);
+        bool manageGetPlayerInfo(QTcpSocket *socket);
+
+    private slots:
+        void onTcpSocketReadyRead();
+        void onTcpSocketDisconnected();
 };
 
 #endif // TICTACTOE_LAN_CLIENT_MDISUBWINDOW_H

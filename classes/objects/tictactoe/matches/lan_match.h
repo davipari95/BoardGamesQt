@@ -10,9 +10,16 @@ class LanMatch : public Match
     public:
         //Constructor
         explicit LanMatch(QObject *parent = nullptr);
+        explicit LanMatch(const TicTacToePlayerEnum clientToken, const QString &clientPlayerName, QObject *parent = nullptr);
 
         //Functions
-        bool setPlayerName(TicTacToePlayerEnum token, const QString &playerName) const;
+        bool setPlayerName(const TicTacToePlayerEnum token, const QString &playerName) const;
+        TicTacToePlayerEnum getClientToken() const;
+        bool setClientToken(const TicTacToePlayerEnum &value);
+        bool getClientPlayerInfo(TicTacToePlayerEnum &out_token, QString &out_playerName) const;
+
+    private:
+        TicTacToePlayerEnum m_clientToken;
 };
 
 #endif // LAN_MATCH_H
