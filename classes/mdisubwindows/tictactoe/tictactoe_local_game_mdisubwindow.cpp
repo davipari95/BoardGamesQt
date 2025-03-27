@@ -100,17 +100,19 @@ void TicTacToeLocalGame::connectAllSlots()
     connect(m_match, &Match::gameStoppedSignal, this, &TicTacToeLocalGame::onGameStopped);
 }
 
-void TicTacToeLocalGame::onGridLabelClicked(QGridLabel *sender)
+void TicTacToeLocalGame::onGridLabelClicked()
 {
-    qDebug() << "Label clicked = " + sender->getGridPosition()->toString();
+    QGridLabel* m_sender = qobject_cast<QGridLabel*>(sender());
+
+    qDebug() << "Label clicked = " + m_sender->getGridPosition()->toString();
 
     if (!m_match->isGameStopped())
     {
-        TicTacToePlayerEnum token = m_match->getBoard()->getTokenByPosition(*sender->getGridPosition());
+        TicTacToePlayerEnum token = m_match->getBoard()->getTokenByPosition(*m_sender->getGridPosition());
 
         if (token == TicTacToePlayerEnum::None)
         {
-            m_match->getBoard()->insertToken(*sender->getGridPosition(), m_match->getActualTurn());
+            m_match->getBoard()->insertToken(*m_sender->getGridPosition(), m_match->getActualTurn());
 
             updateGraphics();
             m_match->switchTurn();

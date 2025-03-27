@@ -36,7 +36,7 @@ class TicTacToeLocalGame : public QMdiSubWindow
         void connectAllSlots();
 
     private slots:
-        void onGridLabelClicked(QGridLabel *sender);
+        void onGridLabelClicked();
         void onActualTurnChanged(Match* sender, TicTacToePlayerEnum actualTurn);
         void onGameStopped(Match *sender);
 };

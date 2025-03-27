@@ -34,5 +34,5 @@ void QGridLabel::mouseReleaseEvent(QMouseEvent *ev)
 {
     (void) ev;
 
-    emit clicked(this);
+    emit clicked();
 }

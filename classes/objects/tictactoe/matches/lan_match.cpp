@@ -1,20 +1,12 @@
 #include "lan_match.h"
 
-
-LanMatch::LanMatch(QObject *parent)
-    : Match("", "", parent)
-{
-
-}
-
 LanMatch::LanMatch(const TicTacToePlayerEnum clientToken, const QString &clientPlayerName, QObject *parent)
     : Match("", "", parent)
 {
-    setClientToken(clientToken);
-    setPlayerName(getClientToken(), clientPlayerName);
+    initialize(clientToken, clientPlayerName);
 }
 
-bool LanMatch::setPlayerName(const TicTacToePlayerEnum token, const QString &playerName) const
+bool LanMatch::setPlayerName(const TicTacToePlayerEnum token, const QString &playerName)
 {
     m_playerNames[token] = playerName;
 
@@ -42,4 +34,42 @@ bool LanMatch::getClientPlayerInfo(TicTacToePlayerEnum &out_token, QString &out_
 {
     out_token = getClientToken();
     return getPlayerName(getClientToken(), out_playerName);
+}
+
+bool LanMatch::isGameReady() const
+{
+    return m_gameIsReady;
+}
+
+bool LanMatch::setGameIsReady(const bool &value)
+{
+    if (value != m_gameIsReady)
+    {
+        m_gameIsReady = value;
+
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool LanMatch::setActualTurn(const TicTacToePlayerEnum &value)
+{
+    if (m_actTurn != value)
+    {
+        m_actTurn = value;
+
+        return true;
+    }
+
+    return false;
+}
+
+bool LanMatch::initialize(const TicTacToePlayerEnum &clientToken, const QString &clientPlayerName)
+{
+    setClientToken(clientToken);
+    setPlayerName(getClientToken(), clientPlayerName);
+    m_gameIsReady = false;
 }

@@ -30,7 +30,7 @@ class QGridLabel : public QLabel
         void mouseReleaseEvent(QMouseEvent *ev) override;
 
     signals:
-        void clicked(QGridLabel* sender);
+        void clicked();
 
 };
 

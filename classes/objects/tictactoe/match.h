@@ -13,11 +13,10 @@ class Match : public QObject
     protected:
         //Variables
         QMap<TicTacToePlayerEnum, QString> m_playerNames;
-
+        TicTacToePlayerEnum m_actTurn;
 
     private:
         //Variables
-        TicTacToePlayerEnum m_actTurn;
         Board *m_board;
         bool m_gameStopped;
 

@@ -11,6 +11,7 @@
 #include <QCloseEvent>
 #include <QTcpSocket>
 #include <QHash>
+#include <QMdiArea>
 
 TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerName, QWidget *parent) :
     QMdiSubWindow(parent),
@@ -22,6 +23,7 @@ TicTacToeLanServerMdiSubWindow::TicTacToeLanServerMdiSubWindow(QString playerNam
     initializeComponents();
 
     waitClients();
+    openClient();
 }
 
 TicTacToeLanServerMdiSubWindow::~TicTacToeLanServerMdiSubWindow()
@@ -111,6 +113,10 @@ quint64 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *cli
                 result |= 1 << 1;
             }
         }
+        else if (command[0] == "insert-token")
+        {
+
+        }
     }
 
     if (result == 0)
@@ -144,13 +150,52 @@ bool TicTacToeLanServerMdiSubWindow::manageIncomingGetGame(QTcpSocket *client)
     return true;
 }
 
+bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStringList &args)
+{
+    PlayerInfoStruct player;
+
+    if (getPlayerInfoBySocket(client, player))
+    {
+        QString message = "insert-token\n%0\r\n";
+
+        if (m_match->getActualTurn() == player.token)
+        {
+            bool rowOk, colOk;
+
+            int row = args[1].toInt(&rowOk);
+            int col = args[2].toInt(&colOk);
+
+            if (rowOk && colOk)
+            {
+                qint8 result = m_match->m_board->insertToken(row, column, player.token);
+                //TODO: continue here
+            }
+            else
+            {
+                throw "Unable to convert row or column";
+            }
+        }
+        else
+        {
+            message = message.arg("NYT");
+            client->write(message.toLatin1());
+        }
+
+        return true;
+    }
+    else
+    {
+        throw "Unable to retrieve player";
+    }
+}
+
 qint32 TicTacToeLanServerMdiSubWindow::insertNewConnectedPlayer(PlayerInfoStruct player)
 {
     m_connectedPlayers.append(player);
 
     int connectedPlayers = m_connectedPlayers.count();
 
-    writeLog(QString("Player info: [%0][%1]").arg(player.name, getTokenChar(player.token)));
+    writeLog(QString("Player info: [%0][%1]").arg(player.name).arg(getTokenChar(player.token)));
 
     emit connectedPlayerListManaged(connectedPlayers);
 
@@ -185,6 +230,24 @@ bool TicTacToeLanServerMdiSubWindow::getPlayerNameByToken(TicTacToePlayerEnum to
     }
 }
 
+bool TicTacToeLanServerMdiSubWindow::getPlayerInfoBySocket(QTcpSocket *socket, PlayerInfoStruct &out_playerInfo) const
+{
+    QList<PlayerInfoStruct>::const_iterator res = std::find_if(m_connectedPlayers.begin(), m_connectedPlayers.end(), [socket](const PlayerInfoStruct &player)
+    {
+        return player.socket == socket;
+    });
+
+    if (res != m_clientPlayerName.end())
+    {
+        out_playerInfo = res;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 bool TicTacToeLanServerMdiSubWindow::broadcastMessage(const QString message) const
 {
     for (const PlayerInfoStruct& player : m_connectedPlayers)
@@ -195,7 +258,7 @@ bool TicTacToeLanServerMdiSubWindow::broadcastMessage(const QString message) con
     return true;
 }
 
-bool TicTacToeLanServerMdiSubWindow::openClient(const QString &playerName) const
+bool TicTacToeLanServerMdiSubWindow::openClient() const
 {
     QTcpSocket *clientSocket = new QTcpSocket();
 
@@ -203,6 +266,8 @@ bool TicTacToeLanServerMdiSubWindow::openClient(const QString &playerName) const
     connect(clientSocket, &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
 
     clientSocket->connectToHost(m_server->serverAddress(), m_server->serverPort());
+
+    return true;
 }
 
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
@@ -320,10 +385,19 @@ void TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected()
     disconnect(clientSocket, &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
 
     TicTacToeLANClientMdiSubWindow *window = new TicTacToeLANClientMdiSubWindow(clientSocket, m_clientPlayerName, TicTacToePlayerEnum::Cross, MainWindow::getMainMdiArea());
+    MainWindow::getMainMdiArea()->addSubWindow(window);
+    UFrames::centreFormInMdiArea(window);
+    window->show();
 }
 
 void TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured()
 {
     disconnect(qobject_cast<QTcpSocket*>(sender()), &QTcpSocket::connected, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketConnected);
     disconnect(qobject_cast<QTcpSocket*>(sender()), &QTcpSocket::errorOccurred, this, &TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured);
+
+    QString title = tr("Open client error.");
+    QString message = tr("Unable to open the client.\nThe server will be close.");
+    QMessageBox::critical(this, title, message);
+
+    this->close();
 }
