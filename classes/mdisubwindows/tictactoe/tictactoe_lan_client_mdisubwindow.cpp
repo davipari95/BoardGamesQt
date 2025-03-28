@@ -141,7 +141,7 @@ bool TicTacToeLANClientMdiSubWindow::manageTokenInserted(QStringList data)
 {
     bool rowOk, colOk;
 
-    TicTacToePlayerEnum token = getTokenByChar(data[1].toLatin1());
+    TicTacToePlayerEnum token = getTokenByChar(data[1][0].toLatin1());
     int row = data[2].toInt(&rowOk);
     int col = data[3].toInt(&colOk);
 
@@ -166,17 +166,20 @@ void TicTacToeLANClientMdiSubWindow::onTcpSocketDisconnected()
 
 void TicTacToeLANClientMdiSubWindow::onBoardCellClicked()
 {
-    QGridLabel* m_sender = qobject_cast<QGridLabel*>(sender());
-
-    if (m_match->getActualTurn() == m_match->getClientToken())
+    if (m_match->isGameReady())
     {
-        int row = m_sender->getGridPosition()->getRow();
-        int col = m_sender->getGridPosition()->getColumn();
+        QGridLabel* m_sender = qobject_cast<QGridLabel*>(sender());
 
-        if (m_match->getBoard()->getTokenByPosition(row, col) == TicTacToePlayerEnum::None)
+        if (m_match->getActualTurn() == m_match->getClientToken())
         {
-            QString message = QString("insert-token\n%0\n%1").arg(row).arg(col);
-            m_socket->write(message.toLatin1());
+            int row = m_sender->getGridPosition()->getRow();
+            int col = m_sender->getGridPosition()->getColumn();
+
+            if (m_match->getBoard()->getTokenByPosition(row, col) == TicTacToePlayerEnum::None)
+            {
+                QString message = QString("insert-token\n%0\n%1").arg(row).arg(col);
+                m_socket->write(message.toLatin1());
+            }
         }
     }
 }

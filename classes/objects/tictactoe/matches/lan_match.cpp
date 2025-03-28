@@ -71,5 +71,7 @@ bool LanMatch::initialize(const TicTacToePlayerEnum &clientToken, const QString 
 {
     setClientToken(clientToken);
     setPlayerName(getClientToken(), clientPlayerName);
-    m_gameIsReady = false;
+    m_gameIsReady = false;  //Perché va in errore qui?
+
+    return true;
 }

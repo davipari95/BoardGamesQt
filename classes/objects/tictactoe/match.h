@@ -17,8 +17,8 @@ class Match : public QObject
 
     private:
         //Variables
-        Board *m_board;
         bool m_gameStopped;
+        Board *m_board;
 
         //Functions
         void initialize(const QString &xPlayerName, const QString &oPlayerName);

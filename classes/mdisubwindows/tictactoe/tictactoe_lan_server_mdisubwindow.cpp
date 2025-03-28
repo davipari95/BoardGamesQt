@@ -167,8 +167,20 @@ bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStri
 
             if (rowOk && colOk)
             {
-                qint8 result = m_match->m_board->insertToken(row, column, player.token);
-                //TODO: continue here
+                qint8 result = m_match->getBoard()->insertToken(row, col, player.token);
+
+                if (result == 0)
+                {
+                    message = message.arg("OK");
+
+                    //Aware all clients that a token is inserted correctly
+                    QString broadcast = QString("token-inserted\n%0\n%1\n%2\r\n").arg(getTokenChar(player.token)).arg(row).arg(col);
+                    broadcastMessage(broadcast);
+                }
+                else
+                {
+                    message = message.arg("BUSY");
+                }
             }
             else
             {
@@ -178,8 +190,9 @@ bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStri
         else
         {
             message = message.arg("NYT");
-            client->write(message.toLatin1());
         }
+
+        client->write(message.toLatin1());
 
         return true;
     }
@@ -237,9 +250,9 @@ bool TicTacToeLanServerMdiSubWindow::getPlayerInfoBySocket(QTcpSocket *socket, P
         return player.socket == socket;
     });
 
-    if (res != m_clientPlayerName.end())
+    if (res != m_connectedPlayers.end())
     {
-        out_playerInfo = res;
+        out_playerInfo = res[0];
         return true;
     }
     else
@@ -366,7 +379,7 @@ void TicTacToeLanServerMdiSubWindow::onGameIsReady()
 
     if (ok)
     {
-        m_match = std::make_unique<Match>(xPlayerName, oPlayerName);
+        m_match = new Match(xPlayerName, oPlayerName, this);
 
         broadcastMessage("game-ready\r\n");
         writeLog("Game is ready!");

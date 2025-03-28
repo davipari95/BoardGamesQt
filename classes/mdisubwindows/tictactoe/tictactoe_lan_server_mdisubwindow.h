@@ -44,7 +44,7 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
         Ui::TicTacToeLanServerMdiSubWindow *ui;
         QHostAddress m_primaryAddress;
         QTcpServer *m_server;
-        std::unique_ptr<Match> m_match;
+        Match* m_match;
         bool m_gameIsReady;
         QString m_clientPlayerName;
 
