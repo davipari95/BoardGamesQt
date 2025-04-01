@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: Match Class Reference</title>
+<title>Board Games QT: Match Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -112,85 +112,394 @@ $(function(){initNavTree('class_match.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Match Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that represents the Tic-Tac-Toe match.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="match_8h_source.html">match.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Match:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_match.png" usemap="#Match_map" alt=""/>
   <map id="Match_map" name="Match_map">
-<area href="class_lan_match.html" alt="LanMatch" shape="rect" coords="0,112,68,136"/>
+<area href="class_lan_match.html" title="This class represents a Tic-Tac-Toe LAN match." alt="LanMatch" shape="rect" coords="0,112,68,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aeb928cb29d7f92920f9f1b04ee2b33f7" id="r_aeb928cb29d7f92920f9f1b04ee2b33f7"><td class="memItemLeft" align="right" valign="top"><a id="aeb928cb29d7f92920f9f1b04ee2b33f7" name="aeb928cb29d7f92920f9f1b04ee2b33f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>actualTurnChangedSignal</b> (<a class="el" href="class_match.html">Match</a> *sender, TicTacToePlayerEnum actualTurn)</td></tr>
-<tr class="separator:aeb928cb29d7f92920f9f1b04ee2b33f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f0dc9d3eb4127a3616fb38a8d91a59" id="r_ae6f0dc9d3eb4127a3616fb38a8d91a59"><td class="memItemLeft" align="right" valign="top"><a id="ae6f0dc9d3eb4127a3616fb38a8d91a59" name="ae6f0dc9d3eb4127a3616fb38a8d91a59"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gameStoppedSignal</b> (<a class="el" href="class_match.html">Match</a> *sender)</td></tr>
-<tr class="separator:ae6f0dc9d3eb4127a3616fb38a8d91a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c41aa4062151471975110b3429086" id="r_ac14c41aa4062151471975110b3429086"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac14c41aa4062151471975110b3429086">actualTurnChangedSignal</a> (TicTacToePlayerEnum actualTurn)</td></tr>
+<tr class="memdesc:ac14c41aa4062151471975110b3429086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted after the turn is changed.  <br /></td></tr>
+<tr class="separator:ac14c41aa4062151471975110b3429086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f48351a9fbc34b052aebd136c306df9" id="r_a7f48351a9fbc34b052aebd136c306df9"><td class="memItemLeft" align="right" valign="top"><a id="a7f48351a9fbc34b052aebd136c306df9" name="a7f48351a9fbc34b052aebd136c306df9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>gameStoppedSignal</b> ()</td></tr>
+<tr class="memdesc:a7f48351a9fbc34b052aebd136c306df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is used when the came is completely stopped. <br /></td></tr>
+<tr class="separator:a7f48351a9fbc34b052aebd136c306df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb09bc784d0ea5b43b4e2d488976f2b4" id="r_afb09bc784d0ea5b43b4e2d488976f2b4"><td class="memItemLeft" align="right" valign="top"><a id="afb09bc784d0ea5b43b4e2d488976f2b4" name="afb09bc784d0ea5b43b4e2d488976f2b4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Match</b> (const QString &amp;xPlayerName, const QString &amp;oPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memitem:afb09bc784d0ea5b43b4e2d488976f2b4" id="r_afb09bc784d0ea5b43b4e2d488976f2b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb09bc784d0ea5b43b4e2d488976f2b4">Match</a> (const QString &amp;xPlayerName, const QString &amp;oPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:afb09bc784d0ea5b43b4e2d488976f2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class initializer.  <br /></td></tr>
 <tr class="separator:afb09bc784d0ea5b43b4e2d488976f2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b4f9777d467e4c55b6664d3767156dd" id="r_a2b4f9777d467e4c55b6664d3767156dd"><td class="memItemLeft" align="right" valign="top"><a id="a2b4f9777d467e4c55b6664d3767156dd" name="a2b4f9777d467e4c55b6664d3767156dd"></a>
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>getActualTurn</b> ()</td></tr>
+<tr class="memitem:a2b4f9777d467e4c55b6664d3767156dd" id="r_a2b4f9777d467e4c55b6664d3767156dd"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b4f9777d467e4c55b6664d3767156dd">getActualTurn</a> ()</td></tr>
+<tr class="memdesc:a2b4f9777d467e4c55b6664d3767156dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the actual turn (cross or circle).  <br /></td></tr>
 <tr class="separator:a2b4f9777d467e4c55b6664d3767156dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33fb7d91ac09ed4ae7fdc61c33e4d07" id="r_aa33fb7d91ac09ed4ae7fdc61c33e4d07"><td class="memItemLeft" align="right" valign="top"><a id="aa33fb7d91ac09ed4ae7fdc61c33e4d07" name="aa33fb7d91ac09ed4ae7fdc61c33e4d07"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>switchTurn</b> ()</td></tr>
+<tr class="memdesc:aa33fb7d91ac09ed4ae7fdc61c33e4d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the turn from cross to circle and vice versa. <br /></td></tr>
 <tr class="separator:aa33fb7d91ac09ed4ae7fdc61c33e4d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add34f79de6021006ab1542ae0dd4d662" id="r_add34f79de6021006ab1542ae0dd4d662"><td class="memItemLeft" align="right" valign="top"><a id="add34f79de6021006ab1542ae0dd4d662" name="add34f79de6021006ab1542ae0dd4d662"></a>
-<a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getBoard</b> ()</td></tr>
+<tr class="memitem:add34f79de6021006ab1542ae0dd4d662" id="r_add34f79de6021006ab1542ae0dd4d662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add34f79de6021006ab1542ae0dd4d662">getBoard</a> ()</td></tr>
+<tr class="memdesc:add34f79de6021006ab1542ae0dd4d662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the board of this match.  <br /></td></tr>
 <tr class="separator:add34f79de6021006ab1542ae0dd4d662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9aa78ece3310777df365dea7e65b53a" id="r_aa9aa78ece3310777df365dea7e65b53a"><td class="memItemLeft" align="right" valign="top"><a id="aa9aa78ece3310777df365dea7e65b53a" name="aa9aa78ece3310777df365dea7e65b53a"></a>
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>checkGameOver</b> ()</td></tr>
+<tr class="memitem:aa9aa78ece3310777df365dea7e65b53a" id="r_aa9aa78ece3310777df365dea7e65b53a"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9aa78ece3310777df365dea7e65b53a">checkGameOver</a> ()</td></tr>
+<tr class="memdesc:aa9aa78ece3310777df365dea7e65b53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a game over.  <br /></td></tr>
 <tr class="separator:aa9aa78ece3310777df365dea7e65b53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebe11bca186cf124871d860bce726d7e" id="r_aebe11bca186cf124871d860bce726d7e"><td class="memItemLeft" align="right" valign="top"><a id="aebe11bca186cf124871d860bce726d7e" name="aebe11bca186cf124871d860bce726d7e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerName</b> (const TicTacToePlayerEnum token, QString &amp;out_payerName) const</td></tr>
+<tr class="memitem:aebe11bca186cf124871d860bce726d7e" id="r_aebe11bca186cf124871d860bce726d7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe11bca186cf124871d860bce726d7e">getPlayerName</a> (const TicTacToePlayerEnum token, QString &amp;out_payerName) const</td></tr>
+<tr class="memdesc:aebe11bca186cf124871d860bce726d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the player name that plays token give in <code>token</code>.  <br /></td></tr>
 <tr class="separator:aebe11bca186cf124871d860bce726d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4607df723cdd07e6b495b224888718e5" id="r_a4607df723cdd07e6b495b224888718e5"><td class="memItemLeft" align="right" valign="top"><a id="a4607df723cdd07e6b495b224888718e5" name="a4607df723cdd07e6b495b224888718e5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>restart</b> (const TicTacToePlayerEnum &amp;gameStartsWith)</td></tr>
+<tr class="memitem:a4607df723cdd07e6b495b224888718e5" id="r_a4607df723cdd07e6b495b224888718e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4607df723cdd07e6b495b224888718e5">restart</a> (const TicTacToePlayerEnum &amp;gameStartsWith)</td></tr>
+<tr class="memdesc:a4607df723cdd07e6b495b224888718e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a new match.  <br /></td></tr>
 <tr class="separator:a4607df723cdd07e6b495b224888718e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc87f7305065f95907953be25d0bb15" id="r_a1fc87f7305065f95907953be25d0bb15"><td class="memItemLeft" align="right" valign="top"><a id="a1fc87f7305065f95907953be25d0bb15" name="a1fc87f7305065f95907953be25d0bb15"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stopsGame</b> ()</td></tr>
+<tr class="memdesc:a1fc87f7305065f95907953be25d0bb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the game. <br /></td></tr>
 <tr class="separator:a1fc87f7305065f95907953be25d0bb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6404849b470a436807523c5b0d0cd947" id="r_a6404849b470a436807523c5b0d0cd947"><td class="memItemLeft" align="right" valign="top"><a id="a6404849b470a436807523c5b0d0cd947" name="a6404849b470a436807523c5b0d0cd947"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isGameStopped</b> () const</td></tr>
+<tr class="memitem:a6404849b470a436807523c5b0d0cd947" id="r_a6404849b470a436807523c5b0d0cd947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6404849b470a436807523c5b0d0cd947">isGameStopped</a> () const</td></tr>
+<tr class="memdesc:a6404849b470a436807523c5b0d0cd947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the game is stopped.  <br /></td></tr>
 <tr class="separator:a6404849b470a436807523c5b0d0cd947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a58aba69f5a7f666cfca3b80fee8007e9" id="r_a58aba69f5a7f666cfca3b80fee8007e9"><td class="memItemLeft" align="right" valign="top"><a id="a58aba69f5a7f666cfca3b80fee8007e9" name="a58aba69f5a7f666cfca3b80fee8007e9"></a>
 QMap&lt; TicTacToePlayerEnum, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_playerNames</b></td></tr>
+<tr class="memdesc:a58aba69f5a7f666cfca3b80fee8007e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Players of the match. <br /></td></tr>
 <tr class="separator:a58aba69f5a7f666cfca3b80fee8007e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1fb4ac895b2d7fcde474f0ab799731" id="r_afa1fb4ac895b2d7fcde474f0ab799731"><td class="memItemLeft" align="right" valign="top"><a id="afa1fb4ac895b2d7fcde474f0ab799731" name="afa1fb4ac895b2d7fcde474f0ab799731"></a>
 TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>m_actTurn</b></td></tr>
+<tr class="memdesc:afa1fb4ac895b2d7fcde474f0ab799731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual turn (cross or circle). <br /></td></tr>
 <tr class="separator:afa1fb4ac895b2d7fcde474f0ab799731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a0ca8d839daa9a70df12565bc9839efc0" id="r_a0ca8d839daa9a70df12565bc9839efc0"><td class="memItemLeft" align="right" valign="top"><a id="a0ca8d839daa9a70df12565bc9839efc0" name="a0ca8d839daa9a70df12565bc9839efc0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (const QString &amp;xPlayerName, const QString &amp;oPlayerName)</td></tr>
+<tr class="memitem:a0ca8d839daa9a70df12565bc9839efc0" id="r_a0ca8d839daa9a70df12565bc9839efc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ca8d839daa9a70df12565bc9839efc0">initialize</a> (const QString &amp;xPlayerName, const QString &amp;oPlayerName)</td></tr>
+<tr class="memdesc:a0ca8d839daa9a70df12565bc9839efc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the variables of this class.  <br /></td></tr>
 <tr class="separator:a0ca8d839daa9a70df12565bc9839efc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a648c8dac6e16e04d064603868bdf1f09" id="r_a648c8dac6e16e04d064603868bdf1f09"><td class="memItemLeft" align="right" valign="top"><a id="a648c8dac6e16e04d064603868bdf1f09" name="a648c8dac6e16e04d064603868bdf1f09"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setActualTurn</b> (TicTacToePlayerEnum turn)</td></tr>
+<tr class="memitem:a648c8dac6e16e04d064603868bdf1f09" id="r_a648c8dac6e16e04d064603868bdf1f09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a648c8dac6e16e04d064603868bdf1f09">setActualTurn</a> (TicTacToePlayerEnum turn)</td></tr>
+<tr class="memdesc:a648c8dac6e16e04d064603868bdf1f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the actual turn.  <br /></td></tr>
 <tr class="separator:a648c8dac6e16e04d064603868bdf1f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a56d506605c0cb4a8037bd1a936c56961" id="r_a56d506605c0cb4a8037bd1a936c56961"><td class="memItemLeft" align="right" valign="top"><a id="a56d506605c0cb4a8037bd1a936c56961" name="a56d506605c0cb4a8037bd1a936c56961"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_gameStopped</b></td></tr>
+<tr class="memdesc:a56d506605c0cb4a8037bd1a936c56961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Game is stopped (<code>true</code> is stopped, <code>false</code> is not). <br /></td></tr>
 <tr class="separator:a56d506605c0cb4a8037bd1a936c56961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac80cc09f25ed7ec4f6c4e80a0bffb61a" id="r_ac80cc09f25ed7ec4f6c4e80a0bffb61a"><td class="memItemLeft" align="right" valign="top"><a id="ac80cc09f25ed7ec4f6c4e80a0bffb61a" name="ac80cc09f25ed7ec4f6c4e80a0bffb61a"></a>
 <a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_board</b></td></tr>
+<tr class="memdesc:ac80cc09f25ed7ec4f6c4e80a0bffb61a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_board.html" title="Class that represents the board of Tic-Tac-Toe game.">Board</a> of the match. <br /></td></tr>
 <tr class="separator:ac80cc09f25ed7ec4f6c4e80a0bffb61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that represents the Tic-Tac-Toe match. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afb09bc784d0ea5b43b4e2d488976f2b4" name="afb09bc784d0ea5b43b4e2d488976f2b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb09bc784d0ea5b43b4e2d488976f2b4">&#9670;&#160;</a></span>Match()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Match::Match </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>xPlayerName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>oPlayerName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Class initializer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xPlayerName</td><td>The name of the player that plays cross. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">oPlayerName</td><td>The name of the player that plays circle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parent</td><td>The parent where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac14c41aa4062151471975110b3429086" name="ac14c41aa4062151471975110b3429086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14c41aa4062151471975110b3429086">&#9670;&#160;</a></span>actualTurnChangedSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Match::actualTurnChangedSignal </td>
+          <td>(</td>
+          <td class="paramtype">TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>actualTurn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal that is emitted after the turn is changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actualTurn</td><td>The actual turn. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9aa78ece3310777df365dea7e65b53a" name="aa9aa78ece3310777df365dea7e65b53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9aa78ece3310777df365dea7e65b53a">&#9670;&#160;</a></span>checkGameOver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TicTacToePlayerEnum Match::checkGameOver </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if there is a game over. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the winner of the match or: <ul>
+<li>
+<code>TicTacToePlayerEnum::None</code> if the game is not finished yet; </li>
+<li>
+<code>TicTacToePlayerEnum::Cross | TicTacToePlayerEnum::Circle</code> if the game is finished with drawn. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a2b4f9777d467e4c55b6664d3767156dd" name="a2b4f9777d467e4c55b6664d3767156dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4f9777d467e4c55b6664d3767156dd">&#9670;&#160;</a></span>getActualTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TicTacToePlayerEnum Match::getActualTurn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the actual turn (cross or circle). </p>
+<dl class="section return"><dt>Returns</dt><dd>The actual turn (cross or circle). </dd></dl>
+
+</div>
+</div>
+<a id="add34f79de6021006ab1542ae0dd4d662" name="add34f79de6021006ab1542ae0dd4d662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add34f79de6021006ab1542ae0dd4d662">&#9670;&#160;</a></span>getBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_board.html">Board</a> * Match::getBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the board of this match. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return a pointer that point at the board of this match. </dd></dl>
+
+</div>
+</div>
+<a id="aebe11bca186cf124871d860bce726d7e" name="aebe11bca186cf124871d860bce726d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe11bca186cf124871d860bce726d7e">&#9670;&#160;</a></span>getPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Match::getPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out_payerName</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the player name that plays token give in <code>token</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">token</td><td>The token that is played by the player whic you want to retrieve the name. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_payerName</td><td>The name of the player that plays the token given in <code>token</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if <code>token</code> is a valid value, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a0ca8d839daa9a70df12565bc9839efc0" name="a0ca8d839daa9a70df12565bc9839efc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca8d839daa9a70df12565bc9839efc0">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Match::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>xPlayerName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>oPlayerName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize the variables of this class. </p>
+<p>This function will initialize the player names with the names given in <code>xPlayerName</code> and <code>oPlayerName</code>, the <code>m_board</code> with an empty board and set the game stopped (<code>m_gameStopped</code>) to <code>false</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xPlayerName</td><td>Name of the player that plays cross. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">oPlayerName</td><td>Name of the player that plays circle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6404849b470a436807523c5b0d0cd947" name="a6404849b470a436807523c5b0d0cd947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6404849b470a436807523c5b0d0cd947">&#9670;&#160;</a></span>isGameStopped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Match::isGameStopped </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the game is stopped. </p>
+<p>This function will emit the signal <code><a class="el" href="#a7f48351a9fbc34b052aebd136c306df9" title="Signal that is used when the came is completely stopped.">gameStoppedSignal()</a></code></p>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the game is stopped, <code>false</code> if is not. </dd></dl>
+
+</div>
+</div>
+<a id="a4607df723cdd07e6b495b224888718e5" name="a4607df723cdd07e6b495b224888718e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4607df723cdd07e6b495b224888718e5">&#9670;&#160;</a></span>restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Match::restart </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum &amp;</td>          <td class="paramname"><span class="paramname"><em>gameStartsWith</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start a new match. </p>
+<p>This function will clear all board and set the actual turn with the value given in <code>gameStartsWith</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gameStartsWith</td><td>The turn wich the game restart with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a648c8dac6e16e04d064603868bdf1f09" name="a648c8dac6e16e04d064603868bdf1f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648c8dac6e16e04d064603868bdf1f09">&#9670;&#160;</a></span>setActualTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Match::setActualTurn </td>
+          <td>(</td>
+          <td class="paramtype">TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>turn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the actual turn. </p>
+<p>This function will emit the signal <code><a class="el" href="#ac14c41aa4062151471975110b3429086" title="Signal that is emitted after the turn is changed.">actualTurnChangedSignal()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">turn</td><td>New turn (cross or circle). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/objects/tictactoe/<a class="el" href="match_8h_source.html">match.h</a></li>
-<li>build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/debug/<b>moc_match.cpp</b></li>
 <li>classes/objects/tictactoe/<b>match.cpp</b></li>
 </ul>
 </div><!-- contents -->

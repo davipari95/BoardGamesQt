@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: classes/objects/custom_components/qgridlabel.h Source File</title>
+<title>Board Games QT: classes/objects/custom_components/qgridlabel.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,40 +111,46 @@ $(function(){initNavTree('qgridlabel_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;classes/objects/gridposition.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_q_grid_label.html">    8</a></span><span class="keyword">class </span>QGridLabel : <span class="keyword">public</span> QLabel</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    Q_OBJECT</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">//Constructors</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">explicit</span> QGridLabel(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">explicit</span> QGridLabel(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position, QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">explicit</span> QGridLabel(<span class="keyword">const</span> qint32 row, <span class="keyword">const</span> qint32 column, QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">//Destructor</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        ~QGridLabel();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_class" href="class_grid_position.html">GridPosition</a> *getGridPosition();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::unique_ptr&lt;GridPosition&gt; m_gridPosition;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">void</span> init(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> mouseReleaseEvent(QMouseEvent *ev) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    signals:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> clicked();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_q_grid_label.html">   11</a></span><span class="keyword">class </span><a class="code hl_function" href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">QGridLabel</a> : <span class="keyword">public</span> QLabel</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Q_OBJECT</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="comment">//Constructors</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">QGridLabel</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">QGridLabel</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">QGridLabel</a>(<span class="keyword">const</span> qint32 row, <span class="keyword">const</span> qint32 column, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="comment">//Destructor</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_function" href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">~QGridLabel</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_class" href="class_grid_position.html">GridPosition</a> *<a class="code hl_function" href="class_q_grid_label.html#a7ad5ab67f45f31cd8b3d51dda6cfbc3a">getGridPosition</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">//Variables</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_q_grid_label.html#a5630607a1d5b022cebcb759881e2f675">   51</a></span>        <a class="code hl_class" href="class_grid_position.html">GridPosition</a> *<a class="code hl_variable" href="class_q_grid_label.html#a5630607a1d5b022cebcb759881e2f675">m_gridPosition</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_q_grid_label.html#af86557a06f04c34172642ffe8487a35c">init</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_q_grid_label.html#a066d8a169279e2367050f0b9346237ef">mouseReleaseEvent</a>(QMouseEvent *ev) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    signals:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_q_grid_label.html#ac22259046e0141e2059b576c6649d09f">   73</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_q_grid_label.html#ac22259046e0141e2059b576c6649d09f">clicked</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">// QGRIDLABEL_H</span></div>
-<div class="ttc" id="aclass_grid_position_html"><div class="ttname"><a href="class_grid_position.html">GridPosition</a></div><div class="ttdef"><b>Definition</b> gridposition.h:10</div></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// QGRIDLABEL_H</span></div>
+<div class="ttc" id="aclass_grid_position_html"><div class="ttname"><a href="class_grid_position.html">GridPosition</a></div><div class="ttdoc">A class that represents a position on the grid, using row and column.</div><div class="ttdef"><b>Definition</b> gridposition.h:13</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_a066d8a169279e2367050f0b9346237ef"><div class="ttname"><a href="class_q_grid_label.html#a066d8a169279e2367050f0b9346237ef">QGridLabel::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *ev) override</div><div class="ttdoc">This function is used when the click of the mouse is released on this label.</div><div class="ttdef"><b>Definition</b> qgridlabel.cpp:33</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_a5630607a1d5b022cebcb759881e2f675"><div class="ttname"><a href="class_q_grid_label.html#a5630607a1d5b022cebcb759881e2f675">QGridLabel::m_gridPosition</a></div><div class="ttdeci">GridPosition * m_gridPosition</div><div class="ttdoc">Grid position of this label.</div><div class="ttdef"><b>Definition</b> qgridlabel.h:51</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_a7ad5ab67f45f31cd8b3d51dda6cfbc3a"><div class="ttname"><a href="class_q_grid_label.html#a7ad5ab67f45f31cd8b3d51dda6cfbc3a">QGridLabel::getGridPosition</a></div><div class="ttdeci">GridPosition * getGridPosition()</div><div class="ttdoc">Retrieve the grid position.</div><div class="ttdef"><b>Definition</b> qgridlabel.cpp:23</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_ac22259046e0141e2059b576c6649d09f"><div class="ttname"><a href="class_q_grid_label.html#ac22259046e0141e2059b576c6649d09f">QGridLabel::clicked</a></div><div class="ttdeci">void clicked()</div><div class="ttdoc">Signal that is emitted when this cell is clicked.</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_acdef1f7b185f8c7bd6d749835707f049"><div class="ttname"><a href="class_q_grid_label.html#acdef1f7b185f8c7bd6d749835707f049">QGridLabel::QGridLabel</a></div><div class="ttdeci">QGridLabel(QWidget *parent=nullptr)</div><div class="ttdoc">Initialize this class with grid informations in (0, 0).</div><div class="ttdef"><b>Definition</b> qgridlabel.cpp:3</div></div>
+<div class="ttc" id="aclass_q_grid_label_html_af86557a06f04c34172642ffe8487a35c"><div class="ttname"><a href="class_q_grid_label.html#af86557a06f04c34172642ffe8487a35c">QGridLabel::init</a></div><div class="ttdeci">void init(const qint32 &amp;row, const qint32 &amp;column)</div><div class="ttdoc">Initialize the variables of this class.</div><div class="ttdef"><b>Definition</b> qgridlabel.cpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

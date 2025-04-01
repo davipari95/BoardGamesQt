@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: Board Class Reference</title>
+<title>Board Games QT: Board Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,6 +110,11 @@ $(function(){initNavTree('class_board.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Board Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that represents the board of Tic-Tac-Toe game.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="board_8h_source.html">board.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Board:</div>
 <div class="dyncontent">
@@ -120,29 +125,29 @@ Inheritance diagram for Board:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62266df3e16767981ee4b20d4dac084c" id="r_a62266df3e16767981ee4b20d4dac084c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62266df3e16767981ee4b20d4dac084c">Board</a> (<a class="el" href="class_match.html">Match</a> *matchParent, QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:a62266df3e16767981ee4b20d4dac084c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the class giving the match parent in <code>matchParent</code> and the object parent in <code>parent</code>.  <br /></td></tr>
+<tr class="memdesc:a62266df3e16767981ee4b20d4dac084c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor.  <br /></td></tr>
 <tr class="separator:a62266df3e16767981ee4b20d4dac084c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e2f50e5d3c925b0f8606a9f494b5e04" id="r_a4e2f50e5d3c925b0f8606a9f494b5e04"><td class="memItemLeft" align="right" valign="top"><a id="a4e2f50e5d3c925b0f8606a9f494b5e04" name="a4e2f50e5d3c925b0f8606a9f494b5e04"></a>
-const std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getContent</b> ()</td></tr>
+<tr class="memitem:a4e2f50e5d3c925b0f8606a9f494b5e04" id="r_a4e2f50e5d3c925b0f8606a9f494b5e04"><td class="memItemLeft" align="right" valign="top">const std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e2f50e5d3c925b0f8606a9f494b5e04">getContent</a> ()</td></tr>
+<tr class="memdesc:a4e2f50e5d3c925b0f8606a9f494b5e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrive the content of the board.  <br /></td></tr>
 <tr class="separator:a4e2f50e5d3c925b0f8606a9f494b5e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3f905c72c8d8d62e0d1a7d0356ab87" id="r_adf3f905c72c8d8d62e0d1a7d0356ab87"><td class="memItemLeft" align="right" valign="top">qint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf3f905c72c8d8d62e0d1a7d0356ab87">insertToken</a> (const int &amp;row, const int &amp;column, TicTacToePlayerEnum token)</td></tr>
-<tr class="memdesc:adf3f905c72c8d8d62e0d1a7d0356ab87"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#adf3f905c72c8d8d62e0d1a7d0356ab87" title="Board::insertToken Insert the token into the specified position, giving the row position in row,...">Board::insertToken</a> Insert the token into the specified position, giving the row position in <code>row</code>, the column position in <code>column</code> and the token to insert in <code>token</code>.  <br /></td></tr>
+<tr class="memdesc:adf3f905c72c8d8d62e0d1a7d0356ab87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new token given in <code>token</code> on the board, given the row in <code>row</code> and the column in <code>column</code>.  <br /></td></tr>
 <tr class="separator:adf3f905c72c8d8d62e0d1a7d0356ab87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae526455a2944ed9223b37f64890a8465" id="r_ae526455a2944ed9223b37f64890a8465"><td class="memItemLeft" align="right" valign="top">qint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae526455a2944ed9223b37f64890a8465">insertToken</a> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;position, TicTacToePlayerEnum token)</td></tr>
-<tr class="memdesc:ae526455a2944ed9223b37f64890a8465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert the token given the position in <code>position</code>.  <br /></td></tr>
+<tr class="memdesc:ae526455a2944ed9223b37f64890a8465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new token given in <code>token</code> on the board, given the grid position in <code>position</code>.  <br /></td></tr>
 <tr class="separator:ae526455a2944ed9223b37f64890a8465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7beeea710f4c682a283ae68e1ff3293" id="r_af7beeea710f4c682a283ae68e1ff3293"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7beeea710f4c682a283ae68e1ff3293">getTokenByPosition</a> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
-<tr class="memdesc:af7beeea710f4c682a283ae68e1ff3293"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the token at the given row and column.  <br /></td></tr>
+<tr class="memdesc:af7beeea710f4c682a283ae68e1ff3293"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the token into position with row given in <code>row</code> and the column given in <code>column</code>.  <br /></td></tr>
 <tr class="separator:af7beeea710f4c682a283ae68e1ff3293"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a935980beb464e8b00c3493bf93812cdb" id="r_a935980beb464e8b00c3493bf93812cdb"><td class="memItemLeft" align="right" valign="top"><a id="a935980beb464e8b00c3493bf93812cdb" name="a935980beb464e8b00c3493bf93812cdb"></a>
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>getTokenByPosition</b> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;position)</td></tr>
+<tr class="memitem:a935980beb464e8b00c3493bf93812cdb" id="r_a935980beb464e8b00c3493bf93812cdb"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a935980beb464e8b00c3493bf93812cdb">getTokenByPosition</a> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;position)</td></tr>
+<tr class="memdesc:a935980beb464e8b00c3493bf93812cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the token into position given in <code>position</code>.  <br /></td></tr>
 <tr class="separator:a935980beb464e8b00c3493bf93812cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3c9a93f03cf9d8cc365b2ab4e3cdc72" id="r_ae3c9a93f03cf9d8cc365b2ab4e3cdc72"><td class="memItemLeft" align="right" valign="top"><a id="ae3c9a93f03cf9d8cc365b2ab4e3cdc72" name="ae3c9a93f03cf9d8cc365b2ab4e3cdc72"></a>
-std::array&lt; QString, 8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAllSequences</b> ()</td></tr>
+<tr class="memitem:ae3c9a93f03cf9d8cc365b2ab4e3cdc72" id="r_ae3c9a93f03cf9d8cc365b2ab4e3cdc72"><td class="memItemLeft" align="right" valign="top">std::array&lt; QString, 8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3c9a93f03cf9d8cc365b2ab4e3cdc72">getAllSequences</a> ()</td></tr>
+<tr class="memdesc:ae3c9a93f03cf9d8cc365b2ab4e3cdc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve all sequences that represents the content of rows, columns and diagonals. On the string, the <code>X</code> represents the cross token, the <code>O</code> the circle token and the space means that the cell is empty.  <br /></td></tr>
 <tr class="separator:ae3c9a93f03cf9d8cc365b2ab4e3cdc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac592e5739efbd6d4b9ab41cc7d9fdf40" id="r_ac592e5739efbd6d4b9ab41cc7d9fdf40"><td class="memItemLeft" align="right" valign="top"><a id="ac592e5739efbd6d4b9ab41cc7d9fdf40" name="ac592e5739efbd6d4b9ab41cc7d9fdf40"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clearContent</b> ()</td></tr>
-<tr class="memdesc:ac592e5739efbd6d4b9ab41cc7d9fdf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all content of the board. <br /></td></tr>
+<tr class="memdesc:ac592e5739efbd6d4b9ab41cc7d9fdf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove every tokens from the board. <br /></td></tr>
 <tr class="separator:ac592e5739efbd6d4b9ab41cc7d9fdf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -155,12 +160,16 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad06195da2e83e6361c16e8c8e3439928" id="r_ad06195da2e83e6361c16e8c8e3439928"><td class="memItemLeft" align="right" valign="top"><a id="ad06195da2e83e6361c16e8c8e3439928" name="ad06195da2e83e6361c16e8c8e3439928"></a>
 <a class="el" href="class_match.html">Match</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_matchParent</b></td></tr>
+<tr class="memdesc:ad06195da2e83e6361c16e8c8e3439928"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code><a class="el" href="class_match.html" title="Class that represents the Tic-Tac-Toe match.">Match</a></code> parent where this class is initialized. <br /></td></tr>
 <tr class="separator:ad06195da2e83e6361c16e8c8e3439928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ca98e98a6e93c555a36af8b450c9b8" id="r_a86ca98e98a6e93c555a36af8b450c9b8"><td class="memItemLeft" align="right" valign="top"><a id="a86ca98e98a6e93c555a36af8b450c9b8" name="a86ca98e98a6e93c555a36af8b450c9b8"></a>
 std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_content</b></td></tr>
+<tr class="memdesc:a86ca98e98a6e93c555a36af8b450c9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Content of this baord. <br /></td></tr>
 <tr class="separator:a86ca98e98a6e93c555a36af8b450c9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that represents the board of Tic-Tac-Toe game. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a62266df3e16767981ee4b20d4dac084c" name="a62266df3e16767981ee4b20d4dac084c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62266df3e16767981ee4b20d4dac084c">&#9670;&#160;</a></span>Board()</h2>
 
@@ -188,11 +197,11 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
 </table>
 </div><div class="memdoc">
 
-<p>Initialize the class giving the match parent in <code>matchParent</code> and the object parent in <code>parent</code>. </p>
+<p>Class constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">matchParent</td><td>the match where this class is initialized. </td></tr>
-    <tr><td class="paramname">parent</td><td>the QObject parent that will deallocate this class. </td></tr>
+    <tr><td class="paramname">matchParent</td><td>The match where this class is initialized. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent component where this baord is initialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -200,8 +209,74 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae3c9a93f03cf9d8cc365b2ab4e3cdc72" name="ae3c9a93f03cf9d8cc365b2ab4e3cdc72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c9a93f03cf9d8cc365b2ab4e3cdc72">&#9670;&#160;</a></span>getAllSequences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; QString, 8 &gt; Board::getAllSequences </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve all sequences that represents the content of rows, columns and diagonals. On the string, the <code>X</code> represents the cross token, the <code>O</code> the circle token and the space means that the cell is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of 8 elements, that contains all sequences of the board. </dd></dl>
+
+</div>
+</div>
+<a id="a4e2f50e5d3c925b0f8606a9f494b5e04" name="a4e2f50e5d3c925b0f8606a9f494b5e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2f50e5d3c925b0f8606a9f494b5e04">&#9670;&#160;</a></span>getContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt; Board::getContent </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrive the content of the board. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 3x3 matrix that represents the board containing the tokens. </dd></dl>
+
+</div>
+</div>
+<a id="a935980beb464e8b00c3493bf93812cdb" name="a935980beb464e8b00c3493bf93812cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935980beb464e8b00c3493bf93812cdb">&#9670;&#160;</a></span>getTokenByPosition() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TicTacToePlayerEnum Board::getTokenByPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the token into position given in <code>position</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position where you want to retrieve the token. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The token on given position. </dd></dl>
+
+</div>
+</div>
 <a id="af7beeea710f4c682a283ae68e1ff3293" name="af7beeea710f4c682a283ae68e1ff3293"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7beeea710f4c682a283ae68e1ff3293">&#9670;&#160;</a></span>getTokenByPosition()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af7beeea710f4c682a283ae68e1ff3293">&#9670;&#160;</a></span>getTokenByPosition() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,15 +294,15 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the token at the given row and column. </p>
+<p>Retrieve the token into position with row given in <code>row</code> and the column given in <code>column</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>The row position (0-based). </td></tr>
-    <tr><td class="paramname">column</td><td>The column position (0-based). </td></tr>
+    <tr><td class="paramname">row</td><td>The 0-based row where you want to retrieve the token. </td></tr>
+    <tr><td class="paramname">column</td><td>The 0-based column where you want to retrieve the token. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The token in the specified cell. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The token on given position. </dd></dl>
 
 </div>
 </div>
@@ -257,7 +332,7 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
 <p>Initialize the variables of this class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">matchParent</td><td>the <code><a class="el" href="class_match.html">Match</a></code> class where this class is initialized. </td></tr>
+    <tr><td class="paramname">matchParent</td><td>The <code><a class="el" href="class_match.html" title="Class that represents the Tic-Tac-Toe match.">Match</a></code> parent where this class is initialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -283,21 +358,21 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
       </table>
 </div><div class="memdoc">
 
-<p>Insert the token given the position in <code>position</code>. </p>
+<p>Insert a new token given in <code>token</code> on the board, given the grid position in <code>position</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td>position, 0 based, where you want to insert the token. </td></tr>
-    <tr><td class="paramname">token</td><td>the token that you want to insert. </td></tr>
+    <tr><td class="paramname">position</td><td>The position where you want to insert the token. </td></tr>
+    <tr><td class="paramname">token</td><td>The token that you want to insert. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a number that represents the result: <ul>
+<dl class="section return"><dt>Returns</dt><dd>A status code that represents the result of this function: <ul>
 <li>
-<code>0</code> - The token is inserted correctly. </li>
+<code>[0]</code> → The token is inserted correctly. </li>
 <li>
-<code>1</code> - The cell is busy with the same token. </li>
+<code>[1]</code> → The cell is busy with the same token given in <code>token</code>. </li>
 <li>
-<code>2</code> - The cell is busy with another token. </li>
+<code>[2]</code> → The cell is busy with a different token given in <code>token</code>. </li>
 </ul>
 </dd></dl>
 
@@ -327,22 +402,22 @@ std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt;&#160;</td><td 
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#adf3f905c72c8d8d62e0d1a7d0356ab87" title="Board::insertToken Insert the token into the specified position, giving the row position in row,...">Board::insertToken</a> Insert the token into the specified position, giving the row position in <code>row</code>, the column position in <code>column</code> and the token to insert in <code>token</code>. </p>
+<p>Insert a new token given in <code>token</code> on the board, given the row in <code>row</code> and the column in <code>column</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">row</td><td>the row position (starting from 0) where you want to insert the token. </td></tr>
-    <tr><td class="paramname">column</td><td>the column position (starting from 0) where you want to insert the token. </td></tr>
-    <tr><td class="paramname">token</td><td>the token that you want to insert. </td></tr>
+    <tr><td class="paramname">row</td><td>The 0-based row where you want to insert the token. </td></tr>
+    <tr><td class="paramname">column</td><td>The 0-based column where you want to insert the token. </td></tr>
+    <tr><td class="paramname">token</td><td>The token that you want to insert (cross or circle). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a number that represents the result: <ul>
+<dl class="section return"><dt>Returns</dt><dd>A status code that represents the result of this function: <ul>
 <li>
-<code>0</code> - The token is inserted correctly. </li>
+<code>[0]</code> → The token is inserted correctly. </li>
 <li>
-<code>1</code> - The cell is busy with the same token. </li>
+<code>[1]</code> → The cell is busy with the same token given in <code>token</code>. </li>
 <li>
-<code>2</code> - The cell is busy with another token. </li>
+<code>[2]</code> → The cell is busy with a different token given in <code>token</code>. </li>
 </ul>
 </dd></dl>
 

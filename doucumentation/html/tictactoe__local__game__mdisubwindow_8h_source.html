@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h Source File</title>
+<title>Board Games QT: classes/mdisubwindows/tictactoe/tictactoe_local_game_mdisubwindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -114,7 +114,7 @@ $(function(){initNavTree('tictactoe__local__game__mdisubwindow_8h_source.html','
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;enums/tictactoe/tictactoe_players_enum.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_ui_1_1_tic_tac_toe_local_game.html">TicTacToeLocalGame</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span>TicTacToeLocalGame;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span><a class="code hl_class" href="class_match.html">Match</a>;</div>
@@ -133,7 +133,7 @@ $(function(){initNavTree('tictactoe__local__game__mdisubwindow_8h_source.html','
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_class" href="class_ui_1_1_tic_tac_toe_local_game.html">Ui::TicTacToeLocalGame</a> *ui;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        Ui::TicTacToeLocalGame *ui;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_class" href="class_match.html">Match</a>* m_match;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_class" href="class_q_grid_label.html">QGridLabel</a>* m_cells[3][3];</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
@@ -145,15 +145,14 @@ $(function(){initNavTree('tictactoe__local__game__mdisubwindow_8h_source.html','
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">private</span> slots:</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordtype">void</span> onGridLabelClicked();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> onActualTurnChanged(<a class="code hl_class" href="class_match.html">Match</a>* sender, TicTacToePlayerEnum actualTurn);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> onGameStopped(<a class="code hl_class" href="class_match.html">Match</a> *sender);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> onActualTurnChanged(TicTacToePlayerEnum actualTurn);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> onGameStopped();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// TICTACTOE_LOCAL_GAME_MDISUBWINDOW_H</span></div>
-<div class="ttc" id="aclass_match_html"><div class="ttname"><a href="class_match.html">Match</a></div><div class="ttdef"><b>Definition</b> match.h:10</div></div>
-<div class="ttc" id="aclass_q_grid_label_html"><div class="ttname"><a href="class_q_grid_label.html">QGridLabel</a></div><div class="ttdef"><b>Definition</b> qgridlabel.h:9</div></div>
-<div class="ttc" id="aclass_ui_1_1_tic_tac_toe_local_game_html"><div class="ttname"><a href="class_ui_1_1_tic_tac_toe_local_game.html">Ui::TicTacToeLocalGame</a></div><div class="ttdef"><b>Definition</b> ui_tictactoe_local_game_mdisubwindow.h:54</div></div>
+<div class="ttc" id="aclass_match_html"><div class="ttname"><a href="class_match.html">Match</a></div><div class="ttdoc">Class that represents the Tic-Tac-Toe match.</div><div class="ttdef"><b>Definition</b> match.h:13</div></div>
+<div class="ttc" id="aclass_q_grid_label_html"><div class="ttname"><a href="class_q_grid_label.html">QGridLabel</a></div><div class="ttdoc">A label that contains grid informations.</div><div class="ttdef"><b>Definition</b> qgridlabel.h:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: GridPosition Class Reference</title>
+<title>Board Games QT: GridPosition Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -111,6 +111,11 @@ $(function(){initNavTree('class_grid_position.html',''); initResizable(true); })
   <div class="headertitle"><div class="title">GridPosition Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class that represents a position on the grid, using row and column.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="gridposition_8h_source.html">gridposition.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GridPosition:</div>
 <div class="dyncontent">
@@ -125,59 +130,184 @@ Inheritance diagram for GridPosition:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aed8e8b440e72c6190cde7773867c053b" id="r_aed8e8b440e72c6190cde7773867c053b"><td class="memItemLeft" align="right" valign="top"><a id="aed8e8b440e72c6190cde7773867c053b" name="aed8e8b440e72c6190cde7773867c053b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rowValueChangedSignal</b> (<a class="el" href="class_grid_position.html">GridPosition</a> *sender, const qint32 &amp;value)</td></tr>
-<tr class="separator:aed8e8b440e72c6190cde7773867c053b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea5f421b97169c60f7b63b4efd3b734e" id="r_aea5f421b97169c60f7b63b4efd3b734e"><td class="memItemLeft" align="right" valign="top"><a id="aea5f421b97169c60f7b63b4efd3b734e" name="aea5f421b97169c60f7b63b4efd3b734e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>columnValueChangedSignal</b> (<a class="el" href="class_grid_position.html">GridPosition</a> *sender, const qint32 &amp;value)</td></tr>
-<tr class="separator:aea5f421b97169c60f7b63b4efd3b734e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59aa723f89031083d1cefb3d0b489d18" id="r_a59aa723f89031083d1cefb3d0b489d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59aa723f89031083d1cefb3d0b489d18">rowValueChangedSignal</a> (const qint32 &amp;value)</td></tr>
+<tr class="memdesc:a59aa723f89031083d1cefb3d0b489d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted when the value of the row change.  <br /></td></tr>
+<tr class="separator:a59aa723f89031083d1cefb3d0b489d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79fcf2692a82a17bd11d63778214a7d9" id="r_a79fcf2692a82a17bd11d63778214a7d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79fcf2692a82a17bd11d63778214a7d9">columnValueChangedSignal</a> (const qint32 &amp;value)</td></tr>
+<tr class="memdesc:a79fcf2692a82a17bd11d63778214a7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted when the value of the column change.  <br /></td></tr>
+<tr class="separator:a79fcf2692a82a17bd11d63778214a7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a89298c34a2d723c9b7079a90dc9c454d" id="r_a89298c34a2d723c9b7079a90dc9c454d"><td class="memItemLeft" align="right" valign="top"><a id="a89298c34a2d723c9b7079a90dc9c454d" name="a89298c34a2d723c9b7079a90dc9c454d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GridPosition</b> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
-<tr class="separator:a89298c34a2d723c9b7079a90dc9c454d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7d4bd53c865e983d190201644745968" id="r_ae7d4bd53c865e983d190201644745968"><td class="memItemLeft" align="right" valign="top"><a id="ae7d4bd53c865e983d190201644745968" name="ae7d4bd53c865e983d190201644745968"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GridPosition</b> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;gridPosition)</td></tr>
-<tr class="separator:ae7d4bd53c865e983d190201644745968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55cb92da89bfc07b5f7d7b256be092da" id="r_a55cb92da89bfc07b5f7d7b256be092da"><td class="memItemLeft" align="right" valign="top"><a id="a55cb92da89bfc07b5f7d7b256be092da" name="a55cb92da89bfc07b5f7d7b256be092da"></a>
-qint32&#160;</td><td class="memItemRight" valign="bottom"><b>getRow</b> () const</td></tr>
+<tr class="memitem:abcf7f5f0fd17b0bd91be8ffab19bf34a" id="r_abcf7f5f0fd17b0bd91be8ffab19bf34a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:abcf7f5f0fd17b0bd91be8ffab19bf34a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. Initialize this class into position <code>(0, 0)</code>.  <br /></td></tr>
+<tr class="separator:abcf7f5f0fd17b0bd91be8ffab19bf34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86962432efa346cceb363c40f22f5a29" id="r_a86962432efa346cceb363c40f22f5a29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86962432efa346cceb363c40f22f5a29">GridPosition</a> (const qint32 &amp;row, const qint32 &amp;column, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a86962432efa346cceb363c40f22f5a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. Initialize this class into position <code>(row, column)</code>.  <br /></td></tr>
+<tr class="separator:a86962432efa346cceb363c40f22f5a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056c07aab89e343e84c309ae823295f5" id="r_a056c07aab89e343e84c309ae823295f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a056c07aab89e343e84c309ae823295f5">GridPosition</a> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;gridPosition, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a056c07aab89e343e84c309ae823295f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. Initialize this class on row and column position of <code>gridPosition</code>.  <br /></td></tr>
+<tr class="separator:a056c07aab89e343e84c309ae823295f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55cb92da89bfc07b5f7d7b256be092da" id="r_a55cb92da89bfc07b5f7d7b256be092da"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55cb92da89bfc07b5f7d7b256be092da">getRow</a> () const</td></tr>
+<tr class="memdesc:a55cb92da89bfc07b5f7d7b256be092da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the row of the grid position.  <br /></td></tr>
 <tr class="separator:a55cb92da89bfc07b5f7d7b256be092da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa3551be3c41dc4d505758375ae9d729" id="r_aaa3551be3c41dc4d505758375ae9d729"><td class="memItemLeft" align="right" valign="top"><a id="aaa3551be3c41dc4d505758375ae9d729" name="aaa3551be3c41dc4d505758375ae9d729"></a>
-qint32&#160;</td><td class="memItemRight" valign="bottom"><b>getColumn</b> () const</td></tr>
+<tr class="memitem:aaa3551be3c41dc4d505758375ae9d729" id="r_aaa3551be3c41dc4d505758375ae9d729"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa3551be3c41dc4d505758375ae9d729">getColumn</a> () const</td></tr>
+<tr class="memdesc:aaa3551be3c41dc4d505758375ae9d729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the column of the grid position.  <br /></td></tr>
 <tr class="separator:aaa3551be3c41dc4d505758375ae9d729"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac178f87f46339cbc8f092e50d006e039" id="r_ac178f87f46339cbc8f092e50d006e039"><td class="memItemLeft" align="right" valign="top"><a id="ac178f87f46339cbc8f092e50d006e039" name="ac178f87f46339cbc8f092e50d006e039"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setRow</b> (const qint32 &amp;value)</td></tr>
+<tr class="memitem:ac178f87f46339cbc8f092e50d006e039" id="r_ac178f87f46339cbc8f092e50d006e039"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac178f87f46339cbc8f092e50d006e039">setRow</a> (const qint32 &amp;value)</td></tr>
+<tr class="memdesc:ac178f87f46339cbc8f092e50d006e039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the row on this grid position. If the value is different from the previous one, the signal <code><a class="el" href="#a59aa723f89031083d1cefb3d0b489d18" title="Signal that is emitted when the value of the row change.">rowValueChangedSignal()</a></code> will be emitted.  <br /></td></tr>
 <tr class="separator:ac178f87f46339cbc8f092e50d006e039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a509cb330a56905ecbb7ba89efd250959" id="r_a509cb330a56905ecbb7ba89efd250959"><td class="memItemLeft" align="right" valign="top"><a id="a509cb330a56905ecbb7ba89efd250959" name="a509cb330a56905ecbb7ba89efd250959"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setColumn</b> (const qint32 &amp;value)</td></tr>
+<tr class="memitem:a509cb330a56905ecbb7ba89efd250959" id="r_a509cb330a56905ecbb7ba89efd250959"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a509cb330a56905ecbb7ba89efd250959">setColumn</a> (const qint32 &amp;value)</td></tr>
+<tr class="memdesc:a509cb330a56905ecbb7ba89efd250959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the row on this grid position. If the value is different from the previous one, the signal <code><a class="el" href="#a79fcf2692a82a17bd11d63778214a7d9" title="Signal that is emitted when the value of the column change.">columnValueChangedSignal()</a></code> will be emitted.  <br /></td></tr>
 <tr class="separator:a509cb330a56905ecbb7ba89efd250959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a882fdd6459f499c542c820fb7b365518" id="r_a882fdd6459f499c542c820fb7b365518"><td class="memItemLeft" align="right" valign="top"><a id="a882fdd6459f499c542c820fb7b365518" name="a882fdd6459f499c542c820fb7b365518"></a>
-qint32&#160;</td><td class="memItemRight" valign="bottom"><b>setPosition</b> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
+<tr class="memitem:a882fdd6459f499c542c820fb7b365518" id="r_a882fdd6459f499c542c820fb7b365518"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882fdd6459f499c542c820fb7b365518">setPosition</a> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
+<tr class="memdesc:a882fdd6459f499c542c820fb7b365518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new position given the row in <code>row</code> and the column in <code>column</code>.  <br /></td></tr>
 <tr class="separator:a882fdd6459f499c542c820fb7b365518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0dd604c0435274baa1f552a299d1e9c" id="r_ab0dd604c0435274baa1f552a299d1e9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0dd604c0435274baa1f552a299d1e9c">equals</a> (const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;item) const override</td></tr>
+<tr class="memdesc:ab0dd604c0435274baa1f552a299d1e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the position given in <code>item</code> is the same of this instance.  <br /></td></tr>
 <tr class="separator:ab0dd604c0435274baa1f552a299d1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02fe7ec6ca651870525a483f7ebbd29d" id="r_a02fe7ec6ca651870525a483f7ebbd29d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_grid_position.html">GridPosition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02fe7ec6ca651870525a483f7ebbd29d">clone</a> () override</td></tr>
+<tr class="memdesc:a02fe7ec6ca651870525a483f7ebbd29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a new instance of <code><a class="el" href="class_grid_position.html" title="A class that represents a position on the grid, using row and column.">GridPosition</a></code> with the same row and column position.  <br /></td></tr>
 <tr class="separator:a02fe7ec6ca651870525a483f7ebbd29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b220a560ad729541f4a82d734dbeab5" id="r_a8b220a560ad729541f4a82d734dbeab5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b220a560ad729541f4a82d734dbeab5">toString</a> () override</td></tr>
-<tr class="memdesc:a8b220a560ad729541f4a82d734dbeab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a string that represents the element.  <br /></td></tr>
+<tr class="memdesc:a8b220a560ad729541f4a82d734dbeab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that return a string that represents this instance.  <br /></td></tr>
 <tr class="separator:a8b220a560ad729541f4a82d734dbeab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a4b220c88fddde1fe49a21b203bc7ac46" id="r_a4b220c88fddde1fe49a21b203bc7ac46"><td class="memItemLeft" align="right" valign="top"><a id="a4b220c88fddde1fe49a21b203bc7ac46" name="a4b220c88fddde1fe49a21b203bc7ac46"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
+<tr class="memitem:a4b220c88fddde1fe49a21b203bc7ac46" id="r_a4b220c88fddde1fe49a21b203bc7ac46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b220c88fddde1fe49a21b203bc7ac46">initialize</a> (const qint32 &amp;row, const qint32 &amp;column)</td></tr>
+<tr class="memdesc:a4b220c88fddde1fe49a21b203bc7ac46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all variables in this class.  <br /></td></tr>
 <tr class="separator:a4b220c88fddde1fe49a21b203bc7ac46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac356f42b381f40231e64f688e8267721" id="r_ac356f42b381f40231e64f688e8267721"><td class="memItemLeft" align="right" valign="top"><a id="ac356f42b381f40231e64f688e8267721" name="ac356f42b381f40231e64f688e8267721"></a>
 qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_row</b></td></tr>
+<tr class="memdesc:ac356f42b381f40231e64f688e8267721"><td class="mdescLeft">&#160;</td><td class="mdescRight">The row position. <br /></td></tr>
 <tr class="separator:ac356f42b381f40231e64f688e8267721"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8159215d95a0d47eb6d5f67a032a8701" id="r_a8159215d95a0d47eb6d5f67a032a8701"><td class="memItemLeft" align="right" valign="top"><a id="a8159215d95a0d47eb6d5f67a032a8701" name="a8159215d95a0d47eb6d5f67a032a8701"></a>
 qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_column</b></td></tr>
+<tr class="memdesc:a8159215d95a0d47eb6d5f67a032a8701"><td class="mdescLeft">&#160;</td><td class="mdescRight">The column position. <br /></td></tr>
 <tr class="separator:a8159215d95a0d47eb6d5f67a032a8701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that represents a position on the grid, using row and column. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abcf7f5f0fd17b0bd91be8ffab19bf34a" name="abcf7f5f0fd17b0bd91be8ffab19bf34a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf7f5f0fd17b0bd91be8ffab19bf34a">&#9670;&#160;</a></span>GridPosition() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GridPosition::GridPosition </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Class constructor. Initialize this class into position <code>(0, 0)</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The object where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a86962432efa346cceb363c40f22f5a29" name="a86962432efa346cceb363c40f22f5a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86962432efa346cceb363c40f22f5a29">&#9670;&#160;</a></span>GridPosition() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GridPosition::GridPosition </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>column</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Class constructor. Initialize this class into position <code>(row, column)</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Row of the grid position. </td></tr>
+    <tr><td class="paramname">column</td><td>Column of the grid position. </td></tr>
+    <tr><td class="paramname">parent</td><td>The object where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a056c07aab89e343e84c309ae823295f5" name="a056c07aab89e343e84c309ae823295f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056c07aab89e343e84c309ae823295f5">&#9670;&#160;</a></span>GridPosition() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GridPosition::GridPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_grid_position.html">GridPosition</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>gridPosition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Class constructor. Initialize this class on row and column position of <code>gridPosition</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gridPosition</td><td>The grid position where you want to retrieve row and column. </td></tr>
+    <tr><td class="paramname">parent</td><td>The object where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a02fe7ec6ca651870525a483f7ebbd29d" name="a02fe7ec6ca651870525a483f7ebbd29d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02fe7ec6ca651870525a483f7ebbd29d">&#9670;&#160;</a></span>clone()</h2>
@@ -202,7 +332,43 @@ qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_column</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_cloneable.html">Cloneable&lt; GridPosition * &gt;</a>.</p>
+<p>Return a new instance of <code><a class="el" href="class_grid_position.html" title="A class that represents a position on the grid, using row and column.">GridPosition</a></code> with the same row and column position. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of this instance. </dd></dl>
+
+<p>Implements <a class="el" href="class_cloneable.html#a9f7b82bd14881a0914ca2198acf434e9">Cloneable&lt; GridPosition * &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a79fcf2692a82a17bd11d63778214a7d9" name="a79fcf2692a82a17bd11d63778214a7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79fcf2692a82a17bd11d63778214a7d9">&#9670;&#160;</a></span>columnValueChangedSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridPosition::columnValueChangedSignal </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal that is emitted when the value of the column change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The actual value of the column. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -229,7 +395,217 @@ qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_column</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_equatable.html">Equatable&lt; GridPosition &gt;</a>.</p>
+<p>Check if the position given in <code>item</code> is the same of this instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The item which compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the items are equal, <code>false</code> otherwise. </dd></dl>
+
+<p>Implements <a class="el" href="class_equatable.html#a9c31bd8613d7519407064556e4092226">Equatable&lt; GridPosition &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aaa3551be3c41dc4d505758375ae9d729" name="aaa3551be3c41dc4d505758375ae9d729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3551be3c41dc4d505758375ae9d729">&#9670;&#160;</a></span>getColumn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint32 GridPosition::getColumn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the column of the grid position. </p>
+<dl class="section return"><dt>Returns</dt><dd>An integer that is the column of the grid position. </dd></dl>
+
+</div>
+</div>
+<a id="a55cb92da89bfc07b5f7d7b256be092da" name="a55cb92da89bfc07b5f7d7b256be092da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55cb92da89bfc07b5f7d7b256be092da">&#9670;&#160;</a></span>getRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint32 GridPosition::getRow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the row of the grid position. </p>
+<dl class="section return"><dt>Returns</dt><dd>An integer that is the row of the grid position. </dd></dl>
+
+</div>
+</div>
+<a id="a4b220c88fddde1fe49a21b203bc7ac46" name="a4b220c88fddde1fe49a21b203bc7ac46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b220c88fddde1fe49a21b203bc7ac46">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridPosition::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize all variables in this class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The row of the grid position. </td></tr>
+    <tr><td class="paramname">column</td><td>The column of the grid position. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a59aa723f89031083d1cefb3d0b489d18" name="a59aa723f89031083d1cefb3d0b489d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59aa723f89031083d1cefb3d0b489d18">&#9670;&#160;</a></span>rowValueChangedSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridPosition::rowValueChangedSignal </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal that is emitted when the value of the row change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The actual value of the row. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a509cb330a56905ecbb7ba89efd250959" name="a509cb330a56905ecbb7ba89efd250959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509cb330a56905ecbb7ba89efd250959">&#9670;&#160;</a></span>setColumn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GridPosition::setColumn </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the row on this grid position. If the value is different from the previous one, the signal <code><a class="el" href="#a79fcf2692a82a17bd11d63778214a7d9" title="Signal that is emitted when the value of the column change.">columnValueChangedSignal()</a></code> will be emitted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value of the column that you want to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the inserted value is different from the previous one, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a882fdd6459f499c542c820fb7b365518" name="a882fdd6459f499c542c820fb7b365518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882fdd6459f499c542c820fb7b365518">&#9670;&#160;</a></span>setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint32 GridPosition::setPosition </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a new position given the row in <code>row</code> and the column in <code>column</code>. </p>
+<p>If the row is different from the previous one, the signal <code><a class="el" href="#a59aa723f89031083d1cefb3d0b489d18" title="Signal that is emitted when the value of the row change.">rowValueChangedSignal()</a></code> will be emitted. If the column is different from the previous one, the signal <code><a class="el" href="#a79fcf2692a82a17bd11d63778214a7d9" title="Signal that is emitted when the value of the column change.">columnValueChangedSignal()</a></code> will be emitted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The value of the row that you want to set. </td></tr>
+    <tr><td class="paramname">column</td><td>The value of the column that you want to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A bitwise status as following: <ul>
+<li>
+<code>[0]</code> → The row is different from the previous one. </li>
+<li>
+<code>[1]</code> → The column is different from the previous one. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ac178f87f46339cbc8f092e50d006e039" name="ac178f87f46339cbc8f092e50d006e039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac178f87f46339cbc8f092e50d006e039">&#9670;&#160;</a></span>setRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GridPosition::setRow </td>
+          <td>(</td>
+          <td class="paramtype">const qint32 &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the row on this grid position. If the value is different from the previous one, the signal <code><a class="el" href="#a59aa723f89031083d1cefb3d0b489d18" title="Signal that is emitted when the value of the row change.">rowValueChangedSignal()</a></code> will be emitted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value of the row that you want to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the inserted value is different from the previous one, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -256,8 +632,8 @@ qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_column</b></td></
 </table>
 </div><div class="memdoc">
 
-<p>Retrieve a string that represents the element. </p>
-<dl class="section return"><dt>Returns</dt><dd>A string that represents the element. </dd></dl>
+<p>Function that return a string that represents this instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string that represents this istance. </dd></dl>
 
 <p>Implements <a class="el" href="class_to_stringable.html#adb4042af5036852930041a6a254386d6">ToStringable</a>.</p>
 
@@ -265,7 +641,6 @@ qint32&#160;</td><td class="memItemRight" valign="bottom"><b>m_column</b></td></
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/objects/<a class="el" href="gridposition_8h_source.html">gridposition.h</a></li>
-<li>build/Desktop_Qt_6_8_2_MinGW_64_bit-Debug/debug/<b>moc_gridposition.cpp</b></li>
 <li>classes/objects/<b>gridposition.cpp</b></li>
 </ul>
 </div><!-- contents -->

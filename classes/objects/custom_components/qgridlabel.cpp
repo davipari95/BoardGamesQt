@@ -22,12 +22,12 @@ QGridLabel::~QGridLabel()
 
 GridPosition *QGridLabel::getGridPosition()
 {
-    return m_gridPosition.get();
+    return m_gridPosition;
 }
 
 void QGridLabel::init(const qint32 &row, const qint32 &column)
 {
-    m_gridPosition = std::make_unique<GridPosition>(row, column);
+    m_gridPosition = new GridPosition(row, column, this);
 }
 
 void QGridLabel::mouseReleaseEvent(QMouseEvent *ev)

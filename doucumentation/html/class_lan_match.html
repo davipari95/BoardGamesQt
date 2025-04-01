@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: LanMatch Class Reference</title>
+<title>Board Games QT: LanMatch Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,103 +110,382 @@ $(function(){initNavTree('class_lan_match.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">LanMatch Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class represents a Tic-Tac-Toe LAN match.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="lan__match_8h_source.html">lan_match.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LanMatch:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_lan_match.png" usemap="#LanMatch_map" alt=""/>
   <map id="LanMatch_map" name="LanMatch_map">
-<area href="class_match.html" alt="Match" shape="rect" coords="0,56,68,80"/>
+<area href="class_match.html" title="Class that represents the Tic-Tac-Toe match." alt="Match" shape="rect" coords="0,56,68,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af20b8e854d55f1dbf5349e5eab299ebe" id="r_af20b8e854d55f1dbf5349e5eab299ebe"><td class="memItemLeft" align="right" valign="top"><a id="af20b8e854d55f1dbf5349e5eab299ebe" name="af20b8e854d55f1dbf5349e5eab299ebe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LanMatch</b> (const TicTacToePlayerEnum clientToken, const QString &amp;clientPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memitem:af20b8e854d55f1dbf5349e5eab299ebe" id="r_af20b8e854d55f1dbf5349e5eab299ebe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af20b8e854d55f1dbf5349e5eab299ebe">LanMatch</a> (const TicTacToePlayerEnum clientToken, const QString &amp;clientPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:af20b8e854d55f1dbf5349e5eab299ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor.  <br /></td></tr>
 <tr class="separator:af20b8e854d55f1dbf5349e5eab299ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb4da8f757465da8b5363690b278d0fc" id="r_aeb4da8f757465da8b5363690b278d0fc"><td class="memItemLeft" align="right" valign="top"><a id="aeb4da8f757465da8b5363690b278d0fc" name="aeb4da8f757465da8b5363690b278d0fc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setPlayerName</b> (const TicTacToePlayerEnum token, const QString &amp;playerName)</td></tr>
+<tr class="memitem:aeb4da8f757465da8b5363690b278d0fc" id="r_aeb4da8f757465da8b5363690b278d0fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb4da8f757465da8b5363690b278d0fc">setPlayerName</a> (const TicTacToePlayerEnum token, const QString &amp;playerName)</td></tr>
+<tr class="memdesc:aeb4da8f757465da8b5363690b278d0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the player name of the player that plays the token given in <code>token</code>.  <br /></td></tr>
 <tr class="separator:aeb4da8f757465da8b5363690b278d0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24f9e2bcc06c1248738488237f0b2382" id="r_a24f9e2bcc06c1248738488237f0b2382"><td class="memItemLeft" align="right" valign="top"><a id="a24f9e2bcc06c1248738488237f0b2382" name="a24f9e2bcc06c1248738488237f0b2382"></a>
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>getClientToken</b> () const</td></tr>
+<tr class="memitem:a24f9e2bcc06c1248738488237f0b2382" id="r_a24f9e2bcc06c1248738488237f0b2382"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24f9e2bcc06c1248738488237f0b2382">getClientToken</a> () const</td></tr>
+<tr class="memdesc:a24f9e2bcc06c1248738488237f0b2382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the token of the client where this class is initialized.  <br /></td></tr>
 <tr class="separator:a24f9e2bcc06c1248738488237f0b2382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92fdb2df9f73dccb60d87b7f7a6b70cd" id="r_a92fdb2df9f73dccb60d87b7f7a6b70cd"><td class="memItemLeft" align="right" valign="top"><a id="a92fdb2df9f73dccb60d87b7f7a6b70cd" name="a92fdb2df9f73dccb60d87b7f7a6b70cd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setClientToken</b> (const TicTacToePlayerEnum &amp;value)</td></tr>
+<tr class="memitem:a92fdb2df9f73dccb60d87b7f7a6b70cd" id="r_a92fdb2df9f73dccb60d87b7f7a6b70cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92fdb2df9f73dccb60d87b7f7a6b70cd">setClientToken</a> (const TicTacToePlayerEnum &amp;value)</td></tr>
+<tr class="memdesc:a92fdb2df9f73dccb60d87b7f7a6b70cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the token of the client where this class is initialized.  <br /></td></tr>
 <tr class="separator:a92fdb2df9f73dccb60d87b7f7a6b70cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cbcaee5f4f5fe74c01099a492552e93" id="r_a7cbcaee5f4f5fe74c01099a492552e93"><td class="memItemLeft" align="right" valign="top"><a id="a7cbcaee5f4f5fe74c01099a492552e93" name="a7cbcaee5f4f5fe74c01099a492552e93"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getClientPlayerInfo</b> (TicTacToePlayerEnum &amp;out_token, QString &amp;out_playerName) const</td></tr>
+<tr class="memitem:a7cbcaee5f4f5fe74c01099a492552e93" id="r_a7cbcaee5f4f5fe74c01099a492552e93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cbcaee5f4f5fe74c01099a492552e93">getClientPlayerInfo</a> (TicTacToePlayerEnum &amp;out_token, QString &amp;out_playerName) const</td></tr>
+<tr class="memdesc:a7cbcaee5f4f5fe74c01099a492552e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the token and the name of the player that is managing the client where this class is initialized.  <br /></td></tr>
 <tr class="separator:a7cbcaee5f4f5fe74c01099a492552e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c890f8442dcc264a29d4641ff4e9bd" id="r_a31c890f8442dcc264a29d4641ff4e9bd"><td class="memItemLeft" align="right" valign="top"><a id="a31c890f8442dcc264a29d4641ff4e9bd" name="a31c890f8442dcc264a29d4641ff4e9bd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isGameReady</b> () const</td></tr>
+<tr class="memitem:a31c890f8442dcc264a29d4641ff4e9bd" id="r_a31c890f8442dcc264a29d4641ff4e9bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31c890f8442dcc264a29d4641ff4e9bd">isGameReady</a> () const</td></tr>
+<tr class="memdesc:a31c890f8442dcc264a29d4641ff4e9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if game is ready.  <br /></td></tr>
 <tr class="separator:a31c890f8442dcc264a29d4641ff4e9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08550081da5d4ef897eaea33308c9150" id="r_a08550081da5d4ef897eaea33308c9150"><td class="memItemLeft" align="right" valign="top"><a id="a08550081da5d4ef897eaea33308c9150" name="a08550081da5d4ef897eaea33308c9150"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setGameIsReady</b> (const bool &amp;value)</td></tr>
+<tr class="memitem:a08550081da5d4ef897eaea33308c9150" id="r_a08550081da5d4ef897eaea33308c9150"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08550081da5d4ef897eaea33308c9150">setGameIsReady</a> (const bool &amp;value)</td></tr>
+<tr class="memdesc:a08550081da5d4ef897eaea33308c9150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the game ready with the value given in <code>value</code>.  <br /></td></tr>
 <tr class="separator:a08550081da5d4ef897eaea33308c9150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac257dbbd8592f788f4bda2ae120d4e75" id="r_ac257dbbd8592f788f4bda2ae120d4e75"><td class="memItemLeft" align="right" valign="top"><a id="ac257dbbd8592f788f4bda2ae120d4e75" name="ac257dbbd8592f788f4bda2ae120d4e75"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setActualTurn</b> (const TicTacToePlayerEnum &amp;value)</td></tr>
+<tr class="memitem:ac257dbbd8592f788f4bda2ae120d4e75" id="r_ac257dbbd8592f788f4bda2ae120d4e75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac257dbbd8592f788f4bda2ae120d4e75">setActualTurn</a> (const TicTacToePlayerEnum &amp;value)</td></tr>
+<tr class="memdesc:ac257dbbd8592f788f4bda2ae120d4e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the actual turn of this match.  <br /></td></tr>
 <tr class="separator:ac257dbbd8592f788f4bda2ae120d4e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_match"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_match')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_match.html">Match</a></td></tr>
-<tr class="memitem:afb09bc784d0ea5b43b4e2d488976f2b4 inherit pub_methods_class_match" id="r_afb09bc784d0ea5b43b4e2d488976f2b4"><td class="memItemLeft" align="right" valign="top">
-&#160;</td><td class="memItemRight" valign="bottom"><b>Match</b> (const QString &amp;xPlayerName, const QString &amp;oPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memitem:afb09bc784d0ea5b43b4e2d488976f2b4 inherit pub_methods_class_match" id="r_afb09bc784d0ea5b43b4e2d488976f2b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#afb09bc784d0ea5b43b4e2d488976f2b4">Match</a> (const QString &amp;xPlayerName, const QString &amp;oPlayerName, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:afb09bc784d0ea5b43b4e2d488976f2b4 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class initializer.  <br /></td></tr>
 <tr class="separator:afb09bc784d0ea5b43b4e2d488976f2b4 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b4f9777d467e4c55b6664d3767156dd inherit pub_methods_class_match" id="r_a2b4f9777d467e4c55b6664d3767156dd"><td class="memItemLeft" align="right" valign="top">
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>getActualTurn</b> ()</td></tr>
+<tr class="memitem:a2b4f9777d467e4c55b6664d3767156dd inherit pub_methods_class_match" id="r_a2b4f9777d467e4c55b6664d3767156dd"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#a2b4f9777d467e4c55b6664d3767156dd">getActualTurn</a> ()</td></tr>
+<tr class="memdesc:a2b4f9777d467e4c55b6664d3767156dd inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the actual turn (cross or circle).  <br /></td></tr>
 <tr class="separator:a2b4f9777d467e4c55b6664d3767156dd inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33fb7d91ac09ed4ae7fdc61c33e4d07 inherit pub_methods_class_match" id="r_aa33fb7d91ac09ed4ae7fdc61c33e4d07"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>switchTurn</b> ()</td></tr>
+<tr class="memdesc:aa33fb7d91ac09ed4ae7fdc61c33e4d07 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the turn from cross to circle and vice versa. <br /></td></tr>
 <tr class="separator:aa33fb7d91ac09ed4ae7fdc61c33e4d07 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add34f79de6021006ab1542ae0dd4d662 inherit pub_methods_class_match" id="r_add34f79de6021006ab1542ae0dd4d662"><td class="memItemLeft" align="right" valign="top">
-<a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getBoard</b> ()</td></tr>
+<tr class="memitem:add34f79de6021006ab1542ae0dd4d662 inherit pub_methods_class_match" id="r_add34f79de6021006ab1542ae0dd4d662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_board.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#add34f79de6021006ab1542ae0dd4d662">getBoard</a> ()</td></tr>
+<tr class="memdesc:add34f79de6021006ab1542ae0dd4d662 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the board of this match.  <br /></td></tr>
 <tr class="separator:add34f79de6021006ab1542ae0dd4d662 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9aa78ece3310777df365dea7e65b53a inherit pub_methods_class_match" id="r_aa9aa78ece3310777df365dea7e65b53a"><td class="memItemLeft" align="right" valign="top">
-TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>checkGameOver</b> ()</td></tr>
+<tr class="memitem:aa9aa78ece3310777df365dea7e65b53a inherit pub_methods_class_match" id="r_aa9aa78ece3310777df365dea7e65b53a"><td class="memItemLeft" align="right" valign="top">TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#aa9aa78ece3310777df365dea7e65b53a">checkGameOver</a> ()</td></tr>
+<tr class="memdesc:aa9aa78ece3310777df365dea7e65b53a inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a game over.  <br /></td></tr>
 <tr class="separator:aa9aa78ece3310777df365dea7e65b53a inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebe11bca186cf124871d860bce726d7e inherit pub_methods_class_match" id="r_aebe11bca186cf124871d860bce726d7e"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerName</b> (const TicTacToePlayerEnum token, QString &amp;out_payerName) const</td></tr>
+<tr class="memitem:aebe11bca186cf124871d860bce726d7e inherit pub_methods_class_match" id="r_aebe11bca186cf124871d860bce726d7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#aebe11bca186cf124871d860bce726d7e">getPlayerName</a> (const TicTacToePlayerEnum token, QString &amp;out_payerName) const</td></tr>
+<tr class="memdesc:aebe11bca186cf124871d860bce726d7e inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the player name that plays token give in <code>token</code>.  <br /></td></tr>
 <tr class="separator:aebe11bca186cf124871d860bce726d7e inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4607df723cdd07e6b495b224888718e5 inherit pub_methods_class_match" id="r_a4607df723cdd07e6b495b224888718e5"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>restart</b> (const TicTacToePlayerEnum &amp;gameStartsWith)</td></tr>
+<tr class="memitem:a4607df723cdd07e6b495b224888718e5 inherit pub_methods_class_match" id="r_a4607df723cdd07e6b495b224888718e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#a4607df723cdd07e6b495b224888718e5">restart</a> (const TicTacToePlayerEnum &amp;gameStartsWith)</td></tr>
+<tr class="memdesc:a4607df723cdd07e6b495b224888718e5 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a new match.  <br /></td></tr>
 <tr class="separator:a4607df723cdd07e6b495b224888718e5 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc87f7305065f95907953be25d0bb15 inherit pub_methods_class_match" id="r_a1fc87f7305065f95907953be25d0bb15"><td class="memItemLeft" align="right" valign="top">
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stopsGame</b> ()</td></tr>
+<tr class="memdesc:a1fc87f7305065f95907953be25d0bb15 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the game. <br /></td></tr>
 <tr class="separator:a1fc87f7305065f95907953be25d0bb15 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6404849b470a436807523c5b0d0cd947 inherit pub_methods_class_match" id="r_a6404849b470a436807523c5b0d0cd947"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isGameStopped</b> () const</td></tr>
+<tr class="memitem:a6404849b470a436807523c5b0d0cd947 inherit pub_methods_class_match" id="r_a6404849b470a436807523c5b0d0cd947"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#a6404849b470a436807523c5b0d0cd947">isGameStopped</a> () const</td></tr>
+<tr class="memdesc:a6404849b470a436807523c5b0d0cd947 inherit pub_methods_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the game is stopped.  <br /></td></tr>
 <tr class="separator:a6404849b470a436807523c5b0d0cd947 inherit pub_methods_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a1035a0e673cdc4435a4cbb13aba63785" id="r_a1035a0e673cdc4435a4cbb13aba63785"><td class="memItemLeft" align="right" valign="top"><a id="a1035a0e673cdc4435a4cbb13aba63785" name="a1035a0e673cdc4435a4cbb13aba63785"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> (const TicTacToePlayerEnum &amp;clientToken, const QString &amp;clientPlayerName)</td></tr>
+<tr class="memitem:a1035a0e673cdc4435a4cbb13aba63785" id="r_a1035a0e673cdc4435a4cbb13aba63785"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1035a0e673cdc4435a4cbb13aba63785">initialize</a> (const TicTacToePlayerEnum &amp;clientToken, const QString &amp;clientPlayerName)</td></tr>
+<tr class="memdesc:a1035a0e673cdc4435a4cbb13aba63785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all variables of this class.  <br /></td></tr>
 <tr class="separator:a1035a0e673cdc4435a4cbb13aba63785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0d021a7b0a5d38629a4dae892b54be7b" id="r_a0d021a7b0a5d38629a4dae892b54be7b"><td class="memItemLeft" align="right" valign="top"><a id="a0d021a7b0a5d38629a4dae892b54be7b" name="a0d021a7b0a5d38629a4dae892b54be7b"></a>
 TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientToken</b></td></tr>
+<tr class="memdesc:a0d021a7b0a5d38629a4dae892b54be7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The token of the client player where this class is intialized. <br /></td></tr>
 <tr class="separator:a0d021a7b0a5d38629a4dae892b54be7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8cd9e2a42a9b7ec8c881b92b936fa56" id="r_ae8cd9e2a42a9b7ec8c881b92b936fa56"><td class="memItemLeft" align="right" valign="top"><a id="ae8cd9e2a42a9b7ec8c881b92b936fa56" name="ae8cd9e2a42a9b7ec8c881b92b936fa56"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_gameIsReady</b></td></tr>
+<tr class="memdesc:ae8cd9e2a42a9b7ec8c881b92b936fa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state of game ready. <br /></td></tr>
 <tr class="separator:ae8cd9e2a42a9b7ec8c881b92b936fa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_match"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_class_match')"><img src="closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="class_match.html">Match</a></td></tr>
-<tr class="memitem:aeb928cb29d7f92920f9f1b04ee2b33f7 inherit signals_class_match" id="r_aeb928cb29d7f92920f9f1b04ee2b33f7"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>actualTurnChangedSignal</b> (<a class="el" href="class_match.html">Match</a> *sender, TicTacToePlayerEnum actualTurn)</td></tr>
-<tr class="separator:aeb928cb29d7f92920f9f1b04ee2b33f7 inherit signals_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f0dc9d3eb4127a3616fb38a8d91a59 inherit signals_class_match" id="r_ae6f0dc9d3eb4127a3616fb38a8d91a59"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gameStoppedSignal</b> (<a class="el" href="class_match.html">Match</a> *sender)</td></tr>
-<tr class="separator:ae6f0dc9d3eb4127a3616fb38a8d91a59 inherit signals_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14c41aa4062151471975110b3429086 inherit signals_class_match" id="r_ac14c41aa4062151471975110b3429086"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_match.html#ac14c41aa4062151471975110b3429086">actualTurnChangedSignal</a> (TicTacToePlayerEnum actualTurn)</td></tr>
+<tr class="memdesc:ac14c41aa4062151471975110b3429086 inherit signals_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted after the turn is changed.  <br /></td></tr>
+<tr class="separator:ac14c41aa4062151471975110b3429086 inherit signals_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f48351a9fbc34b052aebd136c306df9 inherit signals_class_match" id="r_a7f48351a9fbc34b052aebd136c306df9"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>gameStoppedSignal</b> ()</td></tr>
+<tr class="memdesc:a7f48351a9fbc34b052aebd136c306df9 inherit signals_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is used when the came is completely stopped. <br /></td></tr>
+<tr class="separator:a7f48351a9fbc34b052aebd136c306df9 inherit signals_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_match"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_match')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_match.html">Match</a></td></tr>
 <tr class="memitem:a58aba69f5a7f666cfca3b80fee8007e9 inherit pro_attribs_class_match" id="r_a58aba69f5a7f666cfca3b80fee8007e9"><td class="memItemLeft" align="right" valign="top">
 QMap&lt; TicTacToePlayerEnum, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_playerNames</b></td></tr>
+<tr class="memdesc:a58aba69f5a7f666cfca3b80fee8007e9 inherit pro_attribs_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Players of the match. <br /></td></tr>
 <tr class="separator:a58aba69f5a7f666cfca3b80fee8007e9 inherit pro_attribs_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1fb4ac895b2d7fcde474f0ab799731 inherit pro_attribs_class_match" id="r_afa1fb4ac895b2d7fcde474f0ab799731"><td class="memItemLeft" align="right" valign="top">
 TicTacToePlayerEnum&#160;</td><td class="memItemRight" valign="bottom"><b>m_actTurn</b></td></tr>
+<tr class="memdesc:afa1fb4ac895b2d7fcde474f0ab799731 inherit pro_attribs_class_match"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual turn (cross or circle). <br /></td></tr>
 <tr class="separator:afa1fb4ac895b2d7fcde474f0ab799731 inherit pro_attribs_class_match"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class represents a Tic-Tac-Toe LAN match. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af20b8e854d55f1dbf5349e5eab299ebe" name="af20b8e854d55f1dbf5349e5eab299ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20b8e854d55f1dbf5349e5eab299ebe">&#9670;&#160;</a></span>LanMatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LanMatch::LanMatch </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>clientToken</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>clientPlayerName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Class constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clientToken</td><td>The token of the client where this class is initialized. </td></tr>
+    <tr><td class="paramname">clientPlayerName</td><td>The username of the client where this class is initialized </td></tr>
+    <tr><td class="paramname">parent</td><td>The object where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7cbcaee5f4f5fe74c01099a492552e93" name="a7cbcaee5f4f5fe74c01099a492552e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cbcaee5f4f5fe74c01099a492552e93">&#9670;&#160;</a></span>getClientPlayerInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::getClientPlayerInfo </td>
+          <td>(</td>
+          <td class="paramtype">TicTacToePlayerEnum &amp;</td>          <td class="paramname"><span class="paramname"><em>out_token</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out_playerName</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the token and the name of the player that is managing the client where this class is initialized. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_token</td><td>The token of the player. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_playerName</td><td>The name of the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the player name exists in this contest, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a24f9e2bcc06c1248738488237f0b2382" name="a24f9e2bcc06c1248738488237f0b2382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f9e2bcc06c1248738488237f0b2382">&#9670;&#160;</a></span>getClientToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TicTacToePlayerEnum LanMatch::getClientToken </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve the token of the client where this class is initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd>The token of the client where this class is initialized. </dd></dl>
+
+</div>
+</div>
+<a id="a1035a0e673cdc4435a4cbb13aba63785" name="a1035a0e673cdc4435a4cbb13aba63785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1035a0e673cdc4435a4cbb13aba63785">&#9670;&#160;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum &amp;</td>          <td class="paramname"><span class="paramname"><em>clientToken</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>clientPlayerName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize all variables of this class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">clientToken</td><td>The token of the client player where this class is initialized. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clientPlayerName</td><td>The name of the client player where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns always <code>true</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a31c890f8442dcc264a29d4641ff4e9bd" name="a31c890f8442dcc264a29d4641ff4e9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c890f8442dcc264a29d4641ff4e9bd">&#9670;&#160;</a></span>isGameReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::isGameReady </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if game is ready. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if game is ready, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ac257dbbd8592f788f4bda2ae120d4e75" name="ac257dbbd8592f788f4bda2ae120d4e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac257dbbd8592f788f4bda2ae120d4e75">&#9670;&#160;</a></span>setActualTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::setActualTurn </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the actual turn of this match. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The new turn of this match. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the value is different from the previous one, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a92fdb2df9f73dccb60d87b7f7a6b70cd" name="a92fdb2df9f73dccb60d87b7f7a6b70cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fdb2df9f73dccb60d87b7f7a6b70cd">&#9670;&#160;</a></span>setClientToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::setClientToken </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the token of the client where this class is initialized. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The token of the client where this class is initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the value is different from the previous one, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a08550081da5d4ef897eaea33308c9150" name="a08550081da5d4ef897eaea33308c9150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08550081da5d4ef897eaea33308c9150">&#9670;&#160;</a></span>setGameIsReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::setGameIsReady </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the game ready with the value given in <code>value</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of game ready to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if value is different from the previous one, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="aeb4da8f757465da8b5363690b278d0fc" name="aeb4da8f757465da8b5363690b278d0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4da8f757465da8b5363690b278d0fc">&#9670;&#160;</a></span>setPlayerName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LanMatch::setPlayerName </td>
+          <td>(</td>
+          <td class="paramtype">const TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>playerName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the player name of the player that plays the token given in <code>token</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">token</td><td>The token of the player you want to change the name of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">playerName</td><td>The name of the player of the token given in <code>token</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns always <code>true</code>. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/objects/tictactoe/matches/<a class="el" href="lan__match_8h_source.html">lan_match.h</a></li>
 <li>classes/objects/tictactoe/matches/<b>lan_match.cpp</b></li>

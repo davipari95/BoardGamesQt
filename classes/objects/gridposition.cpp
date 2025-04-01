@@ -1,19 +1,19 @@
 #include "gridposition.h"
 
-GridPosition::GridPosition()
-    : QObject{nullptr}
+GridPosition::GridPosition(QObject *parent)
+    : QObject{parent}
 {
     initialize(0, 0);
 }
 
-GridPosition::GridPosition(const qint32 &row, const qint32 &column)
-    : QObject {nullptr}
+GridPosition::GridPosition(const qint32 &row, const qint32 &column, QObject *parent)
+    : QObject {parent}
 {
     initialize(row, column);
 }
 
-GridPosition::GridPosition(const GridPosition &gridPosition)
-    : QObject {nullptr}
+GridPosition::GridPosition(const GridPosition &gridPosition, QObject *parent)
+    : QObject {parent}
 {
     initialize(gridPosition.getRow(), gridPosition.getColumn());
 }
@@ -34,7 +34,7 @@ bool GridPosition::setRow(const qint32 &value)
     {
         m_row = value;
 
-        emit rowValueChangedSignal(this, value);
+        emit rowValueChangedSignal(value);
 
         return true;
     }
@@ -48,7 +48,7 @@ bool GridPosition::setColumn(const qint32 &value)
     {
         m_column = value;
 
-        emit columnValueChangedSignal(this, value);
+        emit columnValueChangedSignal(value);
 
         return true;
     }

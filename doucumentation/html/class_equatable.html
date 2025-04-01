@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: Equatable&lt; T &gt; Class Template Reference</title>
+<title>Board Games QT: Equatable&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -108,13 +108,60 @@ $(function(){initNavTree('class_equatable.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Equatable&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Virtual class. Inherting this class means that the inherted class can be compared with another class of the same type.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="equatable_8h_source.html">equatable.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c31bd8613d7519407064556e4092226" id="r_a9c31bd8613d7519407064556e4092226"><td class="memItemLeft" align="right" valign="top"><a id="a9c31bd8613d7519407064556e4092226" name="a9c31bd8613d7519407064556e4092226"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const T &amp;item) const =0</td></tr>
+<tr class="memitem:a9c31bd8613d7519407064556e4092226" id="r_a9c31bd8613d7519407064556e4092226"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c31bd8613d7519407064556e4092226">equals</a> (const T &amp;item) const =0</td></tr>
+<tr class="memdesc:a9c31bd8613d7519407064556e4092226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the content of the two classes are equals.  <br /></td></tr>
 <tr class="separator:a9c31bd8613d7519407064556e4092226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class Equatable&lt; T &gt;</div><p>Virtual class. Inherting this class means that the inherted class can be compared with another class of the same type. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9c31bd8613d7519407064556e4092226" name="a9c31bd8613d7519407064556e4092226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c31bd8613d7519407064556e4092226">&#9670;&#160;</a></span>equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_equatable.html">Equatable</a>&lt; T &gt;::equals </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the content of the two classes are equals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Item used for compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <code>true</code> if the content are equals, <code>false</code> otherwise. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_grid_position.html#ab0dd604c0435274baa1f552a299d1e9c">GridPosition</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>classes/virtuals/<a class="el" href="equatable_8h_source.html">equatable.h</a></li>
 </ul>

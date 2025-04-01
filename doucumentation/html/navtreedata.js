@@ -24,14 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "BoardGamesQt", "index.html", [
-    [ "Board Games Qt", "md__readme.html", [
-      [ "Info", "md__readme.html#autotoc_md1", null ],
-      [ "Release note", "md__readme.html#autotoc_md2", null ]
-    ] ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
-    ] ],
+  [ "Board Games QT", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

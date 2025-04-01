@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: classes/objects/tictactoe/matches/lan_match.h Source File</title>
+<title>Board Games QT: classes/objects/tictactoe/matches/lan_match.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -110,35 +110,47 @@ $(function(){initNavTree('lan__match_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;classes/objects/tictactoe/match.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_lan_match.html">    7</a></span><span class="keyword">class </span>LanMatch : <span class="keyword">public</span> Match</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        Q_OBJECT</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="comment">//Constructor</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">explicit</span> LanMatch(<span class="keyword">const</span> TicTacToePlayerEnum clientToken, <span class="keyword">const</span> QString &amp;clientPlayerName, QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">bool</span> setPlayerName(<span class="keyword">const</span> TicTacToePlayerEnum token, <span class="keyword">const</span> QString &amp;playerName);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        TicTacToePlayerEnum getClientToken() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">bool</span> setClientToken(<span class="keyword">const</span> TicTacToePlayerEnum &amp;value);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">bool</span> getClientPlayerInfo(TicTacToePlayerEnum &amp;out_token, QString &amp;out_playerName) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">bool</span> isGameReady() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordtype">bool</span> setGameIsReady(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;value);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> setActualTurn(<span class="keyword">const</span> TicTacToePlayerEnum &amp;value);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_lan_match.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="class_lan_match.html#af20b8e854d55f1dbf5349e5eab299ebe">LanMatch</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_match.html#afb09bc784d0ea5b43b4e2d488976f2b4">Match</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        Q_OBJECT</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="comment">//Constructor</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_lan_match.html#af20b8e854d55f1dbf5349e5eab299ebe">LanMatch</a>(<span class="keyword">const</span> TicTacToePlayerEnum clientToken, <span class="keyword">const</span> QString &amp;clientPlayerName, QObject *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        TicTacToePlayerEnum m_clientToken;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">bool</span> m_gameIsReady;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">bool</span> initialize(<span class="keyword">const</span> TicTacToePlayerEnum &amp;clientToken, <span class="keyword">const</span> QString &amp;clientPlayerName);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#aeb4da8f757465da8b5363690b278d0fc">setPlayerName</a>(<span class="keyword">const</span> TicTacToePlayerEnum token, <span class="keyword">const</span> QString &amp;playerName);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        TicTacToePlayerEnum <a class="code hl_function" href="class_lan_match.html#a24f9e2bcc06c1248738488237f0b2382">getClientToken</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#a92fdb2df9f73dccb60d87b7f7a6b70cd">setClientToken</a>(<span class="keyword">const</span> TicTacToePlayerEnum &amp;value);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#a7cbcaee5f4f5fe74c01099a492552e93">getClientPlayerInfo</a>(TicTacToePlayerEnum &amp;out_token, QString &amp;out_playerName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#a31c890f8442dcc264a29d4641ff4e9bd">isGameReady</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#a08550081da5d4ef897eaea33308c9150">setGameIsReady</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;value);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#ac257dbbd8592f788f4bda2ae120d4e75">setActualTurn</a>(<span class="keyword">const</span> TicTacToePlayerEnum &amp;value);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">//Variables</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_lan_match.html#a0d021a7b0a5d38629a4dae892b54be7b">   72</a></span>        TicTacToePlayerEnum <a class="code hl_variable" href="class_lan_match.html#a0d021a7b0a5d38629a4dae892b54be7b">m_clientToken</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_lan_match.html#ae8cd9e2a42a9b7ec8c881b92b936fa56">   76</a></span>        <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_lan_match.html#ae8cd9e2a42a9b7ec8c881b92b936fa56">m_gameIsReady</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_lan_match.html#a1035a0e673cdc4435a4cbb13aba63785">initialize</a>(<span class="keyword">const</span> TicTacToePlayerEnum &amp;clientToken, <span class="keyword">const</span> QString &amp;clientPlayerName);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">// LAN_MATCH_H</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// LAN_MATCH_H</span></div>
+<div class="ttc" id="aclass_lan_match_html_a08550081da5d4ef897eaea33308c9150"><div class="ttname"><a href="class_lan_match.html#a08550081da5d4ef897eaea33308c9150">LanMatch::setGameIsReady</a></div><div class="ttdeci">bool setGameIsReady(const bool &amp;value)</div><div class="ttdoc">Set the game ready with the value given in value.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:44</div></div>
+<div class="ttc" id="aclass_lan_match_html_a0d021a7b0a5d38629a4dae892b54be7b"><div class="ttname"><a href="class_lan_match.html#a0d021a7b0a5d38629a4dae892b54be7b">LanMatch::m_clientToken</a></div><div class="ttdeci">TicTacToePlayerEnum m_clientToken</div><div class="ttdoc">The token of the client player where this class is intialized.</div><div class="ttdef"><b>Definition</b> lan_match.h:72</div></div>
+<div class="ttc" id="aclass_lan_match_html_a1035a0e673cdc4435a4cbb13aba63785"><div class="ttname"><a href="class_lan_match.html#a1035a0e673cdc4435a4cbb13aba63785">LanMatch::initialize</a></div><div class="ttdeci">bool initialize(const TicTacToePlayerEnum &amp;clientToken, const QString &amp;clientPlayerName)</div><div class="ttdoc">Initialize all variables of this class.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:70</div></div>
+<div class="ttc" id="aclass_lan_match_html_a24f9e2bcc06c1248738488237f0b2382"><div class="ttname"><a href="class_lan_match.html#a24f9e2bcc06c1248738488237f0b2382">LanMatch::getClientToken</a></div><div class="ttdeci">TicTacToePlayerEnum getClientToken() const</div><div class="ttdoc">Retrieve the token of the client where this class is initialized.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:16</div></div>
+<div class="ttc" id="aclass_lan_match_html_a31c890f8442dcc264a29d4641ff4e9bd"><div class="ttname"><a href="class_lan_match.html#a31c890f8442dcc264a29d4641ff4e9bd">LanMatch::isGameReady</a></div><div class="ttdeci">bool isGameReady() const</div><div class="ttdoc">Check if game is ready.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:39</div></div>
+<div class="ttc" id="aclass_lan_match_html_a7cbcaee5f4f5fe74c01099a492552e93"><div class="ttname"><a href="class_lan_match.html#a7cbcaee5f4f5fe74c01099a492552e93">LanMatch::getClientPlayerInfo</a></div><div class="ttdeci">bool getClientPlayerInfo(TicTacToePlayerEnum &amp;out_token, QString &amp;out_playerName) const</div><div class="ttdoc">Retrieve the token and the name of the player that is managing the client where this class is initial...</div><div class="ttdef"><b>Definition</b> lan_match.cpp:33</div></div>
+<div class="ttc" id="aclass_lan_match_html_a92fdb2df9f73dccb60d87b7f7a6b70cd"><div class="ttname"><a href="class_lan_match.html#a92fdb2df9f73dccb60d87b7f7a6b70cd">LanMatch::setClientToken</a></div><div class="ttdeci">bool setClientToken(const TicTacToePlayerEnum &amp;value)</div><div class="ttdoc">Set the token of the client where this class is initialized.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:21</div></div>
+<div class="ttc" id="aclass_lan_match_html_ac257dbbd8592f788f4bda2ae120d4e75"><div class="ttname"><a href="class_lan_match.html#ac257dbbd8592f788f4bda2ae120d4e75">LanMatch::setActualTurn</a></div><div class="ttdeci">bool setActualTurn(const TicTacToePlayerEnum &amp;value)</div><div class="ttdoc">Set the actual turn of this match.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:58</div></div>
+<div class="ttc" id="aclass_lan_match_html_ae8cd9e2a42a9b7ec8c881b92b936fa56"><div class="ttname"><a href="class_lan_match.html#ae8cd9e2a42a9b7ec8c881b92b936fa56">LanMatch::m_gameIsReady</a></div><div class="ttdeci">bool m_gameIsReady</div><div class="ttdoc">The state of game ready.</div><div class="ttdef"><b>Definition</b> lan_match.h:76</div></div>
+<div class="ttc" id="aclass_lan_match_html_aeb4da8f757465da8b5363690b278d0fc"><div class="ttname"><a href="class_lan_match.html#aeb4da8f757465da8b5363690b278d0fc">LanMatch::setPlayerName</a></div><div class="ttdeci">bool setPlayerName(const TicTacToePlayerEnum token, const QString &amp;playerName)</div><div class="ttdoc">Set the player name of the player that plays the token given in token.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:9</div></div>
+<div class="ttc" id="aclass_lan_match_html_af20b8e854d55f1dbf5349e5eab299ebe"><div class="ttname"><a href="class_lan_match.html#af20b8e854d55f1dbf5349e5eab299ebe">LanMatch::LanMatch</a></div><div class="ttdeci">LanMatch(const TicTacToePlayerEnum clientToken, const QString &amp;clientPlayerName, QObject *parent=nullptr)</div><div class="ttdoc">Class constructor.</div><div class="ttdef"><b>Definition</b> lan_match.cpp:3</div></div>
+<div class="ttc" id="aclass_match_html_afb09bc784d0ea5b43b4e2d488976f2b4"><div class="ttname"><a href="class_match.html#afb09bc784d0ea5b43b4e2d488976f2b4">Match::Match</a></div><div class="ttdeci">Match(const QString &amp;xPlayerName, const QString &amp;oPlayerName, QObject *parent=nullptr)</div><div class="ttdoc">Class initializer.</div><div class="ttdef"><b>Definition</b> match.cpp:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

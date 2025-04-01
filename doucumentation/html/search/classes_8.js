@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['qgridlabel_0',['QGridLabel',['../class_q_grid_label.html',1,'']]],
-  ['qt_5fmeta_5ftag_5fzn10mainwindowe_5ft_1',['qt_meta_tag_ZN10MainWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n10_main_window_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn10qgridlabele_5ft_2',['qt_meta_tag_ZN10QGridLabelE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n10_q_grid_label_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn11rulesviewere_5ft_3',['qt_meta_tag_ZN11RulesViewerE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n11_rules_viewer_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn12gridpositione_5ft_4',['qt_meta_tag_ZN12GridPositionE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n12_grid_position_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn13umessageboxese_5ft_5',['qt_meta_tag_ZN13UMessageBoxesE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n13_u_message_boxes_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn18tictactoelocalgamee_5ft_6',['qt_meta_tag_ZN18TicTacToeLocalGameE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n18_tic_tac_toe_local_game_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn30tictactoelanclientmdisubwindowe_5ft_7',['qt_meta_tag_ZN30TicTacToeLANClientMdiSubWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n30_tic_ta9b3e5b4ee2d6d380246dfc0d0912f282.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn30tictactoelanservermdisubwindowe_5ft_8',['qt_meta_tag_ZN30TicTacToeLanServerMdiSubWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n30_tic_ta370bb0107d14a810a8e15e5141955183.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn38tictactoelanclientsettingsmdisubwindowe_5ft_9',['qt_meta_tag_ZN38TicTacToeLanClientSettingsMdiSubWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n38_tic_ta7a2745ae23183607303f440dd968b321.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn38tictactoelanserversettingsmdisubwindowe_5ft_10',['qt_meta_tag_ZN38TicTacToeLanServerSettingsMdiSubWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n38_tic_ta33746dfcd95098103a2760892307cee6.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn38tictactoelocalgamesettingsmdisubwindowe_5ft_11',['qt_meta_tag_ZN38TicTacToeLocalGameSettingsMdiSubWindowE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n38_tic_ta58b118d61889526a4b56de5973fcf3fc.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn5boarde_5ft_12',['qt_meta_tag_ZN5BoardE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n5_board_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn5matche_5ft_13',['qt_meta_tag_ZN5MatchE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n5_match_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn5rangee_5ft_14',['qt_meta_tag_ZN5RangeE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n5_range_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]],
-  ['qt_5fmeta_5ftag_5fzn8lanmatche_5ft_15',['qt_meta_tag_ZN8LanMatchE_t',['../struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n8_lan_match_e__t.html',1,'QT_WARNING_DISABLE_DEPRECATED']]]
+  ['range_0',['Range',['../class_range.html',1,'']]],
+  ['rulesviewer_1',['RulesViewer',['../class_rules_viewer.html',1,'']]]
 ];

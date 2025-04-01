@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: classes/objects/gridposition.h Source File</title>
+<title>Board Games QT: classes/objects/gridposition.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -112,45 +112,58 @@ $(function(){initNavTree('gridposition_8h_source.html',''); initResizable(true);
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;classes/virtuals/equatable.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;classes/virtuals/cloneable.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;classes/virtuals/to_stringable.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_grid_position.html">    9</a></span><span class="keyword">class </span>GridPosition : <span class="keyword">public</span> QObject, <a class="code hl_class" href="class_equatable.html">Equatable</a>&lt;GridPosition&gt;, <a class="code hl_class" href="class_cloneable.html">Cloneable</a>&lt;GridPosition*&gt;, <a class="code hl_class" href="class_to_stringable.html">ToStringable</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Q_OBJECT</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">explicit</span> GridPosition();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">explicit</span> GridPosition(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">explicit</span> GridPosition(<span class="keyword">const</span> GridPosition &amp;gridPosition);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        qint32 getRow() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        qint32 getColumn() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">bool</span> setRow(<span class="keyword">const</span> qint32 &amp;value);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordtype">bool</span> setColumn(<span class="keyword">const</span> qint32 &amp;value);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        qint32 setPosition(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> GridPosition &amp;item) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        GridPosition* clone() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        QString <a class="code hl_function" href="class_grid_position.html#a8b220a560ad729541f4a82d734dbeab5">toString</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        qint32 m_row;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        qint32 m_column;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> initialize(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    signals:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> rowValueChangedSignal(GridPosition *sender, <span class="keyword">const</span> qint32 &amp;value);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordtype">void</span> columnValueChangedSignal(GridPosition *sender, <span class="keyword">const</span> qint32 &amp;value);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_grid_position.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a> : <span class="keyword">public</span> QObject, <a class="code hl_class" href="class_equatable.html">Equatable</a>&lt;GridPosition&gt;, <a class="code hl_class" href="class_cloneable.html">Cloneable</a>&lt;GridPosition*&gt;, <a class="code hl_class" href="class_to_stringable.html">ToStringable</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Q_OBJECT</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column, QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a> &amp;gridPosition, QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        qint32 <a class="code hl_function" href="class_grid_position.html#a55cb92da89bfc07b5f7d7b256be092da">getRow</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        qint32 <a class="code hl_function" href="class_grid_position.html#aaa3551be3c41dc4d505758375ae9d729">getColumn</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_grid_position.html#ac178f87f46339cbc8f092e50d006e039">setRow</a>(<span class="keyword">const</span> qint32 &amp;value);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_grid_position.html#a509cb330a56905ecbb7ba89efd250959">setColumn</a>(<span class="keyword">const</span> qint32 &amp;value);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        qint32 <a class="code hl_function" href="class_grid_position.html#a882fdd6459f499c542c820fb7b365518">setPosition</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_grid_position.html#ab0dd604c0435274baa1f552a299d1e9c">equals</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a> &amp;item) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_function" href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition</a>* <a class="code hl_function" href="class_grid_position.html#a02fe7ec6ca651870525a483f7ebbd29d">clone</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        QString <a class="code hl_function" href="class_grid_position.html#a8b220a560ad729541f4a82d734dbeab5">toString</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="comment">//Variables</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_grid_position.html#ac356f42b381f40231e64f688e8267721">  106</a></span>        qint32 <a class="code hl_variable" href="class_grid_position.html#ac356f42b381f40231e64f688e8267721">m_row</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_grid_position.html#a8159215d95a0d47eb6d5f67a032a8701">  110</a></span>        qint32 <a class="code hl_variable" href="class_grid_position.html#a8159215d95a0d47eb6d5f67a032a8701">m_column</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_grid_position.html#a4b220c88fddde1fe49a21b203bc7ac46">initialize</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    signals:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_grid_position.html#a59aa723f89031083d1cefb3d0b489d18">  125</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_grid_position.html#a59aa723f89031083d1cefb3d0b489d18">rowValueChangedSignal</a>(<span class="keyword">const</span> qint32 &amp;value);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_grid_position.html#a79fcf2692a82a17bd11d63778214a7d9">  130</a></span>        <span class="keywordtype">void</span> <a class="code hl_signal" href="class_grid_position.html#a79fcf2692a82a17bd11d63778214a7d9">columnValueChangedSignal</a>(<span class="keyword">const</span> qint32 &amp;value);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">// GRIDPOSITION_H</span></div>
-<div class="ttc" id="aclass_cloneable_html"><div class="ttname"><a href="class_cloneable.html">Cloneable</a></div><div class="ttdef"><b>Definition</b> cloneable.h:6</div></div>
-<div class="ttc" id="aclass_equatable_html"><div class="ttname"><a href="class_equatable.html">Equatable</a></div><div class="ttdef"><b>Definition</b> equatable.h:6</div></div>
-<div class="ttc" id="aclass_grid_position_html_a8b220a560ad729541f4a82d734dbeab5"><div class="ttname"><a href="class_grid_position.html#a8b220a560ad729541f4a82d734dbeab5">GridPosition::toString</a></div><div class="ttdeci">QString toString() override</div><div class="ttdoc">Retrieve a string that represents the element.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:88</div></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif </span><span class="comment">// GRIDPOSITION_H</span></div>
+<div class="ttc" id="aclass_cloneable_html"><div class="ttname"><a href="class_cloneable.html">Cloneable</a></div><div class="ttdoc">A virtual class that is used for representing a cloneable class.</div><div class="ttdef"><b>Definition</b> cloneable.h:9</div></div>
+<div class="ttc" id="aclass_equatable_html"><div class="ttname"><a href="class_equatable.html">Equatable</a></div><div class="ttdoc">Virtual class. Inherting this class means that the inherted class can be compared with another class ...</div><div class="ttdef"><b>Definition</b> equatable.h:10</div></div>
+<div class="ttc" id="aclass_grid_position_html_a02fe7ec6ca651870525a483f7ebbd29d"><div class="ttname"><a href="class_grid_position.html#a02fe7ec6ca651870525a483f7ebbd29d">GridPosition::clone</a></div><div class="ttdeci">GridPosition * clone() override</div><div class="ttdoc">Return a new instance of GridPosition with the same row and column position.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:83</div></div>
+<div class="ttc" id="aclass_grid_position_html_a4b220c88fddde1fe49a21b203bc7ac46"><div class="ttname"><a href="class_grid_position.html#a4b220c88fddde1fe49a21b203bc7ac46">GridPosition::initialize</a></div><div class="ttdeci">void initialize(const qint32 &amp;row, const qint32 &amp;column)</div><div class="ttdoc">Initialize all variables in this class.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:95</div></div>
+<div class="ttc" id="aclass_grid_position_html_a509cb330a56905ecbb7ba89efd250959"><div class="ttname"><a href="class_grid_position.html#a509cb330a56905ecbb7ba89efd250959">GridPosition::setColumn</a></div><div class="ttdeci">bool setColumn(const qint32 &amp;value)</div><div class="ttdoc">Set the row on this grid position. If the value is different from the previous one,...</div><div class="ttdef"><b>Definition</b> gridposition.cpp:45</div></div>
+<div class="ttc" id="aclass_grid_position_html_a55cb92da89bfc07b5f7d7b256be092da"><div class="ttname"><a href="class_grid_position.html#a55cb92da89bfc07b5f7d7b256be092da">GridPosition::getRow</a></div><div class="ttdeci">qint32 getRow() const</div><div class="ttdoc">Retrieve the row of the grid position.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:21</div></div>
+<div class="ttc" id="aclass_grid_position_html_a59aa723f89031083d1cefb3d0b489d18"><div class="ttname"><a href="class_grid_position.html#a59aa723f89031083d1cefb3d0b489d18">GridPosition::rowValueChangedSignal</a></div><div class="ttdeci">void rowValueChangedSignal(const qint32 &amp;value)</div><div class="ttdoc">Signal that is emitted when the value of the row change.</div></div>
+<div class="ttc" id="aclass_grid_position_html_a79fcf2692a82a17bd11d63778214a7d9"><div class="ttname"><a href="class_grid_position.html#a79fcf2692a82a17bd11d63778214a7d9">GridPosition::columnValueChangedSignal</a></div><div class="ttdeci">void columnValueChangedSignal(const qint32 &amp;value)</div><div class="ttdoc">Signal that is emitted when the value of the column change.</div></div>
+<div class="ttc" id="aclass_grid_position_html_a8159215d95a0d47eb6d5f67a032a8701"><div class="ttname"><a href="class_grid_position.html#a8159215d95a0d47eb6d5f67a032a8701">GridPosition::m_column</a></div><div class="ttdeci">qint32 m_column</div><div class="ttdoc">The column position.</div><div class="ttdef"><b>Definition</b> gridposition.h:110</div></div>
+<div class="ttc" id="aclass_grid_position_html_a882fdd6459f499c542c820fb7b365518"><div class="ttname"><a href="class_grid_position.html#a882fdd6459f499c542c820fb7b365518">GridPosition::setPosition</a></div><div class="ttdeci">qint32 setPosition(const qint32 &amp;row, const qint32 &amp;column)</div><div class="ttdoc">Set a new position given the row in row and the column in column.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:59</div></div>
+<div class="ttc" id="aclass_grid_position_html_a8b220a560ad729541f4a82d734dbeab5"><div class="ttname"><a href="class_grid_position.html#a8b220a560ad729541f4a82d734dbeab5">GridPosition::toString</a></div><div class="ttdeci">QString toString() override</div><div class="ttdoc">Function that return a string that represents this instance.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:88</div></div>
+<div class="ttc" id="aclass_grid_position_html_aaa3551be3c41dc4d505758375ae9d729"><div class="ttname"><a href="class_grid_position.html#aaa3551be3c41dc4d505758375ae9d729">GridPosition::getColumn</a></div><div class="ttdeci">qint32 getColumn() const</div><div class="ttdoc">Retrieve the column of the grid position.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:26</div></div>
+<div class="ttc" id="aclass_grid_position_html_ab0dd604c0435274baa1f552a299d1e9c"><div class="ttname"><a href="class_grid_position.html#ab0dd604c0435274baa1f552a299d1e9c">GridPosition::equals</a></div><div class="ttdeci">bool equals(const GridPosition &amp;item) const override</div><div class="ttdoc">Check if the position given in item is the same of this instance.</div><div class="ttdef"><b>Definition</b> gridposition.cpp:76</div></div>
+<div class="ttc" id="aclass_grid_position_html_abcf7f5f0fd17b0bd91be8ffab19bf34a"><div class="ttname"><a href="class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a">GridPosition::GridPosition</a></div><div class="ttdeci">GridPosition(QObject *parent=nullptr)</div><div class="ttdoc">Class constructor. Initialize this class into position (0, 0).</div><div class="ttdef"><b>Definition</b> gridposition.cpp:3</div></div>
+<div class="ttc" id="aclass_grid_position_html_ac178f87f46339cbc8f092e50d006e039"><div class="ttname"><a href="class_grid_position.html#ac178f87f46339cbc8f092e50d006e039">GridPosition::setRow</a></div><div class="ttdeci">bool setRow(const qint32 &amp;value)</div><div class="ttdoc">Set the row on this grid position. If the value is different from the previous one,...</div><div class="ttdef"><b>Definition</b> gridposition.cpp:31</div></div>
+<div class="ttc" id="aclass_grid_position_html_ac356f42b381f40231e64f688e8267721"><div class="ttname"><a href="class_grid_position.html#ac356f42b381f40231e64f688e8267721">GridPosition::m_row</a></div><div class="ttdeci">qint32 m_row</div><div class="ttdoc">The row position.</div><div class="ttdef"><b>Definition</b> gridposition.h:106</div></div>
 <div class="ttc" id="aclass_to_stringable_html"><div class="ttname"><a href="class_to_stringable.html">ToStringable</a></div><div class="ttdoc">A virtual class that contains all methods for representing the element into string.</div><div class="ttdef"><b>Definition</b> to_stringable.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -167,18 +167,14 @@ void TicTacToeLocalGame::onGridLabelClicked()
     }
 }
 
-void TicTacToeLocalGame::onActualTurnChanged(Match *sender, TicTacToePlayerEnum actualTurn)
+void TicTacToeLocalGame::onActualTurnChanged(TicTacToePlayerEnum actualTurn)
 {
-    (void)sender;
-
     QString playerName;
     m_match->getPlayerName(actualTurn, playerName);
     ui->infoLabel->setText(tr("%0's turn.").arg(playerName));
 }
 
-void TicTacToeLocalGame::onGameStopped(Match *sender)
+void TicTacToeLocalGame::onGameStopped()
 {
-    (void)sender;
-
     ui->infoLabel->setText(tr("Game over!"));
 }

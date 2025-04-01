@@ -37,8 +37,8 @@ class TicTacToeLocalGame : public QMdiSubWindow
 
     private slots:
         void onGridLabelClicked();
-        void onActualTurnChanged(Match* sender, TicTacToePlayerEnum actualTurn);
-        void onGameStopped(Match *sender);
+        void onActualTurnChanged(TicTacToePlayerEnum actualTurn);
+        void onGameStopped();
 };
 
 #endif // TICTACTOE_LOCAL_GAME_MDISUBWINDOW_H

@@ -70,7 +70,7 @@ void Match::stopsGame()
 {
     m_gameStopped = true;
 
-    emit gameStoppedSignal(this);
+    emit gameStoppedSignal();
 }
 
 bool Match::isGameStopped() const
@@ -102,6 +102,6 @@ void Match::setActualTurn(TicTacToePlayerEnum turn)
     {
         m_actTurn = turn;
 
-        emit Match::actualTurnChangedSignal(this, turn);
+        emit Match::actualTurnChangedSignal(turn);
     }
 }

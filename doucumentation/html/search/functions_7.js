@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plaintextedits_0',['plainTextEdits',['../class_tic_tac_toe_lan_client_settings_mdi_sub_window.html#a094e69faf2cf0dd019d4f2c000dce086',1,'TicTacToeLanClientSettingsMdiSubWindow']]]
+  ['lanmatch_0',['LanMatch',['../class_lan_match.html#af20b8e854d55f1dbf5349e5eab299ebe',1,'LanMatch']]]
 ];

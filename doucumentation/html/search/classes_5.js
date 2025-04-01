@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lanmatch_0',['LanMatch',['../class_lan_match.html',1,'']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'']]],
+  ['match_1',['Match',['../class_match.html',1,'']]]
 ];

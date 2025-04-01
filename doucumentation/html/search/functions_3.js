@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['highlighterrorsinfield_0',['highlightErrorsInField',['../class_tic_tac_toe_lan_client_settings_mdi_sub_window.html#a54434ad54729813081ebad786bd0b1bd',1,'TicTacToeLanClientSettingsMdiSubWindow']]]
+  ['equals_0',['equals',['../class_grid_position.html#ab0dd604c0435274baa1f552a299d1e9c',1,'GridPosition::equals()'],['../class_equatable.html#a9c31bd8613d7519407064556e4092226',1,'Equatable::equals()']]]
 ];

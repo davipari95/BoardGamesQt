@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>BoardGamesQt: classes/objects/tictactoe/board.h Source File</title>
+<title>Board Games QT: classes/objects/tictactoe/board.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">BoardGamesQt
+   <div id="projectname">Board Games QT<span id="projectnumber">&#160;0.1.0.0</span>
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -113,45 +113,49 @@ $(function(){initNavTree('board_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_match.html">Match</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span><a class="code hl_class" href="class_grid_position.html">GridPosition</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_board.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    Q_OBJECT</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="comment">//Constructors</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board</a>(<a class="code hl_class" href="class_match.html">Match</a> *matchParent, QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">const</span> std::array&lt;std::array&lt;TicTacToePlayerEnum, 3&gt;, 3&gt; getContent();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        qint8 <a class="code hl_function" href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">insertToken</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;row, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;column, TicTacToePlayerEnum token);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        qint8 <a class="code hl_function" href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">insertToken</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position, TicTacToePlayerEnum token);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        TicTacToePlayerEnum <a class="code hl_function" href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">getTokenByPosition</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        TicTacToePlayerEnum <a class="code hl_function" href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">getTokenByPosition</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        std::array&lt;QString, 8&gt; getAllSequences();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_board.html#ac592e5739efbd6d4b9ab41cc7d9fdf40">clearContent</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_class" href="class_match.html">Match</a>* m_matchParent;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::array&lt;std::array&lt;TicTacToePlayerEnum, 3&gt;, 3&gt; m_content;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_board.html#addd4810e29ad6d140025a4dc85336752">initialize</a>(<a class="code hl_class" href="class_match.html">Match</a> *matchParent);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>signals:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_board.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_OBJECT</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">//Constructors</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board</a>(<a class="code hl_class" href="class_match.html">Match</a> *matchParent, QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_board.html#a4e2f50e5d3c925b0f8606a9f494b5e04">   31</a></span>        <span class="keyword">const</span> std::array&lt;std::array&lt;TicTacToePlayerEnum, 3&gt;, 3&gt; <a class="code hl_function" href="class_board.html#a4e2f50e5d3c925b0f8606a9f494b5e04">getContent</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        qint8 <a class="code hl_function" href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">insertToken</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;row, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;column, TicTacToePlayerEnum token);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        qint8 <a class="code hl_function" href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">insertToken</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position, TicTacToePlayerEnum token);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        TicTacToePlayerEnum <a class="code hl_function" href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">getTokenByPosition</a>(<span class="keyword">const</span> qint32 &amp;row, <span class="keyword">const</span> qint32 &amp;column);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        TicTacToePlayerEnum <a class="code hl_function" href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">getTokenByPosition</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_grid_position.html">GridPosition</a> &amp;position);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        std::array&lt;QString, 8&gt; <a class="code hl_function" href="class_board.html#ae3c9a93f03cf9d8cc365b2ab4e3cdc72">getAllSequences</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_board.html#ac592e5739efbd6d4b9ab41cc7d9fdf40">clearContent</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">//Variables</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_board.html#ad06195da2e83e6361c16e8c8e3439928">   86</a></span>        <a class="code hl_class" href="class_match.html">Match</a>* <a class="code hl_variable" href="class_board.html#ad06195da2e83e6361c16e8c8e3439928">m_matchParent</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_board.html#a86ca98e98a6e93c555a36af8b450c9b8">   90</a></span>        std::array&lt;std::array&lt;TicTacToePlayerEnum, 3&gt;, 3&gt; <a class="code hl_variable" href="class_board.html#a86ca98e98a6e93c555a36af8b450c9b8">m_content</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_board.html#addd4810e29ad6d140025a4dc85336752">initialize</a>(<a class="code hl_class" href="class_match.html">Match</a> *matchParent);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>signals:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">// BOARD_H</span></div>
-<div class="ttc" id="aclass_board_html_a62266df3e16767981ee4b20d4dac084c"><div class="ttname"><a href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board::Board</a></div><div class="ttdeci">Board(Match *matchParent, QObject *parent=nullptr)</div><div class="ttdoc">Initialize the class giving the match parent in matchParent and the object parent in parent.</div><div class="ttdef"><b>Definition</b> board.cpp:10</div></div>
-<div class="ttc" id="aclass_board_html_ac592e5739efbd6d4b9ab41cc7d9fdf40"><div class="ttname"><a href="class_board.html#ac592e5739efbd6d4b9ab41cc7d9fdf40">Board::clearContent</a></div><div class="ttdeci">void clearContent()</div><div class="ttdoc">Clear all content of the board.</div><div class="ttdef"><b>Definition</b> board.cpp:74</div></div>
-<div class="ttc" id="aclass_board_html_addd4810e29ad6d140025a4dc85336752"><div class="ttname"><a href="class_board.html#addd4810e29ad6d140025a4dc85336752">Board::initialize</a></div><div class="ttdeci">void initialize(Match *matchParent)</div><div class="ttdoc">Initialize the variables of this class.</div><div class="ttdef"><b>Definition</b> board.cpp:62</div></div>
-<div class="ttc" id="aclass_board_html_adf3f905c72c8d8d62e0d1a7d0356ab87"><div class="ttname"><a href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">Board::insertToken</a></div><div class="ttdeci">qint8 insertToken(const int &amp;row, const int &amp;column, TicTacToePlayerEnum token)</div><div class="ttdoc">Board::insertToken Insert the token into the specified position, giving the row position in row,...</div><div class="ttdef"><b>Definition</b> board.cpp:28</div></div>
-<div class="ttc" id="aclass_board_html_af7beeea710f4c682a283ae68e1ff3293"><div class="ttname"><a href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">Board::getTokenByPosition</a></div><div class="ttdeci">TicTacToePlayerEnum getTokenByPosition(const qint32 &amp;row, const qint32 &amp;column)</div><div class="ttdoc">Retrieves the token at the given row and column.</div><div class="ttdef"><b>Definition</b> board.cpp:86</div></div>
-<div class="ttc" id="aclass_grid_position_html"><div class="ttname"><a href="class_grid_position.html">GridPosition</a></div><div class="ttdef"><b>Definition</b> gridposition.h:10</div></div>
-<div class="ttc" id="aclass_match_html"><div class="ttname"><a href="class_match.html">Match</a></div><div class="ttdef"><b>Definition</b> match.h:10</div></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif </span><span class="comment">// BOARD_H</span></div>
+<div class="ttc" id="aclass_board_html_a4e2f50e5d3c925b0f8606a9f494b5e04"><div class="ttname"><a href="class_board.html#a4e2f50e5d3c925b0f8606a9f494b5e04">Board::getContent</a></div><div class="ttdeci">const std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt; getContent()</div><div class="ttdoc">Retrive the content of the board.</div></div>
+<div class="ttc" id="aclass_board_html_a62266df3e16767981ee4b20d4dac084c"><div class="ttname"><a href="class_board.html#a62266df3e16767981ee4b20d4dac084c">Board::Board</a></div><div class="ttdeci">Board(Match *matchParent, QObject *parent=nullptr)</div><div class="ttdoc">Class constructor.</div><div class="ttdef"><b>Definition</b> board.cpp:5</div></div>
+<div class="ttc" id="aclass_board_html_a86ca98e98a6e93c555a36af8b450c9b8"><div class="ttname"><a href="class_board.html#a86ca98e98a6e93c555a36af8b450c9b8">Board::m_content</a></div><div class="ttdeci">std::array&lt; std::array&lt; TicTacToePlayerEnum, 3 &gt;, 3 &gt; m_content</div><div class="ttdoc">Content of this baord.</div><div class="ttdef"><b>Definition</b> board.h:90</div></div>
+<div class="ttc" id="aclass_board_html_ac592e5739efbd6d4b9ab41cc7d9fdf40"><div class="ttname"><a href="class_board.html#ac592e5739efbd6d4b9ab41cc7d9fdf40">Board::clearContent</a></div><div class="ttdeci">void clearContent()</div><div class="ttdoc">Remove every tokens from the board.</div><div class="ttdef"><b>Definition</b> board.cpp:39</div></div>
+<div class="ttc" id="aclass_board_html_ad06195da2e83e6361c16e8c8e3439928"><div class="ttname"><a href="class_board.html#ad06195da2e83e6361c16e8c8e3439928">Board::m_matchParent</a></div><div class="ttdeci">Match * m_matchParent</div><div class="ttdoc">Match parent where this class is initialized.</div><div class="ttdef"><b>Definition</b> board.h:86</div></div>
+<div class="ttc" id="aclass_board_html_addd4810e29ad6d140025a4dc85336752"><div class="ttname"><a href="class_board.html#addd4810e29ad6d140025a4dc85336752">Board::initialize</a></div><div class="ttdeci">void initialize(Match *matchParent)</div><div class="ttdoc">Initialize the variables of this class.</div><div class="ttdef"><b>Definition</b> board.cpp:30</div></div>
+<div class="ttc" id="aclass_board_html_adf3f905c72c8d8d62e0d1a7d0356ab87"><div class="ttname"><a href="class_board.html#adf3f905c72c8d8d62e0d1a7d0356ab87">Board::insertToken</a></div><div class="ttdeci">qint8 insertToken(const int &amp;row, const int &amp;column, TicTacToePlayerEnum token)</div><div class="ttdoc">Insert a new token given in token on the board, given the row in row and the column in column.</div><div class="ttdef"><b>Definition</b> board.cpp:11</div></div>
+<div class="ttc" id="aclass_board_html_ae3c9a93f03cf9d8cc365b2ab4e3cdc72"><div class="ttname"><a href="class_board.html#ae3c9a93f03cf9d8cc365b2ab4e3cdc72">Board::getAllSequences</a></div><div class="ttdeci">std::array&lt; QString, 8 &gt; getAllSequences()</div><div class="ttdoc">Retrieve all sequences that represents the content of rows, columns and diagonals....</div><div class="ttdef"><b>Definition</b> board.cpp:61</div></div>
+<div class="ttc" id="aclass_board_html_af7beeea710f4c682a283ae68e1ff3293"><div class="ttname"><a href="class_board.html#af7beeea710f4c682a283ae68e1ff3293">Board::getTokenByPosition</a></div><div class="ttdeci">TicTacToePlayerEnum getTokenByPosition(const qint32 &amp;row, const qint32 &amp;column)</div><div class="ttdoc">Retrieve the token into position with row given in row and the column given in column.</div><div class="ttdef"><b>Definition</b> board.cpp:51</div></div>
+<div class="ttc" id="aclass_grid_position_html"><div class="ttname"><a href="class_grid_position.html">GridPosition</a></div><div class="ttdoc">A class that represents a position on the grid, using row and column.</div><div class="ttdef"><b>Definition</b> gridposition.h:13</div></div>
+<div class="ttc" id="aclass_match_html"><div class="ttname"><a href="class_match.html">Match</a></div><div class="ttdoc">Class that represents the Tic-Tac-Toe match.</div><div class="ttdef"><b>Definition</b> match.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

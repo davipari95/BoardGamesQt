@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_ui_1_1_main_window.html',1,'Ui::MainWindow']]],
-  ['match_1',['Match',['../class_match.html',1,'']]]
+  ['playerinfostruct_0',['PlayerInfoStruct',['../struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html',1,'TicTacToeLanServerMdiSubWindow']]]
 ];

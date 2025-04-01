@@ -113,7 +113,7 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          *
          * This function will append automatically the date time.
          *
-         * @param logMessage Message to write in 'logPlainTextEdit'.
+         * @param logMessage Message to write in `logPlainTextEdit`.
          */
         void writeLog(QString logMessage);
         /**
@@ -125,9 +125,9 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          * @param client The client that sends the message.
          * @return Bit-to-bit value that indicates which message is managed.
          * <ul>
-         *  <li>'[0]' → 'get-player-info'</li>
-         *  <li>'[1]' → 'get-game'</li>
-         *  <li>'[2]' → 'insert-token'</li>
+         *  <li>`[0]` → `get-player-info`</li>
+         *  <li>`[1]` → `get-game`</li>
+         *  <li>`[2]` → `insert-token`</li>
          * </ul>
          */
         quint64 manageTcpIncomingMessage(QTcpSocket* client);
@@ -163,27 +163,99 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          * @return Returns `true` if the commands is correctly managed, `false` otherwise.
          */
         bool manageInsertToken(QTcpSocket *client, QStringList &args);
+        /**
+         * @brief Insert a new player given in `player` into `m_connectedPlayers` and emit the signal `connectedPlayerListManaged()`.
+         * @param[in] player A `PlayerInfoStruct` containing all informations of the player to add.
+         * @return An integer value that is the number of connected players.
+         */
         qint32 insertNewConnectedPlayer(PlayerInfoStruct player);
+        /**
+         * @brief Remove the player given in `player` from `m_connectedPlayers` and emit the signal `connectedPlayerListManaged()`.
+         * @param[in] player A `PlayerInfoStruct` containing all informations of the player to remove.
+         * @return An integer value that is the number of connected players.
+         */
         qint32 removeConnectedPlayer(PlayerInfoStruct player);
+        /**
+         * @brief Retrieve the player name from `out_playerName` by the token given in `token`.
+         * @param[in] token Player token which you want retrieve the player name.
+         * @param[out] out_playerName The player name of the given token.
+         * @return If the player with the given token exists return `true`, `false` otherwise.
+         */
         bool getPlayerNameByToken(TicTacToePlayerEnum token, QString &out_playerName) const;
+        /**
+         * @brief Retrieve the player informations from `out_playerInfo` by the socket given in `socket`.
+         * @param[in] socket The socket which you want retrieve the player name.
+         * @param[out] out_playerInfo The player information of the given token.
+         * @return If the player with given socket exists return `true`, `false` otherwise.
+         */
         bool getPlayerInfoBySocket(QTcpSocket* socket, PlayerInfoStruct &out_playerInfo) const;
+        /**
+         * @brief Broadcast the message given in `message` to all connected clients.
+         * @param message The message that you want to broadcast.
+         * @return This function return always `true`.
+         */
         bool broadcastMessage(const QString message) const;
+        /**
+         * @brief Open a client socket that will connect on this server.
+         * @return This function return always `true`.
+         */
         bool openClient() const;
+        /**
+         * @brief Overrided function of `QWidget::closeEvent()` for managing the form closing.
+         * @param event Parameters that describe the close event.
+         */
         void closeEvent(QCloseEvent *event) override;
 
     private slots:
+        /**
+         * @brief Manage the signal `QAbstractButton::clicked()` of the button `testPushButton`.
+         * @param checked If the button is checkable: `true` if checked, `false` otherwise.
+         */
         void onTestPushButtonClicked(bool checked);
+        /**
+         * @brief Manage the signal `QAbstractButton::clicked()` of the button `clearPushButton`.
+         * @param checked If the button is checkable: `true` if checked, `false` otherwise.
+         */
         void onClearPushButtonClicked(bool checked);
+        /**
+         * @brief Manage the signal `QTcpServer::newConnection()` of `m_server`.
+         */
         void onTCPServerNewConnection();
+        /**
+         * @brief Manage the signal `QIODevice::readyRead()` of connected client.
+         */
         void onTcpSocketReadyRead();
+        /**
+         * @brief Manage the signal `QAbstractSocket::disconnected()` of connected client.
+         */
         void onTcpSocketDisconnected();
+        /**
+         * @brief Manage the signal `connectedPlayerListManaged()`.
+         * @param nrOfConnectedPlayers The number of connected player.
+         */
         void onConnectedPlayerListManaged(int &nrOfConnectedPlayers);
+        /**
+         * @brief Manage the signal `gameIsReady()`.
+         */
         void onGameIsReady();
+        /**
+         * @brief Manage the event `QAbstractSocket::connected()` of the socket of the client that server is opening.
+         */
         void onClientTcpSocketConnected();
+        /**
+         * @brief Mange the event `QAbstractSocket::errorOccurred()` of the socket of the client that server is opening.
+         */
         void onClientTcpSocketErrorOccured();
 
     signals:
+        /**
+         * @brief Signal that is emitted when the list `m_connectedPlayers` is edited.
+         * @param nrOfConnectedPlayers The number of actual connected players.
+         */
         void connectedPlayerListManaged(int &nrOfConnectedPlayers);
+        /**
+         * @brief Signal that is emitted when the game is ready.
+         */
         void gameIsReady();
 };
 
