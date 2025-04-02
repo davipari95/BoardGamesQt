@@ -1,4 +1,26 @@
 var searchData=
 [
-  ['name_0',['name',['../struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html#a2ce0064565f1401708a457a75d18189a',1,'TicTacToeLanServerMdiSubWindow::PlayerInfoStruct']]]
+  ['m_5factturn_0',['m_actTurn',['../class_match.html#afa1fb4ac895b2d7fcde474f0ab799731',1,'Match']]],
+  ['m_5fboard_1',['m_board',['../class_tic_tac_toe_l_a_n_client_mdi_sub_window.html#ae502c465dd989c9fa1bc66c10b389731',1,'TicTacToeLANClientMdiSubWindow::m_board'],['../class_match.html#ac80cc09f25ed7ec4f6c4e80a0bffb61a',1,'Match::m_board']]],
+  ['m_5fcells_2',['m_cells',['../class_tic_tac_toe_local_game.html#aef1e78ad767b036c9543f5ea9955633e',1,'TicTacToeLocalGame']]],
+  ['m_5fclientplayername_3',['m_clientPlayerName',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a92d12f600684cb5c0585b5ed3c21ee96',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5fclienttoken_4',['m_clientToken',['../class_lan_match.html#a0d021a7b0a5d38629a4dae892b54be7b',1,'LanMatch']]],
+  ['m_5fcolumn_5',['m_column',['../class_grid_position.html#a8159215d95a0d47eb6d5f67a032a8701',1,'GridPosition']]],
+  ['m_5fconnectedplayers_6',['m_connectedPlayers',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a1439b5dc32ecac771d2d3e1d8b5b1e85',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5fconnecting_7',['m_connecting',['../class_tic_tac_toe_lan_client_settings_mdi_sub_window.html#ab6b6e0dcc635c18d93744d2a087ff643',1,'TicTacToeLanClientSettingsMdiSubWindow']]],
+  ['m_5fcontent_8',['m_content',['../class_board.html#a86ca98e98a6e93c555a36af8b450c9b8',1,'Board']]],
+  ['m_5fgameisready_9',['m_gameIsReady',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a81b0074e01f4b71da561ccf534b54d31',1,'TicTacToeLanServerMdiSubWindow::m_gameIsReady'],['../class_lan_match.html#ae8cd9e2a42a9b7ec8c881b92b936fa56',1,'LanMatch::m_gameIsReady']]],
+  ['m_5fgamestopped_10',['m_gameStopped',['../class_match.html#a56d506605c0cb4a8037bd1a936c56961',1,'Match']]],
+  ['m_5fgridposition_11',['m_gridPosition',['../class_q_grid_label.html#a5630607a1d5b022cebcb759881e2f675',1,'QGridLabel']]],
+  ['m_5fmaininstance_12',['m_mainInstance',['../class_main_window.html#aac7af5ec2242f6c543e38b2ff1b14649',1,'MainWindow']]],
+  ['m_5fmatch_13',['m_match',['../class_tic_tac_toe_l_a_n_client_mdi_sub_window.html#a51dcac167c842b902119d5ea58e8c532',1,'TicTacToeLANClientMdiSubWindow::m_match'],['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a9857d62869ed726939b7cc3406c97f96',1,'TicTacToeLanServerMdiSubWindow::m_match'],['../class_tic_tac_toe_local_game.html#a879f629c4af4e2c3fdadc8446f8e9350',1,'TicTacToeLocalGame::m_match']]],
+  ['m_5fmatchparent_14',['m_matchParent',['../class_board.html#ad06195da2e83e6361c16e8c8e3439928',1,'Board']]],
+  ['m_5fmax_15',['m_max',['../class_range.html#a29ca32aa079ef3d7864c7dab7a673c2d',1,'Range']]],
+  ['m_5fmin_16',['m_min',['../class_range.html#a5df6964e51d4af02f750604e30d230f5',1,'Range']]],
+  ['m_5fplayernames_17',['m_playerNames',['../class_match.html#a58aba69f5a7f666cfca3b80fee8007e9',1,'Match']]],
+  ['m_5fprimaryaddress_18',['m_primaryAddress',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#acf0e640060894dbed340a2e23538bdfb',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5frow_19',['m_row',['../class_grid_position.html#ac356f42b381f40231e64f688e8267721',1,'GridPosition']]],
+  ['m_5fserver_20',['m_server',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#ac9f7c9725a9d7fa72717d867439e9a61',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5fsocket_21',['m_socket',['../class_tic_tac_toe_l_a_n_client_mdi_sub_window.html#aa51378fea88bca8eb8b319f358dafc2c',1,'TicTacToeLANClientMdiSubWindow']]],
+  ['mainwindow_22',['mainWindow',['../class_v_widgets.html#a2cb1961af10c14ad693fe2814ff62995',1,'VWidgets']]]
 ];

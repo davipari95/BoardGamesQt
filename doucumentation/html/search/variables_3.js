@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['token_0',['token',['../struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html#af99708b15d845b641fc14b323e8704b3',1,'TicTacToeLanServerMdiSubWindow::PlayerInfoStruct']]]
+  ['plain_0',['plain',['../class_v_styles.html#a68bc085f247de4825abd8fe33e55d75e',1,'VStyles']]]
 ];

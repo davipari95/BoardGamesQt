@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Board Games QT: classes/mdisubwindows/rules_viewer.h Source File</title>
+<link rel="icon" href="app_icon_light.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -114,30 +115,34 @@ $(function(){initNavTree('rules__viewer_8h_source.html',''); initResizable(true)
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>Ui {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>RulesViewer;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_rules_viewer.html">   11</a></span><span class="keyword">class </span>RulesViewer : <span class="keyword">public</span> QMdiSubWindow</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        Q_OBJECT</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="comment">//Constructor</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">explicit</span> RulesViewer(<span class="keyword">const</span> QString gameName, QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="comment">//Destructor</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        ~RulesViewer();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="comment">//Variables</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        Ui::RulesViewer *ui;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> initializeComponents();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> showRules(<span class="keyword">const</span> QString gameName);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_rules_viewer.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_rules_viewer.html#a60bb8efe7979358eb7004fbf806ba375">RulesViewer</a> : <span class="keyword">public</span> QMdiSubWindow</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        Q_OBJECT</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="comment">//Constructor</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">explicit</span> <a class="code hl_function" href="class_rules_viewer.html#a60bb8efe7979358eb7004fbf806ba375">RulesViewer</a>(<span class="keyword">const</span> QString gameName, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">//Destructor</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_function" href="class_rules_viewer.html#a60bb8efe7979358eb7004fbf806ba375">~RulesViewer</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="comment">//Variables</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_rules_viewer.html#a0362f8e60725d7fbe0b9effc3466d9b8">   35</a></span>        Ui::RulesViewer *<a class="code hl_variable" href="class_rules_viewer.html#a0362f8e60725d7fbe0b9effc3466d9b8">ui</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_rules_viewer.html#aa49e4064b184c46a9f0c0f10a0269215">initializeComponents</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_rules_viewer.html#a230733b25096d2e6653576fc86d0ce0d">showRules</a>(<span class="keyword">const</span> QString gameName);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// RULES_VIEWER_H</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">// RULES_VIEWER_H</span></div>
+<div class="ttc" id="aclass_rules_viewer_html_a0362f8e60725d7fbe0b9effc3466d9b8"><div class="ttname"><a href="class_rules_viewer.html#a0362f8e60725d7fbe0b9effc3466d9b8">RulesViewer::ui</a></div><div class="ttdeci">Ui::RulesViewer * ui</div><div class="ttdoc">User interface.</div><div class="ttdef"><b>Definition</b> rules_viewer.h:35</div></div>
+<div class="ttc" id="aclass_rules_viewer_html_a230733b25096d2e6653576fc86d0ce0d"><div class="ttname"><a href="class_rules_viewer.html#a230733b25096d2e6653576fc86d0ce0d">RulesViewer::showRules</a></div><div class="ttdeci">void showRules(const QString gameName)</div><div class="ttdoc">Retrieve the HTML file that contains rules and show on text browser.</div><div class="ttdef"><b>Definition</b> rules_viewer.cpp:36</div></div>
+<div class="ttc" id="aclass_rules_viewer_html_a60bb8efe7979358eb7004fbf806ba375"><div class="ttname"><a href="class_rules_viewer.html#a60bb8efe7979358eb7004fbf806ba375">RulesViewer::RulesViewer</a></div><div class="ttdeci">RulesViewer(const QString gameName, QWidget *parent=nullptr)</div><div class="ttdoc">Initialize this class showing the rules of the game given in gameName.</div><div class="ttdef"><b>Definition</b> rules_viewer.cpp:8</div></div>
+<div class="ttc" id="aclass_rules_viewer_html_aa49e4064b184c46a9f0c0f10a0269215"><div class="ttname"><a href="class_rules_viewer.html#aa49e4064b184c46a9f0c0f10a0269215">RulesViewer::initializeComponents</a></div><div class="ttdeci">void initializeComponents()</div><div class="ttdoc">Initalize all UI components that cannot be initialized via designer.</div><div class="ttdef"><b>Definition</b> rules_viewer.cpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

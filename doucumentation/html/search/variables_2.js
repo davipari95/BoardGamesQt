@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['socket_0',['socket',['../struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html#a1b6566ae34de79e801eaecf354d304ca',1,'TicTacToeLanServerMdiSubWindow::PlayerInfoStruct']]]
+  ['name_0',['name',['../struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html#a2ce0064565f1401708a457a75d18189a',1,'TicTacToeLanServerMdiSubWindow::PlayerInfoStruct']]]
 ];

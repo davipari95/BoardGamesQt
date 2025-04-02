@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Board Games QT: UNetwork Class Reference</title>
+<link rel="icon" href="app_icon_light.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,19 +109,128 @@ $(function(){initNavTree('class_u_network.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">UNetwork Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that contains static functions useful for networking.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="u__network_8h_source.html">u_network.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad847a9bce86bc9d328844676bb19adc0" id="r_ad847a9bce86bc9d328844676bb19adc0"><td class="memItemLeft" align="right" valign="top"><a id="ad847a9bce86bc9d328844676bb19adc0" name="ad847a9bce86bc9d328844676bb19adc0"></a>
-static QList&lt; QHostAddress &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getLocalIPAddresses</b> ()</td></tr>
+<tr class="memitem:ad847a9bce86bc9d328844676bb19adc0" id="r_ad847a9bce86bc9d328844676bb19adc0"><td class="memItemLeft" align="right" valign="top">static QList&lt; QHostAddress &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad847a9bce86bc9d328844676bb19adc0">getLocalIPAddresses</a> ()</td></tr>
+<tr class="memdesc:ad847a9bce86bc9d328844676bb19adc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all local IP addresses.  <br /></td></tr>
 <tr class="separator:ad847a9bce86bc9d328844676bb19adc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1047a2947a4f85eface28908f39ba142" id="r_a1047a2947a4f85eface28908f39ba142"><td class="memItemLeft" align="right" valign="top"><a id="a1047a2947a4f85eface28908f39ba142" name="a1047a2947a4f85eface28908f39ba142"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>getPrimaryIPAddress</b> (QHostAddress &amp;out_primaryIpAddress)</td></tr>
+<tr class="memitem:a1047a2947a4f85eface28908f39ba142" id="r_a1047a2947a4f85eface28908f39ba142"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1047a2947a4f85eface28908f39ba142">getPrimaryIPAddress</a> (QHostAddress &amp;out_primaryIpAddress)</td></tr>
+<tr class="memdesc:a1047a2947a4f85eface28908f39ba142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the main IP address of this system.  <br /></td></tr>
 <tr class="separator:a1047a2947a4f85eface28908f39ba142"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbb4a23222816757c0c7eed988e799e1" id="r_abbb4a23222816757c0c7eed988e799e1"><td class="memItemLeft" align="right" valign="top"><a id="abbb4a23222816757c0c7eed988e799e1" name="abbb4a23222816757c0c7eed988e799e1"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>tryParseIpAddress</b> (const QString strIpAddress, QHostAddress &amp;out_ipAddress)</td></tr>
+<tr class="memitem:abbb4a23222816757c0c7eed988e799e1" id="r_abbb4a23222816757c0c7eed988e799e1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbb4a23222816757c0c7eed988e799e1">tryParseIpAddress</a> (const QString strIpAddress, QHostAddress &amp;out_ipAddress)</td></tr>
+<tr class="memdesc:abbb4a23222816757c0c7eed988e799e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to parse a string of the IP address given in <code>strIpAddress</code> and return a validated IP address in <code>out_ipAddress</code>.  <br /></td></tr>
 <tr class="separator:abbb4a23222816757c0c7eed988e799e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that contains static functions useful for networking. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad847a9bce86bc9d328844676bb19adc0" name="ad847a9bce86bc9d328844676bb19adc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad847a9bce86bc9d328844676bb19adc0">&#9670;&#160;</a></span>getLocalIPAddresses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QHostAddress &gt; UNetwork::getLocalIPAddresses </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all local IP addresses. </p>
+<dl class="section return"><dt>Returns</dt><dd>A list containin all local IP addresses. </dd></dl>
+
+</div>
+</div>
+<a id="a1047a2947a4f85eface28908f39ba142" name="a1047a2947a4f85eface28908f39ba142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1047a2947a4f85eface28908f39ba142">&#9670;&#160;</a></span>getPrimaryIPAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UNetwork::getPrimaryIPAddress </td>
+          <td>(</td>
+          <td class="paramtype">QHostAddress &amp;</td>          <td class="paramname"><span class="paramname"><em>out_primaryIpAddress</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the main IP address of this system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_primaryIpAddress</td><td>The primary IP address of this system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if a primary IP address is found, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="abbb4a23222816757c0c7eed988e799e1" name="abbb4a23222816757c0c7eed988e799e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb4a23222816757c0c7eed988e799e1">&#9670;&#160;</a></span>tryParseIpAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UNetwork::tryParseIpAddress </td>
+          <td>(</td>
+          <td class="paramtype">const QString</td>          <td class="paramname"><span class="paramname"><em>strIpAddress</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QHostAddress &amp;</td>          <td class="paramname"><span class="paramname"><em>out_ipAddress</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to parse a string of the IP address given in <code>strIpAddress</code> and return a validated IP address in <code>out_ipAddress</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strIpAddress</td><td>String with the IP address to validate. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_ipAddress</td><td>Validated IP address, converted from <code>strIpAddress</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the string given in <code>strIpAddress</code> was valid, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/utils/<a class="el" href="u__network_8h_source.html">u_network.h</a></li>
 <li>classes/utils/<b>u_network.cpp</b></li>

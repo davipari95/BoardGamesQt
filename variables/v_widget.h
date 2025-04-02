@@ -3,9 +3,15 @@
 
 class MainWindow;
 
+/**
+ * @brief A class that contains all widget variables.
+ */
 class VWidgets
 {
     public:
+        /**
+         * @brief mainWindow The main window of this project.
+         */
         static MainWindow mainWindow;
 };
 

@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Board Games QT: classes/utils/u_frames.h Source File</title>
+<link rel="icon" href="app_icon_light.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,26 +111,31 @@ $(function(){initNavTree('u__frames_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">class </span>QWidget;</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">class </span>QMdiSubWindow;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_u_frames.html">    7</a></span><span class="keyword">class </span>UFrames</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="comment">//Constructors</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        UFrames();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">//Functions</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> getSubMdiFrameBorderSizes(<span class="keyword">const</span> QWidget* baseWidget, <span class="keywordtype">int</span> &amp;out_topPx, <span class="keywordtype">int</span> &amp;out_bottomPx, <span class="keywordtype">int</span> &amp;out_leftPx, <span class="keywordtype">int</span> &amp;out_rightPx);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> adaptSubMdiSizesByContent(QMdiSubWindow* window, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> fixedSize = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> centreFormInMdiArea(QMdiSubWindow *window);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> isDarkMode();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> setFlagsAndAttributes(QMdiSubWindow *window, <span class="keywordtype">bool</span> deleteOnClose = <span class="keyword">true</span>, <span class="keywordtype">bool</span> showMaximiseButton = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_u_frames.html">   10</a></span><span class="keyword">class </span>UFrames</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="comment">//Constructors</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        UFrames();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="comment">//Functions</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_frames.html#abb1b05699dfae97afbfd74216d1e79e7">getSubMdiFrameBorderSizes</a>(<span class="keyword">const</span> QWidget* baseWidget, <span class="keywordtype">int</span> &amp;out_topPx, <span class="keywordtype">int</span> &amp;out_bottomPx, <span class="keywordtype">int</span> &amp;out_leftPx, <span class="keywordtype">int</span> &amp;out_rightPx);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_u_frames.html#a6dcae8f51b9561d54badaba7802310c2">adaptSubMdiSizesByContent</a>(QMdiSubWindow* window, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">bool</span> fixedSize = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_u_frames.html#a2b8c552c22a21a8218a9b1fbff7f2124">centreFormInMdiArea</a>(QMdiSubWindow *window);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_u_frames.html#a8fb293530e96637b244e7cf0c030d99d">isDarkMode</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_u_frames.html#aa9510c0dbfe4b5638de97070107032b8">setFlagsAndAttributes</a>(QMdiSubWindow *window, <span class="keywordtype">bool</span> deleteOnClose = <span class="keyword">true</span>, <span class="keywordtype">bool</span> showMaximiseButton = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">// U_FRAMES_H</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">// U_FRAMES_H</span></div>
+<div class="ttc" id="aclass_u_frames_html_a2b8c552c22a21a8218a9b1fbff7f2124"><div class="ttname"><a href="class_u_frames.html#a2b8c552c22a21a8218a9b1fbff7f2124">UFrames::centreFormInMdiArea</a></div><div class="ttdeci">static bool centreFormInMdiArea(QMdiSubWindow *window)</div><div class="ttdoc">Centre the window given in window at the center of the main MDI area.</div><div class="ttdef"><b>Definition</b> u_frames.cpp:43</div></div>
+<div class="ttc" id="aclass_u_frames_html_a6dcae8f51b9561d54badaba7802310c2"><div class="ttname"><a href="class_u_frames.html#a6dcae8f51b9561d54badaba7802310c2">UFrames::adaptSubMdiSizesByContent</a></div><div class="ttdeci">static bool adaptSubMdiSizesByContent(QMdiSubWindow *window, int width, int height, bool fixedSize=false)</div><div class="ttdoc">Adapt the size of the QMdiSubWindow window given in window with the content size given in width and h...</div><div class="ttdef"><b>Definition</b> u_frames.cpp:22</div></div>
+<div class="ttc" id="aclass_u_frames_html_a8fb293530e96637b244e7cf0c030d99d"><div class="ttname"><a href="class_u_frames.html#a8fb293530e96637b244e7cf0c030d99d">UFrames::isDarkMode</a></div><div class="ttdeci">static bool isDarkMode()</div><div class="ttdoc">Check if the software is running in dark mode.</div><div class="ttdef"><b>Definition</b> u_frames.cpp:53</div></div>
+<div class="ttc" id="aclass_u_frames_html_aa9510c0dbfe4b5638de97070107032b8"><div class="ttname"><a href="class_u_frames.html#aa9510c0dbfe4b5638de97070107032b8">UFrames::setFlagsAndAttributes</a></div><div class="ttdeci">static void setFlagsAndAttributes(QMdiSubWindow *window, bool deleteOnClose=true, bool showMaximiseButton=false)</div><div class="ttdoc">Set some flags and attributes of the window given in window.</div><div class="ttdef"><b>Definition</b> u_frames.cpp:58</div></div>
+<div class="ttc" id="aclass_u_frames_html_abb1b05699dfae97afbfd74216d1e79e7"><div class="ttname"><a href="class_u_frames.html#abb1b05699dfae97afbfd74216d1e79e7">UFrames::getSubMdiFrameBorderSizes</a></div><div class="ttdeci">static void getSubMdiFrameBorderSizes(const QWidget *baseWidget, int &amp;out_topPx, int &amp;out_bottomPx, int &amp;out_leftPx, int &amp;out_rightPx)</div><div class="ttdoc">Retrieve the border size (Frame size - content size) of the widget given in baseWidget.</div><div class="ttdef"><b>Definition</b> u_frames.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

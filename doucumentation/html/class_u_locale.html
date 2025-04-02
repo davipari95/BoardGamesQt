@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Board Games QT: ULocale Class Reference</title>
+<link rel="icon" href="app_icon_light.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,16 +109,80 @@ $(function(){initNavTree('class_u_locale.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">ULocale Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that contains static functions useful for languages and translations.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="u__locale_8h_source.html">u_locale.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aff336b0e48dc9336997127a87e130e2f" id="r_aff336b0e48dc9336997127a87e130e2f"><td class="memItemLeft" align="right" valign="top"><a id="aff336b0e48dc9336997127a87e130e2f" name="aff336b0e48dc9336997127a87e130e2f"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>getSystemLocale</b> ()</td></tr>
+<tr class="memitem:aff336b0e48dc9336997127a87e130e2f" id="r_aff336b0e48dc9336997127a87e130e2f"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff336b0e48dc9336997127a87e130e2f">getSystemLocale</a> ()</td></tr>
+<tr class="memdesc:aff336b0e48dc9336997127a87e130e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the langauge code of the system with dialect.  <br /></td></tr>
 <tr class="separator:aff336b0e48dc9336997127a87e130e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32d5ce1ab4bd0bbc6f75c309b041f458" id="r_a32d5ce1ab4bd0bbc6f75c309b041f458"><td class="memItemLeft" align="right" valign="top"><a id="a32d5ce1ab4bd0bbc6f75c309b041f458" name="a32d5ce1ab4bd0bbc6f75c309b041f458"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>getTwoCharSystemLocale</b> ()</td></tr>
+<tr class="memitem:a32d5ce1ab4bd0bbc6f75c309b041f458" id="r_a32d5ce1ab4bd0bbc6f75c309b041f458"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32d5ce1ab4bd0bbc6f75c309b041f458">getTwoCharSystemLocale</a> ()</td></tr>
+<tr class="memdesc:a32d5ce1ab4bd0bbc6f75c309b041f458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the language code of the system.  <br /></td></tr>
 <tr class="separator:a32d5ce1ab4bd0bbc6f75c309b041f458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that contains static functions useful for languages and translations. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aff336b0e48dc9336997127a87e130e2f" name="aff336b0e48dc9336997127a87e130e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff336b0e48dc9336997127a87e130e2f">&#9670;&#160;</a></span>getSystemLocale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ULocale::getSystemLocale </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the langauge code of the system with dialect. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string with the language code of the system in format <code>xx_YY</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a32d5ce1ab4bd0bbc6f75c309b041f458" name="a32d5ce1ab4bd0bbc6f75c309b041f458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d5ce1ab4bd0bbc6f75c309b041f458">&#9670;&#160;</a></span>getTwoCharSystemLocale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ULocale::getTwoCharSystemLocale </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the language code of the system. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string with two characters that is the langauge active on the system. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/utils/<a class="el" href="u__locale_8h_source.html">u_locale.h</a></li>
 <li>classes/utils/<b>u_locale.cpp</b></li>

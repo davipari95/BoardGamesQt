@@ -6,6 +6,7 @@
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Board Games QT: UFrames Class Reference</title>
+<link rel="icon" href="app_icon_light.png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -108,25 +109,246 @@ $(function(){initNavTree('class_u_frames.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">UFrames Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that contains static functions useful for windows.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="u__frames_8h_source.html">u_frames.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abb1b05699dfae97afbfd74216d1e79e7" id="r_abb1b05699dfae97afbfd74216d1e79e7"><td class="memItemLeft" align="right" valign="top"><a id="abb1b05699dfae97afbfd74216d1e79e7" name="abb1b05699dfae97afbfd74216d1e79e7"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>getSubMdiFrameBorderSizes</b> (const QWidget *baseWidget, int &amp;out_topPx, int &amp;out_bottomPx, int &amp;out_leftPx, int &amp;out_rightPx)</td></tr>
+<tr class="memitem:abb1b05699dfae97afbfd74216d1e79e7" id="r_abb1b05699dfae97afbfd74216d1e79e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb1b05699dfae97afbfd74216d1e79e7">getSubMdiFrameBorderSizes</a> (const QWidget *baseWidget, int &amp;out_topPx, int &amp;out_bottomPx, int &amp;out_leftPx, int &amp;out_rightPx)</td></tr>
+<tr class="memdesc:abb1b05699dfae97afbfd74216d1e79e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the border size (Frame size - content size) of the widget given in <code>baseWidget</code>.  <br /></td></tr>
 <tr class="separator:abb1b05699dfae97afbfd74216d1e79e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dcae8f51b9561d54badaba7802310c2" id="r_a6dcae8f51b9561d54badaba7802310c2"><td class="memItemLeft" align="right" valign="top"><a id="a6dcae8f51b9561d54badaba7802310c2" name="a6dcae8f51b9561d54badaba7802310c2"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>adaptSubMdiSizesByContent</b> (QMdiSubWindow *window, int width, int height, bool fixedSize=false)</td></tr>
+<tr class="memitem:a6dcae8f51b9561d54badaba7802310c2" id="r_a6dcae8f51b9561d54badaba7802310c2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dcae8f51b9561d54badaba7802310c2">adaptSubMdiSizesByContent</a> (QMdiSubWindow *window, int width, int height, bool fixedSize=false)</td></tr>
+<tr class="memdesc:a6dcae8f51b9561d54badaba7802310c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adapt the size of the <code>QMdiSubWindow</code> window given in <code>window</code> with the content size given in <code>width</code> and <code>height</code>.  <br /></td></tr>
 <tr class="separator:a6dcae8f51b9561d54badaba7802310c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b8c552c22a21a8218a9b1fbff7f2124" id="r_a2b8c552c22a21a8218a9b1fbff7f2124"><td class="memItemLeft" align="right" valign="top"><a id="a2b8c552c22a21a8218a9b1fbff7f2124" name="a2b8c552c22a21a8218a9b1fbff7f2124"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>centreFormInMdiArea</b> (QMdiSubWindow *window)</td></tr>
+<tr class="memitem:a2b8c552c22a21a8218a9b1fbff7f2124" id="r_a2b8c552c22a21a8218a9b1fbff7f2124"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b8c552c22a21a8218a9b1fbff7f2124">centreFormInMdiArea</a> (QMdiSubWindow *window)</td></tr>
+<tr class="memdesc:a2b8c552c22a21a8218a9b1fbff7f2124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centre the window given in <code>window</code> at the center of the main MDI area.  <br /></td></tr>
 <tr class="separator:a2b8c552c22a21a8218a9b1fbff7f2124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fb293530e96637b244e7cf0c030d99d" id="r_a8fb293530e96637b244e7cf0c030d99d"><td class="memItemLeft" align="right" valign="top"><a id="a8fb293530e96637b244e7cf0c030d99d" name="a8fb293530e96637b244e7cf0c030d99d"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDarkMode</b> ()</td></tr>
+<tr class="memitem:a8fb293530e96637b244e7cf0c030d99d" id="r_a8fb293530e96637b244e7cf0c030d99d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fb293530e96637b244e7cf0c030d99d">isDarkMode</a> ()</td></tr>
+<tr class="memdesc:a8fb293530e96637b244e7cf0c030d99d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the software is running in dark mode.  <br /></td></tr>
 <tr class="separator:a8fb293530e96637b244e7cf0c030d99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9510c0dbfe4b5638de97070107032b8" id="r_aa9510c0dbfe4b5638de97070107032b8"><td class="memItemLeft" align="right" valign="top"><a id="aa9510c0dbfe4b5638de97070107032b8" name="aa9510c0dbfe4b5638de97070107032b8"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setFlagsAndAttributes</b> (QMdiSubWindow *window, bool deleteOnClose=true, bool showMaximiseButton=false)</td></tr>
+<tr class="memitem:aa9510c0dbfe4b5638de97070107032b8" id="r_aa9510c0dbfe4b5638de97070107032b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9510c0dbfe4b5638de97070107032b8">setFlagsAndAttributes</a> (QMdiSubWindow *window, bool deleteOnClose=true, bool showMaximiseButton=false)</td></tr>
+<tr class="memdesc:aa9510c0dbfe4b5638de97070107032b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set some flags and attributes of the window given in <code>window</code>.  <br /></td></tr>
 <tr class="separator:aa9510c0dbfe4b5638de97070107032b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that contains static functions useful for windows. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6dcae8f51b9561d54badaba7802310c2" name="a6dcae8f51b9561d54badaba7802310c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcae8f51b9561d54badaba7802310c2">&#9670;&#160;</a></span>adaptSubMdiSizesByContent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UFrames::adaptSubMdiSizesByContent </td>
+          <td>(</td>
+          <td class="paramtype">QMdiSubWindow *</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>fixedSize</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adapt the size of the <code>QMdiSubWindow</code> window given in <code>window</code> with the content size given in <code>width</code> and <code>height</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">window</td><td>Window which you what to adapt size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>Width of the content of the window. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>Height of the content of the windoe. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fixedSize</td><td>Set <code>true</code> if you don't want that the window is resizable, <code>false</code> if you do. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function returns always <code>true</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a2b8c552c22a21a8218a9b1fbff7f2124" name="a2b8c552c22a21a8218a9b1fbff7f2124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8c552c22a21a8218a9b1fbff7f2124">&#9670;&#160;</a></span>centreFormInMdiArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UFrames::centreFormInMdiArea </td>
+          <td>(</td>
+          <td class="paramtype">QMdiSubWindow *</td>          <td class="paramname"><span class="paramname"><em>window</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Centre the window given in <code>window</code> at the center of the main MDI area. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">window</td><td>Window that you want to centre into the main MDI area. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This function return always <code>true</code>. </dd></dl>
+
+</div>
+</div>
+<a id="abb1b05699dfae97afbfd74216d1e79e7" name="abb1b05699dfae97afbfd74216d1e79e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1b05699dfae97afbfd74216d1e79e7">&#9670;&#160;</a></span>getSubMdiFrameBorderSizes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UFrames::getSubMdiFrameBorderSizes </td>
+          <td>(</td>
+          <td class="paramtype">const QWidget *</td>          <td class="paramname"><span class="paramname"><em>baseWidget</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>out_topPx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>out_bottomPx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>out_leftPx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>out_rightPx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the border size (Frame size - content size) of the widget given in <code>baseWidget</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">baseWidget</td><td>Widget where you want to retrieve the border size. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_topPx</td><td><a class="el" href="class_board.html" title="Class that represents the board of Tic-Tac-Toe game.">Board</a> height on the top in pixel. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_bottomPx</td><td><a class="el" href="class_board.html" title="Class that represents the board of Tic-Tac-Toe game.">Board</a> height on botton in pixel. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_leftPx</td><td><a class="el" href="class_board.html" title="Class that represents the board of Tic-Tac-Toe game.">Board</a> width on left in pixel. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out_rightPx</td><td><a class="el" href="class_board.html" title="Class that represents the board of Tic-Tac-Toe game.">Board</a> width on right in pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8fb293530e96637b244e7cf0c030d99d" name="a8fb293530e96637b244e7cf0c030d99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb293530e96637b244e7cf0c030d99d">&#9670;&#160;</a></span>isDarkMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UFrames::isDarkMode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the software is running in dark mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the software is running in dark mode, <code>false</code> in light mode. </dd></dl>
+
+</div>
+</div>
+<a id="aa9510c0dbfe4b5638de97070107032b8" name="aa9510c0dbfe4b5638de97070107032b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9510c0dbfe4b5638de97070107032b8">&#9670;&#160;</a></span>setFlagsAndAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UFrames::setFlagsAndAttributes </td>
+          <td>(</td>
+          <td class="paramtype">QMdiSubWindow *</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>deleteOnClose</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>showMaximiseButton</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set some flags and attributes of the window given in <code>window</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">window</td><td>Window where you want to set flags and attributes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">deleteOnClose</td><td>Set <code>true</code> if you want to delete the window after it is closed, <code>false</code> if not. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">showMaximiseButton</td><td>Set <code>true</code> if you want to show the maximise button of the frame, <code>false</code> if not. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>classes/utils/<a class="el" href="u__frames_8h_source.html">u_frames.h</a></li>
 <li>classes/utils/<b>u_frames.cpp</b></li>
