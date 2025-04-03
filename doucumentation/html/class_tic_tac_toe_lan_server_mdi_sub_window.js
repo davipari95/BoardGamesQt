@@ -15,6 +15,7 @@ var class_tic_tac_toe_lan_server_mdi_sub_window =
     [ "manageIncomingGetPlayerInfo", "class_tic_tac_toe_lan_server_mdi_sub_window.html#a74508eae903b910a187bdda626dcad7b", null ],
     [ "manageInsertToken", "class_tic_tac_toe_lan_server_mdi_sub_window.html#aedcc2978a5b6c9a9e72667549e7e903f", null ],
     [ "manageTcpIncomingMessage", "class_tic_tac_toe_lan_server_mdi_sub_window.html#a66a062d8e9d0a32eb356f57af2000d35", null ],
+    [ "onActualTurnChangedSignal", "class_tic_tac_toe_lan_server_mdi_sub_window.html#ab21971e7bee7767f73e23d054d4aa3f9", null ],
     [ "onClearPushButtonClicked", "class_tic_tac_toe_lan_server_mdi_sub_window.html#ade808b7f8e3a8762889dd43acb24b734", null ],
     [ "onClientTcpSocketConnected", "class_tic_tac_toe_lan_server_mdi_sub_window.html#abe93b0bfc111f15ff55fb0370740d4ab", null ],
     [ "onClientTcpSocketErrorOccured", "class_tic_tac_toe_lan_server_mdi_sub_window.html#af82fa81d4a7db098a45d4d9ba3b6e766", null ],

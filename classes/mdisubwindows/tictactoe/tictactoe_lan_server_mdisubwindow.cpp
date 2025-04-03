@@ -115,7 +115,10 @@ quint64 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *cli
         }
         else if (command[0] == "insert-token")
         {
-
+            if (manageInsertToken(client, command))
+            {
+                result |= 1 << 2;
+            }
         }
     }
 
@@ -176,6 +179,23 @@ bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStri
                     //Aware all clients that a token is inserted correctly
                     QString broadcast = QString("token-inserted\n%0\n%1\n%2\r\n").arg(getTokenChar(player.token)).arg(row).arg(col);
                     broadcastMessage(broadcast);
+
+                    //Check if is game-over
+                    TicTacToePlayerEnum gameOverResult = m_match->checkGameOver();
+                    if (gameOverResult != TicTacToePlayerEnum::None)
+                    {
+                        QString gameOverMessage = QString("game-over\n%0\r\n")
+                                                      .arg(
+                                                            gameOverResult == TicTacToePlayerEnum::Circle ? "O" :
+                                                            gameOverResult == TicTacToePlayerEnum::Cross ? "X" :
+                                                            "#"
+                                                          );
+                        broadcastMessage(gameOverMessage.toLatin1());
+                    }
+                    else
+                    {
+                        m_match->switchTurn();
+                    }
                 }
                 else
                 {
@@ -380,6 +400,7 @@ void TicTacToeLanServerMdiSubWindow::onGameIsReady()
     if (ok)
     {
         m_match = new Match(xPlayerName, oPlayerName, this);
+        connect(m_match, &Match::actualTurnChangedSignal, this, &TicTacToeLanServerMdiSubWindow::onActualTurnChangedSignal);
 
         broadcastMessage("game-ready\r\n");
         writeLog("Game is ready!");
@@ -413,4 +434,10 @@ void TicTacToeLanServerMdiSubWindow::onClientTcpSocketErrorOccured()
     QMessageBox::critical(this, title, message);
 
     this->close();
+}
+
+void TicTacToeLanServerMdiSubWindow::onActualTurnChangedSignal(TicTacToePlayerEnum turn)
+{
+    QString message = QString("set-turn\n%0\r\n").arg(getTokenChar(turn));
+    broadcastMessage(message);
 }

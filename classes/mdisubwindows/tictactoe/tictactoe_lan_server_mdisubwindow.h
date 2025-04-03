@@ -11,7 +11,7 @@ namespace Ui {
 class TicTacToeLanServerMdiSubWindow;
 }
 
-/**
+/**♣
  * @brief Server for the tic tac toe game.
  */
 class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
@@ -246,6 +246,11 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          * @brief Mange the event `QAbstractSocket::errorOccurred()` of the socket of the client that server is opening.
          */
         void onClientTcpSocketErrorOccured();
+        /**
+         * @brief Manage the event `Match::actualTurnChangedSignal()` of the match `m_match`.
+         * @param[out] turn The actual turn.
+         */
+        void onActualTurnChangedSignal(TicTacToePlayerEnum turn);
 
     signals:
         /**

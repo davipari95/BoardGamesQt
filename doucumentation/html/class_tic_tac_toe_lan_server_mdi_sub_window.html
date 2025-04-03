@@ -183,6 +183,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>onClientTcpSocketConn
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onClientTcpSocketErrorOccured</b> ()</td></tr>
 <tr class="memdesc:af82fa81d4a7db098a45d4d9ba3b6e766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mange the event <code>QAbstractSocket::errorOccurred()</code> of the socket of the client that server is opening. <br /></td></tr>
 <tr class="separator:af82fa81d4a7db098a45d4d9ba3b6e766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab21971e7bee7767f73e23d054d4aa3f9" id="r_ab21971e7bee7767f73e23d054d4aa3f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab21971e7bee7767f73e23d054d4aa3f9">onActualTurnChangedSignal</a> (TicTacToePlayerEnum turn)</td></tr>
+<tr class="memdesc:ab21971e7bee7767f73e23d054d4aa3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage the event <code><a class="el" href="class_match.html#ac14c41aa4062151471975110b3429086" title="Signal that is emitted after the turn is changed.">Match::actualTurnChangedSignal()</a></code> of the match <code>m_match</code>.  <br /></td></tr>
+<tr class="separator:ab21971e7bee7767f73e23d054d4aa3f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -267,6 +270,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Server for the tic tac toe game. </p>
+<p>♣ </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a53b3a9d97a05f335aaf785b1c4b863da" name="a53b3a9d97a05f335aaf785b1c4b863da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53b3a9d97a05f335aaf785b1c4b863da">&#9670;&#160;</a></span>TicTacToeLanServerMdiSubWindow()</h2>
@@ -713,6 +717,39 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 <code>[2]</code> → <code>insert-token</code> </li>
 </ul>
 </dd></dl>
+
+</div>
+</div>
+<a id="ab21971e7bee7767f73e23d054d4aa3f9" name="ab21971e7bee7767f73e23d054d4aa3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab21971e7bee7767f73e23d054d4aa3f9">&#9670;&#160;</a></span>onActualTurnChangedSignal</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TicTacToeLanServerMdiSubWindow::onActualTurnChangedSignal </td>
+          <td>(</td>
+          <td class="paramtype">TicTacToePlayerEnum</td>          <td class="paramname"><span class="paramname"><em>turn</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Manage the event <code><a class="el" href="class_match.html#ac14c41aa4062151471975110b3429086" title="Signal that is emitted after the turn is changed.">Match::actualTurnChangedSignal()</a></code> of the match <code>m_match</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">turn</td><td>The actual turn. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

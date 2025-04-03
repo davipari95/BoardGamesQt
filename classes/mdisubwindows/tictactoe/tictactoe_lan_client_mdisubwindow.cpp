@@ -2,9 +2,11 @@
 #include "ui_tictactoe_lan_client_mdisubwindow.h"
 
 #include <QTcpSocket>
+#include <QPixmap>
 
 #include <classes/objects/tictactoe/matches/lan_match.h>
 #include <classes/utils/u_frames.h>
+#include <classes/utils/u_messageboxes.h>
 
 #define CELL_SIZE 100
 #define MARGIN 5
@@ -66,9 +68,44 @@ void TicTacToeLANClientMdiSubWindow::initializeComponents()
     }
 }
 
+bool TicTacToeLANClientMdiSubWindow::updateGraphics()
+{
+    for (int r = 0; r < 3; r++)
+    {
+        for (int c = 0; c < 3; c++)
+        {
+            TicTacToePlayerEnum token = m_match->getBoard()->getTokenByPosition(r, c);
+            QPixmap pixmap = QPixmap();
+
+            if (token == TicTacToePlayerEnum::Cross)
+            {
+                pixmap = QPixmap(":/tictactoe/cross").scaled(REAL_CELL_SIZE, REAL_CELL_SIZE, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            }
+            else if (token == TicTacToePlayerEnum::Circle)
+            {
+                pixmap = QPixmap(":/tictactoe/circle").scaled(REAL_CELL_SIZE, REAL_CELL_SIZE, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+            }
+
+            m_board[r][c]->setPixmap(pixmap);
+        }
+    }
+
+    return true;
+}
+
 quint64 TicTacToeLANClientMdiSubWindow::manageIncomingTcpMessage(QTcpSocket *socket)
 {
     quint64 result = 0;
+
+    QHash<QString, int> commandNrMap =
+    {
+         {"get-player-info", 0},
+         {"game-ready", 1},
+         {"set-turn", 2},
+         {"token-inserted", 3},
+         {"insert-token", 4},
+         {"game-over", 5},
+    };
 
     QString message = socket->readAll();
 
@@ -78,33 +115,36 @@ quint64 TicTacToeLANClientMdiSubWindow::manageIncomingTcpMessage(QTcpSocket *soc
     {
         QStringList data = command.split("\n");
 
-        if (data[0] == "get-player-info")
+        switch (commandNrMap.value(data[0], -1))
         {
-            if (manageGetPlayerInfo(socket))
-            {
-                result |= 1 << 0;
-            }
-        }
-        else if (data[0] == "game-ready")
-        {
-            if (manageGameReady())
-            {
-                result |= 1 << 1;
-            }
-        }
-        else if (data[0] == "set-turn")
-        {
-            if (manageSetTurn(data))
-            {
-                result |= 1 << 2;
-            }
-        }
-        else if (data[0] == "token-inserted")
-        {
-            if (manageTokenInserted(data))
-            {
-                result |= 1 << 3;
-            }
+            case 0: //get-player-info
+                if (manageGetPlayerInfo(socket)) result |= 1 << 0;
+                break;
+
+            case 1: //game-ready
+                if (manageGameReady()) result |= 1 << 1;
+                break;
+
+            case 2: //set-turn
+                if (manageSetTurn(data)) result |= 1 << 2;
+                break;
+
+            case 3: //token-inserted
+                if (manageTokenInserted(data)) result |= 1 << 3;
+                break;
+
+            case 4: //insert-token
+                if (manageInsertToken(data)) result |= 1 << 4;
+                break;
+
+            case 5: //game-over
+                if (manageGameOver(socket, data)) result |= 1 << 5;
+                break;
+
+            case -1: //Invalid value
+                qDebug() << "Invalid value!";
+                break;
+
         }
     }
 
@@ -147,9 +187,72 @@ bool TicTacToeLANClientMdiSubWindow::manageTokenInserted(QStringList data)
 
     if (rowOk && colOk)
     {
-        return m_match->getBoard()->insertToken(row, col, token) == 0;
+        bool ok =  m_match->getBoard()->insertToken(row, col, token) == 0;
+
+        if (ok)
+        {
+            updateGraphics();
+        }
+
+        return ok;
     }
     else return false;
+}
+
+bool TicTacToeLANClientMdiSubWindow::manageInsertToken(QStringList args)
+{
+    if (args[1] == "NYT")
+    {
+        ui->infoLabel->setText(tr("Not your turn!"));
+    }
+    else if (args[1] == "BUSY")
+    {
+        ui->infoLabel->setText(tr("The cell is busy!"));
+    }
+    else if (args[1] != "OK")
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool TicTacToeLANClientMdiSubWindow::manageGameOver(QTcpSocket *socket, QStringList args)
+{
+    bool ok = true;
+
+    QMessageBox::StandardButtons buttons = QMessageBox::StandardButton::Yes|QMessageBox::StandardButton::No;
+    QString title;
+    QString message;
+    QPixmap icon;
+    QString playerName;
+
+    char winner = args[1][0].toLatin1();
+
+    switch (winner)
+    {
+        case 'X':
+            ok = m_match->getPlayerName(TicTacToePlayerEnum::Cross, playerName);
+            title = tr("Cross player wins!");
+            message = tr("%0 wins that match!\n\nDo you want a rematch?").arg(playerName);
+            break;
+        case 'O':
+            ok = m_match->getPlayerName(TicTacToePlayerEnum::Circle, playerName);
+            title = tr("Circle player wins!");
+            message = tr("%0 wins that match!\n\nDo you want a rematch?").arg(playerName);
+            break;
+        case '#':
+            title = tr("Drawn match!");
+            message = tr("Drawn match!\n\nDo you want a rematch?");
+            break;
+    }
+
+    QMessageBox::StandardButton result = UMessageBoxes::showCustomMessageBox(title, message, icon, buttons);
+    QString reply = QString("game-over\n%0\r\n").arg(result == QMessageBox::StandardButton::Yes ? "YES" : "NO");
+
+    socket->write(reply.toLatin1());
+
+    return ok;
 }
 
 void TicTacToeLANClientMdiSubWindow::onTcpSocketReadyRead()
@@ -177,7 +280,7 @@ void TicTacToeLANClientMdiSubWindow::onBoardCellClicked()
 
             if (m_match->getBoard()->getTokenByPosition(row, col) == TicTacToePlayerEnum::None)
             {
-                QString message = QString("insert-token\n%0\n%1").arg(row).arg(col);
+                QString message = QString("insert-token\n%0\n%1\r\n").arg(row).arg(col);
                 m_socket->write(message.toLatin1());
             }
         }

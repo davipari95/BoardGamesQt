@@ -96,7 +96,7 @@ class Board : public QObject
          */
         void initialize(Match *matchParent);
 
-signals:
+    signals:
 };
 
 #endif // BOARD_H

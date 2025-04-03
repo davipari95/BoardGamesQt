@@ -64,6 +64,11 @@ class TicTacToeLANClientMdiSubWindow : public QMdiSubWindow
          */
         void initializeComponents();
         /**
+         * @brief Update all UI board.
+         * @return This function will returns always `true`.
+         */
+        bool updateGraphics();
+        /**
          * @brief Manage all incoming messages from server.
          * @param socket Socket needed for replying to server.
          * @return A bit-to-bit result, where each bit has this meaning:
@@ -95,9 +100,32 @@ class TicTacToeLANClientMdiSubWindow : public QMdiSubWindow
         /**
          * @brief Manage the command `token-inserted` from server.
          * @param data The arguments of the command `token-inserted`.
-         * @return Return `true` if the command is manage correctly, `false` otherwise.
+         * @return Return `true` if the command is managed correctly, `false` otherwise.
          */
         bool manageTokenInserted(QStringList data);
+        /**
+         * @brief Manage the command `insert-token` from server.
+         * @param args The arguments of the command `insert-token`.
+         * @return Return `true` if the command is managed correctly, `false` otherwise.
+         */
+        bool manageInsertToken(QStringList args);
+        /**
+         * @brief Manage the command `game-over` from server.
+         * @param[in] socket The socket used for responding to server.
+         * @param[in] args Arguments of the command, where:
+         * <ul>
+         *  <li>
+         *      `args[1]` → Game over result, where
+         *      <ul>
+         *          <li>`X` → The player that plays cross wins;</li>
+         *          <li>`O` → The player that plays circle wins;</li>
+         *          <li>`#` → Drawn game.</li>
+         *      </ul>
+         *  </li>
+         * </ul>
+         * @return Return `true` if the command is managed correctly, `false` otherwise.
+         */
+        bool manageGameOver(QTcpSocket *socket, QStringList args);
 
     private slots:
         /**

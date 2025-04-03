@@ -4,7 +4,10 @@
 #include <QRegularExpressionValidator>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QMdiArea>
 
+#include <main_window.h>
+#include <classes/mdisubwindows/tictactoe/tictactoe_lan_client_mdisubwindow.h>
 #include <classes/utils/u_frames.h>
 #include <classes/utils/u_network.h>
 #include <variables/v_regex.h>
@@ -205,11 +208,15 @@ void TicTacToeLanClientSettingsMdiSubWindow::onPlayPushButtonClicked(bool checke
 
         QTcpSocket *socket = new QTcpSocket();
 
-        connect(socket, &QTcpSocket::connected, this, [this, socket]()
+        connect(socket, &QTcpSocket::connected, this, [socket, username, this]()
         {
             qDebug() << "Connected to server";
 
             //Open client
+            TicTacToeLANClientMdiSubWindow *client_window = new TicTacToeLANClientMdiSubWindow(socket, username, TicTacToePlayerEnum::Circle, this->parentWidget());
+            MainWindow::getMainMdiArea()->addSubWindow(client_window);
+            UFrames::centreFormInMdiArea(client_window);
+            client_window->show();
         });
 
         connect(socket, &QTcpSocket::errorOccurred, this, [this, socket](QAbstractSocket::SocketError)
