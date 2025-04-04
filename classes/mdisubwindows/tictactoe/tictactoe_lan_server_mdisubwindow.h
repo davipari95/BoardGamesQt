@@ -11,7 +11,7 @@ namespace Ui {
 class TicTacToeLanServerMdiSubWindow;
 }
 
-/**♣
+/**
  * @brief Server for the tic tac toe game.
  */
 class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
@@ -97,6 +97,16 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          * @brief Player name of the client opened by the server.
          */
         QString m_clientPlayerName;
+        /**
+         * @brief Contains the rematch result retrieved from clients, where:
+         * <ul>
+         *  <li>`[-2]` → Game is running.</li>
+         *  <li>`[0]` → Waiting for rematch.</li>
+         *  <li>`[-1]` → Client don't want rematch.</li>
+         *  <li>`[1]` → Client want rematch</li>
+         * </ul>
+         */
+        QHash<QTcpSocket*, qint8> m_rematchClientsResult;
 
         //Functions
         /**
@@ -109,7 +119,7 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          */
         void initialize(const QString &clientPlayerName);
         /**
-         * @brief Write log on 'logPlainTextEdit'.
+         * @brief Write log on `logPlainTextEdit`.
          *
          * This function will append automatically the date time.
          *
@@ -158,11 +168,18 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          *  <li>`NYT` → Is not the turn of the client.
          * </ul>
          *
-         * @param client Client that had sent the message. Server will responds here.
-         * @param args Arguments containing the token informations (token, row and column).
+         * @param[in] client Client that had sent the message. Server will responds here.
+         * @param[in] args Arguments containing the token informations (token, row and column).
          * @return Returns `true` if the commands is correctly managed, `false` otherwise.
          */
         bool manageInsertToken(QTcpSocket *client, QStringList &args);
+        /**
+         * @brief Manage the message `game-over` from the client.
+         * @param[in] client The client that sent the message.
+         * @param[in] args Arguments of the message.
+         * @return asdasd
+         */
+        bool manageGameOver(QTcpSocket *client, QStringList &args);
         /**
          * @brief Insert a new player given in `player` into `m_connectedPlayers` and emit the signal `connectedPlayerListManaged()`.
          * @param[in] player A `PlayerInfoStruct` containing all informations of the player to add.
@@ -200,6 +217,38 @@ class TicTacToeLanServerMdiSubWindow : public QMdiSubWindow
          * @return This function return always `true`.
          */
         bool openClient() const;
+        /**
+         * @brief Set the variable `m_rematchClientsResult` to `0`, that means that the server is waiting for rematch.
+         * @return This function returns always `true`.
+         */
+        bool waitingForRematch();
+        /**
+         * @brief Set if the client given in `clientSocket` want to rematch the game.
+         * @param clientSocket The client that sends the rematch result.
+         * @param rematch Set `true` if client want to rematch, `false` otherwise.
+         * @return One of the following result:
+         * <ul>
+         *  <li>`[-1]` → At leaast one client doesn't want to rematch.</li>
+         *  <li>`[0]` → Still waiting for all clients.</li>
+         *  <li>`[1]` → All clients want to rematch.</li>
+         * </ul>
+         */
+        qint8 setClientRematch(QTcpSocket* clientSocket, bool rematch);
+        /**
+         * @brief Get an integer that retrieve the rematch state.
+         * @return One of the following result:
+         * <ul>
+         *  <li>`[-1]` → At leaast one client doesn't want to rematch.</li>
+         *  <li>`[0]` → Still waiting for all clients.</li>
+         *  <li>`[1]` → All clients want to rematch.</li>
+         * </ul>
+         */
+        qint8 getRematchState();
+        /**
+         * @brief Set the variable `m_rematchClientsResult` at "gaming" state.
+         * @return This function returns always `true`.
+         */
+        bool setRematchInitialState();
         /**
          * @brief Overrided function of `QWidget::closeEvent()` for managing the form closing.
          * @param event Parameters that describe the close event.

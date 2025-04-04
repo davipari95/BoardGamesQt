@@ -197,7 +197,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeComponents<
 <tr class="memdesc:acc1026c22b62d16cf85f8a94ed7f7193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the variables of this class.  <br /></td></tr>
 <tr class="separator:acc1026c22b62d16cf85f8a94ed7f7193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a326aa89004f34d39f632eba8594294" id="r_a8a326aa89004f34d39f632eba8594294"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a326aa89004f34d39f632eba8594294">writeLog</a> (QString logMessage)</td></tr>
-<tr class="memdesc:a8a326aa89004f34d39f632eba8594294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write log on 'logPlainTextEdit'.  <br /></td></tr>
+<tr class="memdesc:a8a326aa89004f34d39f632eba8594294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write log on <code>logPlainTextEdit</code>.  <br /></td></tr>
 <tr class="separator:a8a326aa89004f34d39f632eba8594294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8e16d57361e59076ae745b32ef8b2a" id="r_a4e8e16d57361e59076ae745b32ef8b2a"><td class="memItemLeft" align="right" valign="top"><a id="a4e8e16d57361e59076ae745b32ef8b2a" name="a4e8e16d57361e59076ae745b32ef8b2a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>waitClients</b> ()</td></tr>
@@ -215,6 +215,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>waitClients</b> ()</t
 <tr class="memitem:aedcc2978a5b6c9a9e72667549e7e903f" id="r_aedcc2978a5b6c9a9e72667549e7e903f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedcc2978a5b6c9a9e72667549e7e903f">manageInsertToken</a> (QTcpSocket *client, QStringList &amp;args)</td></tr>
 <tr class="memdesc:aedcc2978a5b6c9a9e72667549e7e903f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage the command <code>insert-token</code> and reply to client.  <br /></td></tr>
 <tr class="separator:aedcc2978a5b6c9a9e72667549e7e903f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a04f35e4f487adbeda6cc233941eb88" id="r_a8a04f35e4f487adbeda6cc233941eb88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a04f35e4f487adbeda6cc233941eb88">manageGameOver</a> (QTcpSocket *client, QStringList &amp;args)</td></tr>
+<tr class="memdesc:a8a04f35e4f487adbeda6cc233941eb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage the message <code>game-over</code> from the client.  <br /></td></tr>
+<tr class="separator:a8a04f35e4f487adbeda6cc233941eb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac04e3eeef012d262d51d46433ca8a3c9" id="r_ac04e3eeef012d262d51d46433ca8a3c9"><td class="memItemLeft" align="right" valign="top">qint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac04e3eeef012d262d51d46433ca8a3c9">insertNewConnectedPlayer</a> (<a class="el" href="struct_tic_tac_toe_lan_server_mdi_sub_window_1_1_player_info_struct.html">PlayerInfoStruct</a> player)</td></tr>
 <tr class="memdesc:ac04e3eeef012d262d51d46433ca8a3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new player given in <code>player</code> into <code>m_connectedPlayers</code> and emit the signal <code><a class="el" href="#ab7c573b2e157e20262f461fc9c400710" title="Signal that is emitted when the list m_connectedPlayers is edited.">connectedPlayerListManaged()</a></code>.  <br /></td></tr>
 <tr class="separator:ac04e3eeef012d262d51d46433ca8a3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,6 +236,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>waitClients</b> ()</t
 <tr class="memitem:a8e3d80a3308d9af5037beb993c39cb6c" id="r_a8e3d80a3308d9af5037beb993c39cb6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e3d80a3308d9af5037beb993c39cb6c">openClient</a> () const</td></tr>
 <tr class="memdesc:a8e3d80a3308d9af5037beb993c39cb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a client socket that will connect on this server.  <br /></td></tr>
 <tr class="separator:a8e3d80a3308d9af5037beb993c39cb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f57c4cea17b0451af65879a8c498d3" id="r_a02f57c4cea17b0451af65879a8c498d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02f57c4cea17b0451af65879a8c498d3">waitingForRematch</a> ()</td></tr>
+<tr class="memdesc:a02f57c4cea17b0451af65879a8c498d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the variable <code>m_rematchClientsResult</code> to <code>0</code>, that means that the server is waiting for rematch.  <br /></td></tr>
+<tr class="separator:a02f57c4cea17b0451af65879a8c498d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8321ff19330a2413a4f4eb55bf319d" id="r_adf8321ff19330a2413a4f4eb55bf319d"><td class="memItemLeft" align="right" valign="top">qint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf8321ff19330a2413a4f4eb55bf319d">setClientRematch</a> (QTcpSocket *clientSocket, bool rematch)</td></tr>
+<tr class="memdesc:adf8321ff19330a2413a4f4eb55bf319d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set if the client given in <code>clientSocket</code> want to rematch the game.  <br /></td></tr>
+<tr class="separator:adf8321ff19330a2413a4f4eb55bf319d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b5190ce37e1b1fa6ecece6998c4359" id="r_a88b5190ce37e1b1fa6ecece6998c4359"><td class="memItemLeft" align="right" valign="top">qint8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88b5190ce37e1b1fa6ecece6998c4359">getRematchState</a> ()</td></tr>
+<tr class="memdesc:a88b5190ce37e1b1fa6ecece6998c4359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an integer that retrieve the rematch state.  <br /></td></tr>
+<tr class="separator:a88b5190ce37e1b1fa6ecece6998c4359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe287b3ee7c2389063bacd581373f428" id="r_abe287b3ee7c2389063bacd581373f428"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe287b3ee7c2389063bacd581373f428">setRematchInitialState</a> ()</td></tr>
+<tr class="memdesc:abe287b3ee7c2389063bacd581373f428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the variable <code>m_rematchClientsResult</code> at "gaming" state.  <br /></td></tr>
+<tr class="separator:abe287b3ee7c2389063bacd581373f428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac74430107aa0e1520f875830705c41fb" id="r_ac74430107aa0e1520f875830705c41fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac74430107aa0e1520f875830705c41fb">closeEvent</a> (QCloseEvent *event) override</td></tr>
 <tr class="memdesc:ac74430107aa0e1520f875830705c41fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrided function of <code>QWidget::closeEvent()</code> for managing the form closing.  <br /></td></tr>
 <tr class="separator:ac74430107aa0e1520f875830705c41fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,10 +282,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_gameIsReady</b></td
 QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName</b></td></tr>
 <tr class="memdesc:a92d12f600684cb5c0585b5ed3c21ee96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player name of the client opened by the server. <br /></td></tr>
 <tr class="separator:a92d12f600684cb5c0585b5ed3c21ee96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd60304c446e2ffad2f6bbda1bef43a" id="r_a3cd60304c446e2ffad2f6bbda1bef43a"><td class="memItemLeft" align="right" valign="top">QHash&lt; QTcpSocket *, qint8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cd60304c446e2ffad2f6bbda1bef43a">m_rematchClientsResult</a></td></tr>
+<tr class="memdesc:a3cd60304c446e2ffad2f6bbda1bef43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the rematch result retrieved from clients, where:  <br /></td></tr>
+<tr class="separator:a3cd60304c446e2ffad2f6bbda1bef43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Server for the tic tac toe game. </p>
-<p>♣ </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a53b3a9d97a05f335aaf785b1c4b863da" name="a53b3a9d97a05f335aaf785b1c4b863da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53b3a9d97a05f335aaf785b1c4b863da">&#9670;&#160;</a></span>TicTacToeLanServerMdiSubWindow()</h2>
@@ -490,6 +507,42 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 
 </div>
 </div>
+<a id="a88b5190ce37e1b1fa6ecece6998c4359" name="a88b5190ce37e1b1fa6ecece6998c4359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b5190ce37e1b1fa6ecece6998c4359">&#9670;&#160;</a></span>getRematchState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint8 TicTacToeLanServerMdiSubWindow::getRematchState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an integer that retrieve the rematch state. </p>
+<dl class="section return"><dt>Returns</dt><dd>One of the following result: <ul>
+<li>
+<code>[-1]</code> → At leaast one client doesn't want to rematch. </li>
+<li>
+<code>[0]</code> → Still waiting for all clients. </li>
+<li>
+<code>[1]</code> → All clients want to rematch. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a id="acc1026c22b62d16cf85f8a94ed7f7193" name="acc1026c22b62d16cf85f8a94ed7f7193"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc1026c22b62d16cf85f8a94ed7f7193">&#9670;&#160;</a></span>initialize()</h2>
 
@@ -554,6 +607,45 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An integer value that is the number of connected players. </dd></dl>
+
+</div>
+</div>
+<a id="a8a04f35e4f487adbeda6cc233941eb88" name="a8a04f35e4f487adbeda6cc233941eb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a04f35e4f487adbeda6cc233941eb88">&#9670;&#160;</a></span>manageGameOver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TicTacToeLanServerMdiSubWindow::manageGameOver </td>
+          <td>(</td>
+          <td class="paramtype">QTcpSocket *</td>          <td class="paramname"><span class="paramname"><em>client</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Manage the message <code>game-over</code> from the client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>The client that sent the message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Arguments of the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>asdasd </dd></dl>
 
 </div>
 </div>
@@ -669,8 +761,8 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">client</td><td>Client that had sent the message. Server will responds here. </td></tr>
-    <tr><td class="paramname">args</td><td>Arguments containing the token informations (token, row and column). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">client</td><td>Client that had sent the message. Server will responds here. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Arguments containing the token informations (token, row and column). </td></tr>
   </table>
   </dd>
 </dl>
@@ -914,6 +1006,109 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 
 </div>
 </div>
+<a id="adf8321ff19330a2413a4f4eb55bf319d" name="adf8321ff19330a2413a4f4eb55bf319d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8321ff19330a2413a4f4eb55bf319d">&#9670;&#160;</a></span>setClientRematch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint8 TicTacToeLanServerMdiSubWindow::setClientRematch </td>
+          <td>(</td>
+          <td class="paramtype">QTcpSocket *</td>          <td class="paramname"><span class="paramname"><em>clientSocket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>rematch</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set if the client given in <code>clientSocket</code> want to rematch the game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clientSocket</td><td>The client that sends the rematch result. </td></tr>
+    <tr><td class="paramname">rematch</td><td>Set <code>true</code> if client want to rematch, <code>false</code> otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One of the following result: <ul>
+<li>
+<code>[-1]</code> → At leaast one client doesn't want to rematch. </li>
+<li>
+<code>[0]</code> → Still waiting for all clients. </li>
+<li>
+<code>[1]</code> → All clients want to rematch. </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="abe287b3ee7c2389063bacd581373f428" name="abe287b3ee7c2389063bacd581373f428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe287b3ee7c2389063bacd581373f428">&#9670;&#160;</a></span>setRematchInitialState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TicTacToeLanServerMdiSubWindow::setRematchInitialState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the variable <code>m_rematchClientsResult</code> at "gaming" state. </p>
+<dl class="section return"><dt>Returns</dt><dd>This function returns always <code>true</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a02f57c4cea17b0451af65879a8c498d3" name="a02f57c4cea17b0451af65879a8c498d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f57c4cea17b0451af65879a8c498d3">&#9670;&#160;</a></span>waitingForRematch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TicTacToeLanServerMdiSubWindow::waitingForRematch </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the variable <code>m_rematchClientsResult</code> to <code>0</code>, that means that the server is waiting for rematch. </p>
+<dl class="section return"><dt>Returns</dt><dd>This function returns always <code>true</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a8a326aa89004f34d39f632eba8594294" name="a8a326aa89004f34d39f632eba8594294"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a326aa89004f34d39f632eba8594294">&#9670;&#160;</a></span>writeLog()</h2>
 
@@ -937,7 +1132,7 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
 </table>
 </div><div class="memdoc">
 
-<p>Write log on 'logPlainTextEdit'. </p>
+<p>Write log on <code>logPlainTextEdit</code>. </p>
 <p>This function will append automatically the date time.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -945,6 +1140,41 @@ QString&#160;</td><td class="memItemRight" valign="bottom"><b>m_clientPlayerName
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3cd60304c446e2ffad2f6bbda1bef43a" name="a3cd60304c446e2ffad2f6bbda1bef43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd60304c446e2ffad2f6bbda1bef43a">&#9670;&#160;</a></span>m_rematchClientsResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QTcpSocket*, qint8&gt; TicTacToeLanServerMdiSubWindow::m_rematchClientsResult</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains the rematch result retrieved from clients, where: </p>
+<ul>
+<li>
+<code>[-2]</code> → Game is running. </li>
+<li>
+<code>[0]</code> → Waiting for rematch. </li>
+<li>
+<code>[-1]</code> → Client don't want rematch. </li>
+<li>
+<code>[1]</code> → Client want rematch </li>
+</ul>
 
 </div>
 </div>

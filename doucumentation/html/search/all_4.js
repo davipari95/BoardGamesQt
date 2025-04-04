@@ -21,10 +21,11 @@ var searchData=
   ['getplayername_18',['getPlayerName',['../class_match.html#aebe11bca186cf124871d860bce726d7e',1,'Match']]],
   ['getplayernamebytoken_19',['getPlayerNameByToken',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#aee3604f09c3613a1fbee83fb298a7722',1,'TicTacToeLanServerMdiSubWindow']]],
   ['getprimaryipaddress_20',['getPrimaryIPAddress',['../class_u_network.html#a1047a2947a4f85eface28908f39ba142',1,'UNetwork']]],
-  ['getrow_21',['getRow',['../class_grid_position.html#a55cb92da89bfc07b5f7d7b256be092da',1,'GridPosition']]],
-  ['getsubmdiframebordersizes_22',['getSubMdiFrameBorderSizes',['../class_u_frames.html#abb1b05699dfae97afbfd74216d1e79e7',1,'UFrames']]],
-  ['getsystemlocale_23',['getSystemLocale',['../class_u_locale.html#aff336b0e48dc9336997127a87e130e2f',1,'ULocale']]],
-  ['gettokenbyposition_24',['getTokenByPosition',['../class_board.html#af7beeea710f4c682a283ae68e1ff3293',1,'Board::getTokenByPosition(const qint32 &amp;row, const qint32 &amp;column)'],['../class_board.html#a935980beb464e8b00c3493bf93812cdb',1,'Board::getTokenByPosition(const GridPosition &amp;position)']]],
-  ['gettwocharsystemlocale_25',['getTwoCharSystemLocale',['../class_u_locale.html#a32d5ce1ab4bd0bbc6f75c309b041f458',1,'ULocale']]],
-  ['gridposition_26',['GridPosition',['../class_grid_position.html',1,'GridPosition'],['../class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a',1,'GridPosition::GridPosition(QObject *parent=nullptr)'],['../class_grid_position.html#a86962432efa346cceb363c40f22f5a29',1,'GridPosition::GridPosition(const qint32 &amp;row, const qint32 &amp;column, QObject *parent=nullptr)'],['../class_grid_position.html#a056c07aab89e343e84c309ae823295f5',1,'GridPosition::GridPosition(const GridPosition &amp;gridPosition, QObject *parent=nullptr)']]]
+  ['getrematchstate_21',['getRematchState',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a88b5190ce37e1b1fa6ecece6998c4359',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['getrow_22',['getRow',['../class_grid_position.html#a55cb92da89bfc07b5f7d7b256be092da',1,'GridPosition']]],
+  ['getsubmdiframebordersizes_23',['getSubMdiFrameBorderSizes',['../class_u_frames.html#abb1b05699dfae97afbfd74216d1e79e7',1,'UFrames']]],
+  ['getsystemlocale_24',['getSystemLocale',['../class_u_locale.html#aff336b0e48dc9336997127a87e130e2f',1,'ULocale']]],
+  ['gettokenbyposition_25',['getTokenByPosition',['../class_board.html#af7beeea710f4c682a283ae68e1ff3293',1,'Board::getTokenByPosition(const qint32 &amp;row, const qint32 &amp;column)'],['../class_board.html#a935980beb464e8b00c3493bf93812cdb',1,'Board::getTokenByPosition(const GridPosition &amp;position)']]],
+  ['gettwocharsystemlocale_26',['getTwoCharSystemLocale',['../class_u_locale.html#a32d5ce1ab4bd0bbc6f75c309b041f458',1,'ULocale']]],
+  ['gridposition_27',['GridPosition',['../class_grid_position.html',1,'GridPosition'],['../class_grid_position.html#abcf7f5f0fd17b0bd91be8ffab19bf34a',1,'GridPosition::GridPosition(QObject *parent=nullptr)'],['../class_grid_position.html#a86962432efa346cceb363c40f22f5a29',1,'GridPosition::GridPosition(const qint32 &amp;row, const qint32 &amp;column, QObject *parent=nullptr)'],['../class_grid_position.html#a056c07aab89e343e84c309ae823295f5',1,'GridPosition::GridPosition(const GridPosition &amp;gridPosition, QObject *parent=nullptr)']]]
 ];

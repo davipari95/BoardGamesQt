@@ -76,49 +76,57 @@ void TicTacToeLanServerMdiSubWindow::writeLog(QString logMessage)
 void TicTacToeLanServerMdiSubWindow::waitClients()
 {
     if (m_server->listen(m_primaryAddress, 0))
-    {        
-        writeLog("Server started.");
+    {
+        writeLog(tr("Server started."));
         ui->portLabel->setText(QString::number(m_server->serverPort()));
         connect(m_server, &QTcpServer::newConnection, this, &TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection);
     }
     else
     {
-        writeLog("Server error: unable to start the server.");
+        writeLog(tr("Server error: unable to start the server."));
     }
 }
 
 quint64 TicTacToeLanServerMdiSubWindow::manageTcpIncomingMessage(QTcpSocket *client)
 {
+    //Init local variables
     quint64 result = 0;
+    QHash<QString, int> commandIntHash
+    {
+        {"get-player-info", 0},
+        {"get-game", 1},
+        {"insert-token", 2},
+        {"game-over", 3},
+    };
 
     QString incoming = client->readAll();
-
     QStringList messages = incoming.split("\r\n", Qt::SkipEmptyParts);
 
     for (QString &message : messages)
     {
-        QStringList command = message.split("\n");
+        QStringList args = message.split("\n");
 
-        if (command[0] == "get-player-info")
+        switch (commandIntHash.value(args[0], -1))
         {
-            if (manageIncomingGetPlayerInfo(client, command))
-            {
-                result |= 1 << 0;
-            }
-        }
-        else if (command[0] == "get-game")
-        {
-            if (manageIncomingGetGame(client))
-            {
-                result |= 1 << 1;
-            }
-        }
-        else if (command[0] == "insert-token")
-        {
-            if (manageInsertToken(client, command))
-            {
-                result |= 1 << 2;
-            }
+            case 0: //get-player-info
+                if (manageIncomingGetPlayerInfo(client, args)) result |= 1 << 0;
+                break;
+
+            case 1: //get-game
+                if (manageIncomingGetGame(client)) result |= 1 << 1;
+                break;
+
+            case 2: //insert-token
+                if (manageInsertToken(client, args)) result |= 1 << 2;
+                break;
+
+            case 3: //game-over
+                if (manageGameOver(client, args)) result |= 1 << 3;
+                break;
+
+            case -1:    //Unexisting command
+                writeLog(tr("Received an unknow command."));
+                break;
         }
     }
 
@@ -174,23 +182,29 @@ bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStri
 
                 if (result == 0)
                 {
+                    char tokenChar = getTokenChar(player.token);
+
                     message = message.arg("OK");
+                    writeLog(QString("%0 → [%1|%2]").arg(tokenChar).arg(row).arg(col));
 
                     //Aware all clients that a token is inserted correctly
-                    QString broadcast = QString("token-inserted\n%0\n%1\n%2\r\n").arg(getTokenChar(player.token)).arg(row).arg(col);
+                    QString broadcast = QString("token-inserted\n%0\n%1\n%2\r\n").arg(tokenChar).arg(row).arg(col);
                     broadcastMessage(broadcast);
 
                     //Check if is game-over
                     TicTacToePlayerEnum gameOverResult = m_match->checkGameOver();
                     if (gameOverResult != TicTacToePlayerEnum::None)
                     {
-                        QString gameOverMessage = QString("game-over\n%0\r\n")
-                                                      .arg(
-                                                            gameOverResult == TicTacToePlayerEnum::Circle ? "O" :
-                                                            gameOverResult == TicTacToePlayerEnum::Cross ? "X" :
-                                                            "#"
-                                                          );
+                        waitingForRematch();
+
+                        QString gameOverCase = gameOverResult == TicTacToePlayerEnum::Circle ? "O" :
+                                            gameOverResult == TicTacToePlayerEnum::Cross ? "X" :
+                                            "#";
+
+                        QString gameOverMessage = QString("game-over\n%0\r\n").arg(gameOverCase);
                         broadcastMessage(gameOverMessage.toLatin1());
+
+                        writeLog(tr("Game over. Winner is %0. Waiting for rematch...").arg(gameOverCase));
                     }
                     else
                     {
@@ -222,13 +236,30 @@ bool TicTacToeLanServerMdiSubWindow::manageInsertToken(QTcpSocket *client, QStri
     }
 }
 
+bool TicTacToeLanServerMdiSubWindow::manageGameOver(QTcpSocket *client, QStringList &args)
+{
+    bool rematch = args[1] == "YES";
+
+    qint8 result = setClientRematch(client, rematch);
+
+    if (result != 0)
+    {
+        setRematchInitialState();
+
+        QString broadcast = QString("rematch\n%0\r\n").arg(result == 1 ? "YES" : "NO");
+        return broadcastMessage(broadcast);
+    }
+
+    return true;
+}
+
 qint32 TicTacToeLanServerMdiSubWindow::insertNewConnectedPlayer(PlayerInfoStruct player)
 {
     m_connectedPlayers.append(player);
 
     int connectedPlayers = m_connectedPlayers.count();
 
-    writeLog(QString("Player info: [%0][%1]").arg(player.name).arg(getTokenChar(player.token)));
+    writeLog(tr("Player info: [%0][%1]").arg(player.name).arg(getTokenChar(player.token)));
 
     emit connectedPlayerListManaged(connectedPlayers);
 
@@ -303,6 +334,47 @@ bool TicTacToeLanServerMdiSubWindow::openClient() const
     return true;
 }
 
+bool TicTacToeLanServerMdiSubWindow::waitingForRematch()
+{
+    const QList<QTcpSocket*> keys = m_rematchClientsResult.keys();
+
+    for (QTcpSocket* socket : keys)
+    {
+        m_rematchClientsResult[socket] = 0;
+    }
+
+    return true;
+}
+
+qint8 TicTacToeLanServerMdiSubWindow::setClientRematch(QTcpSocket *clientSocket, bool rematch)
+{
+    m_rematchClientsResult[clientSocket] = rematch ? 1 : -1;
+
+    return getRematchState();
+}
+
+qint8 TicTacToeLanServerMdiSubWindow::getRematchState()
+{
+    const QList<qint8> values = m_rematchClientsResult.values();
+
+    return
+        values.contains(0) ? 0 :
+        values.contains(-1) ? -1 :
+        1;
+}
+
+bool TicTacToeLanServerMdiSubWindow::setRematchInitialState()
+{
+    const QList<QTcpSocket*> sockets = m_rematchClientsResult.keys();
+
+    for (QTcpSocket* socket : sockets)
+    {
+        m_rematchClientsResult[socket] = -2;
+    }
+
+    return true;
+}
+
 void TicTacToeLanServerMdiSubWindow::closeEvent(QCloseEvent *event)
 {
     QString title = tr("Server is closing");
@@ -357,7 +429,7 @@ void TicTacToeLanServerMdiSubWindow::onTCPServerNewConnection()
 {
     QTcpSocket *client = m_server->nextPendingConnection();
 
-    writeLog(QString("New client connected. IP: %0 .").arg(client->localAddress().toString()));
+    writeLog(tr("New client connected. IP: %0 .").arg(client->localAddress().toString()));
 
     connect(client, &QTcpSocket::readyRead, this, &TicTacToeLanServerMdiSubWindow::onTcpSocketReadyRead);
     connect(client, &QTcpSocket::disconnected, this, &TicTacToeLanServerMdiSubWindow::onTcpSocketDisconnected);
@@ -376,7 +448,7 @@ void TicTacToeLanServerMdiSubWindow::onTcpSocketDisconnected()
 {
     QTcpSocket *m_sender = qobject_cast<QTcpSocket*>(sender());
 
-    writeLog(QString("Client [%0] disconnected.").arg(m_sender->localAddress().toString()));
+    writeLog(tr("Client [%0] disconnected.").arg(m_sender->localAddress().toString()));
 }
 
 void TicTacToeLanServerMdiSubWindow::onConnectedPlayerListManaged(int &nrOfConnectedPlayers)
@@ -402,8 +474,16 @@ void TicTacToeLanServerMdiSubWindow::onGameIsReady()
         m_match = new Match(xPlayerName, oPlayerName, this);
         connect(m_match, &Match::actualTurnChangedSignal, this, &TicTacToeLanServerMdiSubWindow::onActualTurnChangedSignal);
 
+        //Initialize the rematch result to -2
+        m_rematchClientsResult = QHash<QTcpSocket*, qint8>();
+
+        for (PlayerInfoStruct& player : m_connectedPlayers)
+        {
+            m_rematchClientsResult.insert(player.socket, -2);
+        }
+
         broadcastMessage("game-ready\r\n");
-        writeLog("Game is ready!");
+        writeLog(tr("Game is ready!"));
     }
     else
     {

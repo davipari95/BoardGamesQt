@@ -99,12 +99,13 @@ quint64 TicTacToeLANClientMdiSubWindow::manageIncomingTcpMessage(QTcpSocket *soc
 
     QHash<QString, int> commandNrMap =
     {
-         {"get-player-info", 0},
-         {"game-ready", 1},
-         {"set-turn", 2},
-         {"token-inserted", 3},
-         {"insert-token", 4},
-         {"game-over", 5},
+        {"get-player-info", 0},
+        {"game-ready", 1},
+        {"set-turn", 2},
+        {"token-inserted", 3},
+        {"insert-token", 4},
+        {"game-over", 5},
+        {"rematch", 6},
     };
 
     QString message = socket->readAll();
@@ -139,6 +140,9 @@ quint64 TicTacToeLANClientMdiSubWindow::manageIncomingTcpMessage(QTcpSocket *soc
 
             case 5: //game-over
                 if (manageGameOver(socket, data)) result |= 1 << 5;
+                break;
+
+            case 6: //rematch
                 break;
 
             case -1: //Invalid value
@@ -253,6 +257,11 @@ bool TicTacToeLANClientMdiSubWindow::manageGameOver(QTcpSocket *socket, QStringL
     socket->write(reply.toLatin1());
 
     return ok;
+}
+
+bool TicTacToeLANClientMdiSubWindow::manageRematch(QTcpSocket *soocket, QStringList args)
+{
+
 }
 
 void TicTacToeLANClientMdiSubWindow::onTcpSocketReadyRead()

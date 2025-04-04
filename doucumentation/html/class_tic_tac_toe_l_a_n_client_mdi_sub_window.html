@@ -154,8 +154,8 @@ Private Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeComponents</b> ()</td></tr>
 <tr class="memdesc:a4b6575e2672f51e638cd786c618c17f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all graphical elements that are not contained into <code>ui</code>. <br /></td></tr>
 <tr class="separator:a4b6575e2672f51e638cd786c618c17f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ebf197048eaaa01f80b7c9ff6fd8834" id="r_a2ebf197048eaaa01f80b7c9ff6fd8834"><td class="memItemLeft" align="right" valign="top"><a id="a2ebf197048eaaa01f80b7c9ff6fd8834" name="a2ebf197048eaaa01f80b7c9ff6fd8834"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateGraphics</b> ()</td></tr>
+<tr class="memitem:a2ebf197048eaaa01f80b7c9ff6fd8834" id="r_a2ebf197048eaaa01f80b7c9ff6fd8834"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ebf197048eaaa01f80b7c9ff6fd8834">updateGraphics</a> ()</td></tr>
+<tr class="memdesc:a2ebf197048eaaa01f80b7c9ff6fd8834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all UI board.  <br /></td></tr>
 <tr class="separator:a2ebf197048eaaa01f80b7c9ff6fd8834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7aa32950ec4f6de52e9dff55adce2c5" id="r_ab7aa32950ec4f6de52e9dff55adce2c5"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7aa32950ec4f6de52e9dff55adce2c5">manageIncomingTcpMessage</a> (QTcpSocket *socket)</td></tr>
 <tr class="memdesc:ab7aa32950ec4f6de52e9dff55adce2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage all incoming messages from server.  <br /></td></tr>
@@ -178,6 +178,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>updateGraphics</b> ()
 <tr class="memitem:a8c95e094b29b57fddb424dd44f0ea706" id="r_a8c95e094b29b57fddb424dd44f0ea706"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c95e094b29b57fddb424dd44f0ea706">manageGameOver</a> (QTcpSocket *socket, QStringList args)</td></tr>
 <tr class="memdesc:a8c95e094b29b57fddb424dd44f0ea706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage the command <code>game-over</code> from server.  <br /></td></tr>
 <tr class="separator:a8c95e094b29b57fddb424dd44f0ea706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab538b4b5a6bb73b681d234d5e4b1584c" id="r_ab538b4b5a6bb73b681d234d5e4b1584c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab538b4b5a6bb73b681d234d5e4b1584c">manageRematch</a> (QTcpSocket *soocket, QStringList args)</td></tr>
+<tr class="memdesc:ab538b4b5a6bb73b681d234d5e4b1584c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage the command <code>rematch</code> from server.  <br /></td></tr>
+<tr class="separator:ab538b4b5a6bb73b681d234d5e4b1584c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -487,6 +490,55 @@ QTcpSocket *&#160;</td><td class="memItemRight" valign="bottom"><b>m_socket</b><
 
 </div>
 </div>
+<a id="ab538b4b5a6bb73b681d234d5e4b1584c" name="ab538b4b5a6bb73b681d234d5e4b1584c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab538b4b5a6bb73b681d234d5e4b1584c">&#9670;&#160;</a></span>manageRematch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TicTacToeLANClientMdiSubWindow::manageRematch </td>
+          <td>(</td>
+          <td class="paramtype">QTcpSocket *</td>          <td class="paramname"><span class="paramname"><em>soocket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Manage the command <code>rematch</code> from server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soocket</td><td>The socket for replying to server. </td></tr>
+    <tr><td class="paramname">args</td><td>The argument of the command, where <ul>
+<li>
+<code>args[1]</code> → Result for rematch, where <ul>
+<li>
+<code>YES</code> → There will be a rematch; </li>
+<li>
+<code>NO</code> → There won't be a rematch. </li>
+</ul>
+</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TODO </dd></dl>
+
+</div>
+</div>
 <a id="a1767d84da2d4aa94fc4e1bbdc1ad27d2" name="a1767d84da2d4aa94fc4e1bbdc1ad27d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1767d84da2d4aa94fc4e1bbdc1ad27d2">&#9670;&#160;</a></span>manageSetTurn()</h2>
 
@@ -552,6 +604,34 @@ QTcpSocket *&#160;</td><td class="memItemRight" valign="bottom"><b>m_socket</b><
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return <code>true</code> if the command is managed correctly, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a2ebf197048eaaa01f80b7c9ff6fd8834" name="a2ebf197048eaaa01f80b7c9ff6fd8834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ebf197048eaaa01f80b7c9ff6fd8834">&#9670;&#160;</a></span>updateGraphics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TicTacToeLANClientMdiSubWindow::updateGraphics </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update all UI board. </p>
+<dl class="section return"><dt>Returns</dt><dd>This function will returns always <code>true</code>. </dd></dl>
 
 </div>
 </div>

@@ -19,8 +19,9 @@ var searchData=
   ['m_5fmin_16',['m_min',['../class_range.html#a5df6964e51d4af02f750604e30d230f5',1,'Range']]],
   ['m_5fplayernames_17',['m_playerNames',['../class_match.html#a58aba69f5a7f666cfca3b80fee8007e9',1,'Match']]],
   ['m_5fprimaryaddress_18',['m_primaryAddress',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#acf0e640060894dbed340a2e23538bdfb',1,'TicTacToeLanServerMdiSubWindow']]],
-  ['m_5frow_19',['m_row',['../class_grid_position.html#ac356f42b381f40231e64f688e8267721',1,'GridPosition']]],
-  ['m_5fserver_20',['m_server',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#ac9f7c9725a9d7fa72717d867439e9a61',1,'TicTacToeLanServerMdiSubWindow']]],
-  ['m_5fsocket_21',['m_socket',['../class_tic_tac_toe_l_a_n_client_mdi_sub_window.html#aa51378fea88bca8eb8b319f358dafc2c',1,'TicTacToeLANClientMdiSubWindow']]],
-  ['mainwindow_22',['mainWindow',['../class_v_widgets.html#a2cb1961af10c14ad693fe2814ff62995',1,'VWidgets']]]
+  ['m_5frematchclientsresult_19',['m_rematchClientsResult',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#a3cd60304c446e2ffad2f6bbda1bef43a',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5frow_20',['m_row',['../class_grid_position.html#ac356f42b381f40231e64f688e8267721',1,'GridPosition']]],
+  ['m_5fserver_21',['m_server',['../class_tic_tac_toe_lan_server_mdi_sub_window.html#ac9f7c9725a9d7fa72717d867439e9a61',1,'TicTacToeLanServerMdiSubWindow']]],
+  ['m_5fsocket_22',['m_socket',['../class_tic_tac_toe_l_a_n_client_mdi_sub_window.html#aa51378fea88bca8eb8b319f358dafc2c',1,'TicTacToeLANClientMdiSubWindow']]],
+  ['mainwindow_23',['mainWindow',['../class_v_widgets.html#a2cb1961af10c14ad693fe2814ff62995',1,'VWidgets']]]
 ];

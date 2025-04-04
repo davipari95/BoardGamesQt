@@ -126,6 +126,22 @@ class TicTacToeLANClientMdiSubWindow : public QMdiSubWindow
          * @return Return `true` if the command is managed correctly, `false` otherwise.
          */
         bool manageGameOver(QTcpSocket *socket, QStringList args);
+        /**
+         * @brief Manage the command `rematch` from server.
+         * @param soocket The socket for replying to server.
+         * @param args The argument of the command, where
+         * <ul>
+         *  <li>
+         *      `args[1]` → Result for rematch, where
+         *      <ul>
+         *          <li>`YES` → There will be a rematch;</li>
+         *          <li>`NO` → There won't be a rematch.</li>
+         *      </ul>
+         *  </li>
+         * </ul>
+         * @return TODO
+         */
+        bool manageRematch(QTcpSocket *soocket, QStringList args);
 
     private slots:
         /**
